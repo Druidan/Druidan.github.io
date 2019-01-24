@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-image: url("assets/images/bwmarble-dark.jpg");
+    background-image: url("/assets/images/bwmarble-dark.jpg");
     background-color: #000000;
     color: #4c4845;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
