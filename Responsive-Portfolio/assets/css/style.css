@@ -1,0 +1,384 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url("../../assets/images/bwmarble-dark.jpg");
+    background-color: #000000;
+    color: #4c4845;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 2;
+    margin: 0%;
+    Padding: 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} 
+/* Flex code originally came from Chris Coyier at https://css-tricks.com/couple-takes-sticky-footer/ Adjustments were made to make it work for this page*/
+
+header {
+    background-color: #ffffff;  
+    width: 100%;
+    margin-top: 0;  
+    border-bottom: 3px solid;
+    border-color: #d4d4d4;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+}
+
+.header {
+    position: relative;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 65px;
+    width: 960px;
+}
+
+.myName {
+    position: absolute;
+    font-size: 25px;
+    height: 55px;
+    background-color: #4aaaa5;
+    color: white;
+    top: 0;
+    padding: 5px 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.navButtons {
+    float: right;
+    margin-top: 20px;
+    padding: 5px 20px;
+}
+
+.navLinks:link {
+    color: #d4d4d4;
+    -webkit-transition: color .2s, font-size .2s;
+    -moz-transition: color .2s, font-size .2s;
+    -o-transition: color .2s, font-size .2s;
+    transition: color .2s, font-size .2s;
+}
+
+.navLinks:hover {
+    font-size: 110%;
+    color: #727272 !important;
+}
+
+.navLinks:visited {
+    color: #d4d4d4;
+}
+
+h1 {
+    padding: 0 0 0;
+    color: #4aaaa5;
+    float: left;
+    font-size: 25px;
+}
+
+p {
+    text-indent: 20px;
+}
+
+.mainBlock {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    Width: 920px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+input {
+    width: 95%;
+}
+
+.footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: flex-end;
+    bottom:0;
+    background-color: #666666;
+    height: 75px;
+    border-top: 8px solid #4aaaa5;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.copywriteText {
+    font-size: 75%;
+    padding: 10px;
+    color: #d4d4d4;
+}
+
+.contentName {
+    width: 100%;
+    padding: 0 0 10px 0px;
+    border-bottom: 3px solid #d4d4d4;
+    margin-bottom: 20px;
+}
+
+.portfolioLinks {
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 200px;
+    padding: 0px;
+    margin: 12px;
+    border: 3px solid #4aaaa500;
+    text-shadow: 0px 0px 0px #a4fcf7;
+    -webkit-transition: width .2s, border .2s, text-shadow .2s, font-size .2s;
+    -moz-transition: width .2s, border .2s, text-shadow .2s, font-size .2s;
+    -o-transition: width .2s, border .2s, text-shadow .2s, font-size .2s;
+    transition: width .2s, border .2s, text-shadow .2s, font-size .2s;
+}
+
+.portfolioPics {
+    width: 300px;
+    height: auto;
+}
+
+.portfolioLinks:hover {
+    border-color: #4aaaa5;
+    text-shadow: 2px 2px 5px #a4fcf7;
+}
+
+.portfolioLinks:hover .portfolioText {
+    font-size:110%;
+}
+
+.portfolioText {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #4aaaa5;
+    color: white;
+}
+
+.submitButtons {
+    float: left;
+    color: white;
+    background-color: #4aaaa5;
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submitButtons:hover {
+    background-color: #398581;
+}
+
+.about {
+    padding: 2px 20px;
+    position: absolute;
+    right: 200px;
+    border-right: 3px solid;
+    border-color: #d4d4d4;
+}
+
+.portfolio {
+    padding: 2px 20px;
+    position: absolute;
+    right: 100px;
+    border-right: 3px solid;
+    border-color: #d4d4d4;
+}
+
+.contact {
+    padding: 2px 20px;
+    position: absolute;
+    right: 10px;
+}
+
+.myPic {
+    float: left;
+    width: 180px;
+    height: auto;
+    padding: 10px 10px 0px 0px;
+    transform: rotate(90deg);
+}
+
+.messageBox {
+    overflow: auto;
+    resize: vertical;
+    width: 100%
+}
+
+
+@media screen and (max-width: 980px){
+
+/* Header and Nav Bar Changes*/
+
+body {
+    width: 980px;
+}
+
+header {
+    width: 980px;
+}
+
+.header {
+    width: 980px;
+    margin-left: 20px;
+}
+
+.navButtons {
+    float: right;
+    width: 50%;
+    margin-top: 20px;
+    padding: 5px 20px;
+}
+
+.about {
+    right: 26%;
+}
+
+.portfolio {
+    right: 15%;
+}
+
+.contact {
+    right: 5%;
+}
+
+/* Main Block Changes*/
+
+.mainBlock {
+    width: 600px;
+    padding: 20px;
+    margin: 20px;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+
+/* Header and Nav Bar Changes*/
+
+body {
+    width: 768px;
+}
+
+header {
+    width: 768px;
+}
+
+.header {
+    width: 748px;
+    margin-left: 20px;
+}
+
+.navButtons {
+    float: right;
+    width: 50%;
+    margin-top: 20px;
+    padding: 5px 20px;
+}
+
+.about {
+    right: 33%;
+}
+
+.portfolio {
+    right: 18%;
+}
+
+.contact {
+    right: 5%;
+}
+
+/* Main Block Changes*/
+
+.mainBlock {
+    width: 688px;
+    padding: 20px;
+    margin: 20px;
+}
+
+}
+
+
+@media screen and (max-width: 640px) {
+
+    /* Header and Nav Bar Changes*/
+    
+    body {
+        width: 640px;
+        font-size: 110%;
+    }
+    
+    header {
+        position: static;
+        width: 640px;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left: -20px;
+        height: 120px;
+    }
+    
+    .myName {
+        width: 640px;
+        height: 65px;
+        background-color: #4aaaa5;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        padding: 0;
+    }
+    
+    .navButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 25px;
+        left: -10px;
+        width: 640px;
+        height: 120px;
+    }
+    
+    .navLinks:link {
+        text-align: center;
+        position: unset;
+        right: unset;
+        width: 100%;
+        display: inline-block;
+        top: 0;
+    }
+    
+    /* Main Block Changes*/
+    
+    .mainBlock {
+        width: 90%;
+        padding: 2.5%;
+        margin: 2.5%;
+    }
+    
+    .myPic {
+        width: 580px;
+        height: auto;
+        padding: 10px;
+        display: inline-block;
+    }
+    
+    p{
+        display: inline-block;
+    }
+    
+    }
+    
