@@ -19,8 +19,12 @@
     
         <!--The Head(er) is for navigating the body.-->
             <header class="header">
+                    
+                    <!--My Name at the top of the page-->
                     <nav class="d-flex justify-content-between align-items-end navbar navBar-expand-lg navbar-light bg-light">
-                        <a href="../index.html" class="navbar-brand mb-0 h1">Edward L. Cheever II</a>
+                            <a href="../index.html" class="navbar-brand mb-0 mr-auto  h1">Edward L. Cheever II</a>
+                                                        
+                            <!--Navbar Items/Links-->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html">About</a>
@@ -37,61 +41,78 @@
         
             <!---Main Content-->
     
-            <section class="container d-flex mainBlock">
-                <article class="row flex-shrink-0 portfolio">
+            <section class="container-fluid">
+                <article class="d-flex mainBlock col-12 mx-xs-0 mx-md-2 mx-lg-auto">
+                    <div class="row portfolio">
 
-                <h1 class="col-12 contentName">
-                    Portfolio
-                </h1>
+                <!--The name of the Page's Content-->
+                    <h1 class="col-12 contentName">
+                        Portfolio
+                    </h1>
 
-                <section class="row">
-
-                    <div class="card text-white portfolioLinks">
-                        <img class="card-img" src="assets/images/cat1.jpg" alt="A Cat Image">
-                        <div class="card-img-overlay">
-                            <h5 class="portfolioText">Project 1</h5>
+                    <!--The first row of cards-->
+                    <section class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card text-white portfolioLinks">
+                                <img class="card-img" src="assets/images/cat1.jpg" alt="A Cat Image">
+                                <div class="card-img-overlay">
+                                    <h5 class="portfolioText">Project 1</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-    
-                    <div class="card text-white portfolioLinks">
-                        <img class="card-img" src="assets/images/cat2.jpg" alt="A Second Cat Image">
-                        <div class="card-img-overlay">
-                            <h5 class="portfolioText">Project 2</h5>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card text-white portfolioLinks">
+                                <img class="card-img" src="assets/images/cat2.jpg" alt="A Second Cat Image">
+                                <div class="card-img-overlay">
+                                    <h5 class="portfolioText">Project 2</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section class="row">
-
-                    <div class="card text-white portfolioLinks">
-                        <img class="card-img" src="assets/images/cat3.jpg" alt="A THIRD Cat Image!">
-                        <div class="card-img-overlay">
-                            <h5 class="portfolioText">Project 3</h5>
+                    <!--The second row of cards-->
+                    <section class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card text-white portfolioLinks">
+                                <img class="card-img" src="assets/images/cat3.jpg" alt="A THIRD Cat Image!">
+                                <div class="card-img-overlay">
+                                    <h5 class="portfolioText">Project 3</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="card text-white portfolioLinks">
-                        <img class="card-img" src="assets/images/cat4.jpg" alt="A FOURTH Cat Image!?">
-                        <div class="card-img-overlay">
-                            <h5 class="portfolioText">Project 4</h5>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card text-white portfolioLinks">
+                                <img class="card-img" src="assets/images/cat4.jpg" alt="A FOURTH Cat Image!?">
+                                <div class="card-img-overlay">
+                                    <h5 class="portfolioText">Project 4</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-    
-                </section>
+                    </section>
 
-                <section class="row">
-
-                    <div class="card text-white portfolioLinks">
-                        <img class="card-img" src="assets/images/cat5.jpg" alt="HOW MANY CATS ARE THERE!?">
-                        <div class="card-img-overlay">
-                            <h5 class="portfolioText">Project 5</h5>
+                    <!--The third row of cards-->
+                    <section class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="card text-white portfolioLinks">
+                                <img class="card-img" src="assets/images/cat5.jpg" alt="HOW MANY CATS ARE THERE!?">
+                                <div class="card-img-overlay">
+                                    <h5 class="portfolioText">Project 5</h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <!--No idea why, but the first card in this row doesn't follow grid rules if there isn't another card here, sooooo...-->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="card text-white fakePortfolioLinks">
+                                        <img class="card-img" src="assets/images/catReplacement.jpg" alt="HOW MANY CATS ARE THERE!?">
+                                        <div class="card-img-overlay">
+                                            <h5 class="fakePortfolioText"></h5>
+                                        </div>
+                        </div>
+                    </section>
 
-                </section>
-
-
+                </div>
             </article>
+        </section>
         </main>
 
     <!--Footer-->

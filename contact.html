@@ -19,8 +19,12 @@
     
         <!--The Head(er) is for navigating the body.-->
             <header class="header">
+
+                    <!--My Name at the top of the page-->
                     <nav class="d-flex justify-content-between align-items-end navbar navBar-expand-lg navbar-light bg-light">
-                        <span class="navbar-brand mb-0 h1">Edward L. Cheever II</span>
+                            <a href="../index.html" class="navbar-brand mb-0 mr-auto  h1">Edward L. Cheever II</a>
+                            
+                            <!--Navbar Items/Links-->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html">About</a>
@@ -32,24 +36,27 @@
                                     <a class="nav-link" href="#">Contact</a>
                                 </li>
                             </ul>
+                            
                     </nav>
             </header>
         
             <!---Main Content-->
     
             <section class="container d-flex mainBlock">
-                <article class="flex-shrink-0">
-
-                    <h1 class="contentName">
+                <article class="row">
+                    
+                    <!--Page's Content Name-->
+                    <h1 class="row contentName">
                         Contact
                     </h1>
 
-                    <form>
+                    <!--Contact Form-->
+                    <form class="row">
                         Name:<br>
-                            <input type="text" name="firstname"><br>
+                            <input type="text" placeholder="John Smith" name="firstname"><br>
 
                         Email:<br>
-                            <input type="text" name="email"><br>
+                            <input type="text" placeholder="example@gmail.com" name="email"><br>
 
                         Message:<br>
                             <textarea class="messageBox" type="text" placeholder="What do you want to say?" style="height:200px" name="message"></textarea><br>

@@ -1,3 +1,5 @@
+/* Universal CSS*/
+
 html, body {
     height: 100%;
 }
@@ -14,8 +16,19 @@ body {
     display: flex;
     flex-direction: column;
 } 
-/* Flex code originally came from Chris Coyier at https://css-tricks.com/couple-takes-sticky-footer/ Adjustments were made to make it work for this page*/
 
+h1 {
+    padding: 0 0 0;
+    color: #4aaaa5;
+    float: left;
+    font-size: 25px;
+}
+
+p {
+    text-indent: 20px;
+}
+
+/* Universal Top-of-the-page CSS*/
 header {
     background-color: #ffffff;  
     width: 100%;
@@ -72,32 +85,29 @@ header {
     color: #d4d4d4;
 }
 
-h1 {
-    padding: 0 0 0;
-    color: #4aaaa5;
-    float: left;
-    font-size: 25px;
+.about {
+    padding: 2px 20px;
+    position: absolute;
+    right: 200px;
+    border-right: 3px solid;
+    border-color: #d4d4d4;
 }
 
-p {
-    text-indent: 20px;
+.portfolio {
+    padding: 2px 20px;
+    position: absolute;
+    right: 100px;
+    border-right: 3px solid;
+    border-color: #d4d4d4;
 }
 
-.mainBlock {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: auto;
-    left: 0;
-    right: 0;
-    Width: 920px;
-    background-color: #ffffff;
-    padding: 20px;
+.contact {
+    padding: 2px 20px;
+    position: absolute;
+    right: 10px;
 }
 
-input {
-    width: 95%;
-}
+/* Universal Bottom-of-the-page CSS */
 
 .footer {
     display: flex;
@@ -108,7 +118,7 @@ input {
     background-color: #666666;
     height: 75px;
     border-top: 8px solid #4aaaa5;
-    margin-top: 20px;
+    margin-top: auto;
     text-align: center;
 }
 
@@ -118,12 +128,29 @@ input {
     color: #d4d4d4;
 }
 
+/* Main Content Universal CSS*/
+
+.mainBlock {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    left: 0;
+    right: 0;
+    Width: 920px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+
 .contentName {
     width: 100%;
     padding: 0 0 10px 0px;
     border-bottom: 3px solid #d4d4d4;
     margin-bottom: 20px;
 }
+
+/* Portfolio Page Specific CSS */
 
 .portfolioLinks {
     position: relative;
@@ -141,6 +168,9 @@ input {
 }
 
 .portfolioPics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     height: auto;
 }
@@ -165,6 +195,19 @@ input {
     color: white;
 }
 
+/* Contact Page Specific CSS */
+
+input {
+    width: 95%;
+    padding: 5px;
+}
+
+.messageBox {
+    overflow: auto;
+    resize: vertical;
+    width: 97%
+}
+
 .submitButtons {
     float: left;
     color: white;
@@ -178,46 +221,20 @@ input {
     background-color: #398581;
 }
 
-.about {
-    padding: 2px 20px;
-    position: absolute;
-    right: 200px;
-    border-right: 3px solid;
-    border-color: #d4d4d4;
-}
-
-.portfolio {
-    padding: 2px 20px;
-    position: absolute;
-    right: 100px;
-    border-right: 3px solid;
-    border-color: #d4d4d4;
-}
-
-.contact {
-    padding: 2px 20px;
-    position: absolute;
-    right: 10px;
-}
+/* About Page Specific CSS */
 
 .myPic {
     float: left;
     width: 180px;
     height: auto;
     padding: 10px 10px 0px 0px;
-    transform: rotate(90deg);
 }
 
-.messageBox {
-    overflow: auto;
-    resize: vertical;
-    width: 100%
-}
-
+/* Media Queries */
 
 @media screen and (max-width: 980px){
 
-/* Header and Nav Bar Changes*/
+/* Universal Changes*/
 
 body {
     width: 980px;
@@ -225,6 +242,10 @@ body {
 
 header {
     width: 980px;
+}
+
+p {
+    padding: 20px;
 }
 
 .header {
@@ -254,28 +275,69 @@ header {
 /* Main Block Changes*/
 
 .mainBlock {
-    width: 600px;
-    padding: 20px;
+    width: 60%;
+    padding-left: 0px;
     margin: 20px;
+}
+
+.contentName {
+    width: 95%;
+    margin-left: 3.5%;
+    margin-right: 2.5%;
+}
+
+/* About Page Changes*/
+
+.myPic {
+    padding: 10px 10px 0px 20px;
+}
+
+/* Portfolio Page Changes*/
+
+.portfolioLinks {
+    width: 45%;
+    height: auto;
+    padding: 0px;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.portfolioPics {
+    width: 100%;
+    height: 100%;
+}
+
+/* Contact Page Changes*/
+
+form {
+    padding-left: 20px;
+}
+
+.messageBox {
+    width: 97%
 }
 
 }
 
 @media screen and (max-width: 768px) {
 
-/* Header and Nav Bar Changes*/
+/* Universal Changes*/
 
 body {
     width: 768px;
 }
 
 header {
-    width: 768px;
+    width: 100%;
 }
 
 .header {
     width: 748px;
     margin-left: 20px;
+}
+
+.myName {
+    font-size: 200%;
 }
 
 .navButtons {
@@ -286,23 +348,28 @@ header {
 }
 
 .about {
-    right: 33%;
+    right: 30%;
 }
 
 .portfolio {
-    right: 18%;
+    right: 16%;
 }
 
 .contact {
-    right: 5%;
+    right: 2%;
 }
 
 /* Main Block Changes*/
 
 .mainBlock {
-    width: 688px;
+    width: 87%;
     padding: 20px;
+    padding-top:0;
     margin: 20px;
+}
+
+.contentName {
+    font-size: 200%;
 }
 
 }
@@ -310,75 +377,101 @@ header {
 
 @media screen and (max-width: 640px) {
 
-    /* Header and Nav Bar Changes*/
+/* Universal Top and Bottom of the Page Changes*/
     
-    body {
-        width: 640px;
-        font-size: 110%;
-    }
+body {
+    width: 640px;
+    font-size: 110%;
+}
     
-    header {
-        position: static;
-        width: 640px;
-    }
+header {
+    position: static;
+    width: 640px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: -20px;
+    height: 120px;
+}
     
-    .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        left: -20px;
-        height: 120px;
-    }
+.myName {
+    width: 640px;
+    height: 65px;
+    background-color: #4aaaa5;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    padding: 0;
+}
     
-    .myName {
-        width: 640px;
-        height: 65px;
-        background-color: #4aaaa5;
-        display: inline-block;
-        top: 0;
-        left: 0;
-        padding: 0;
-    }
+.navButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 25px;
+    left: -10px;
+    width: 640px;
+    height: 120px;
+}
     
-    .navButtons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: 25px;
-        left: -10px;
-        width: 640px;
-        height: 120px;
-    }
+.navLinks:link {
+    text-align: center;
+    position: unset;
+    right: unset;
+    width: 100%;
+    display: inline-block;
+    top: 0;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+p{
+    display: inline-block;
+}
     
-    .navLinks:link {
-        text-align: center;
-        position: unset;
-        right: unset;
-        width: 100%;
-        display: inline-block;
-        top: 0;
-    }
+/* Main Block Changes*/
     
-    /* Main Block Changes*/
+.mainBlock {
+    width: 87%;
+    padding: 2.5%;
+    margin: 2.5%;
+}
+
+.contentName {
+    font-size: 200%;
+    width: 96%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
     
-    .mainBlock {
-        width: 90%;
-        padding: 2.5%;
-        margin: 2.5%;
-    }
+/* About Page Changes*/
+
+.myPic {
+    width: 96%;
+    height: auto;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Portfolio Page Changes*/
+
+.portfolioLinks {
+    width: 94%;
+    height: auto;
+    padding: 0px;
+    margin: 12px;
+}
     
-    .myPic {
-        width: 580px;
-        height: auto;
-        padding: 10px;
-        display: inline-block;
-    }
-    
-    p{
-        display: inline-block;
-    }
-    
-    }
-    
+.portfolioPics {
+    width: 100%;
+    height: 100%;
+}
+
+}
