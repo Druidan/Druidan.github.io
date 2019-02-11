@@ -160,11 +160,11 @@
     .masterP {
         display: flex;
         flex-wrap: wrap;
-        width: 65%;
+        width: 63%;
         height: 110px;
-        margin-top: 1%;
-        margin-left: 13.5%;
-        margin-right: 15%;
+        margin-top: .5%;
+        margin-left: 14.5%;
+        margin-right: 15.5%;
         left: 0;
         right: 0;
     }
@@ -175,7 +175,7 @@
         display: inline-block;
         padding: .5px;
         font-size: 2vw;
-        margin-bottom: 1vw;
+        margin-bottom: .5vw;
     }
 
     .guessesRow {
@@ -436,11 +436,11 @@
     .masterP {
         display: flex;
         flex-wrap: wrap;
-        width: 60%;
-        height: 35px;
+        width: 83%;
+        height: 110px;
         margin-top: 1%;
-        margin-left: 10%;
-        margin-right: 20%;
+        margin-left: 8%;
+        margin-right: 18%;
         left: 0;
         right: 0;
     }
@@ -561,7 +561,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 90px;
         margin-top: 1%;
         margin-left: 10%;
         margin-right: 20%;
@@ -679,7 +679,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 90px;
         margin-left: 10%;
         margin-right: 20%;
         left: 0;
@@ -778,7 +778,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 60px;
         margin-left: 10%;
         margin-right: 20%;
         left: 0;
@@ -877,7 +877,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 70px;
         margin-left: 10%;
         margin-right: 20%;
         left: 0;
@@ -956,6 +956,12 @@
         left: 0%;
     }
 }
+
+@Media screen and (max-width: 380px){
+    .masterP {
+        height: 50px;
+}
+
 
 @Media screen and (max-width: 320px){
 
@@ -1043,6 +1049,17 @@
         font-size: 1.5vw;
         position: relative;
         left: 0%;
+    }
+}
+
+@Media screen and (max-width: 280px) {
+    .masterP {
+        height: 30px;
+        margin-top: -2%
+    }
+
+    .guessesRow {
+        margin-top: 2%;
     }
 }
 
