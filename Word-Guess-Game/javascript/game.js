@@ -1,7 +1,7 @@
 
         var letterSpace = {};
 
-        var videoGames = ["Bioshock", "Super Mario", "Metroid", "Tetris", "Dragon's Lair", "Undertale", "Uncharted", "The Legend of Zelda: Ocarina of Time"];
+        var videoGames = ["Bioshock", "Super Mario", "Metroid", "Tetris", "Dragon's Lair", "Undertale", "Uncharted", "The Legend of Zelda: Ocarina of Time", "Warcraft", "Warcraft 2", "Warcraft 3: The Frozen Throne", "Call of Duty", "Counter Strike"];
 
         var hiddenWord; 
 

@@ -301,7 +301,7 @@
         flex-wrap: wrap;
         width: 60%;
         height: 110px;
-        margin-top: 1%;
+        margin-top: 0;
         margin-left: 15%;
         margin-right: 15%;
         left: 0;
@@ -860,6 +860,14 @@
 
 @Media screen and (max-width: 480px){
 
+    h2 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
     .header-rows {
         font-size: 1.5vw;
         position: relative;
@@ -965,6 +973,14 @@
 
 @Media screen and (max-width: 320px){
 
+    h2 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
     .header-rows {
         font-size: 1.5vw;
         position: relative;
@@ -981,7 +997,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 40px;
         margin-left: 10%;
         margin-right: 20%;
         left: 0;
@@ -1053,14 +1069,31 @@
 }
 
 @Media screen and (max-width: 280px) {
+
+    h2 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
     .masterP {
         height: 30px;
-        margin-top: -2%
+        margin-top: 0;
     }
 
     .guessesRow {
         margin-top: 2%;
     }
+
+    .letterSpace {
+        padding: 1px;
+        font-size: 2vw;
+        margin-top: -.5vm; 
+        margin-bottom: .5vw;
+    }
+
 }
 
 @Media screen and (max-width: 240px) {
@@ -1081,7 +1114,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 70%;
-        height: 35px;
+        height: 25px;
         margin-left: 10%;
         margin-right: 20%;
         left: 0;
