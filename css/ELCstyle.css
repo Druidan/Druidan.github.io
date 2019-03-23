@@ -126,7 +126,7 @@ h3 {
         "home   home header header header header header header features features"
         "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
         "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-        "webMap webMap pContent pContent pContent pContent pContent pContent feats feats"
+        "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
         "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr)
@@ -197,7 +197,7 @@ h3 {
     color: var(--ELCblack);
     border: 2px solid var(--ELCblue);
     border-radius: 100px;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .hardBubble:after {
@@ -225,10 +225,13 @@ h3 {
 
 .socialBar{
     display: grid;
-    margin-top: 10px;
     font-size: 2vw;
-    grid-gap: 15px;
+    grid-gap: 10px;
     grid-template-columns: 1fr auto auto auto auto 1fr
+}
+
+.aboutMeTitle{
+    grid-column: 1 / -1;
 }
 
 .fa-file{
@@ -435,20 +438,111 @@ h3 {
 }
 
 .pImg:hover{
-    -webkit-animation: rotating 2s linear;
-    -moz-animation: rotating 2s linear;
-    -ms-animation: rotating 2s linear;
-    -o-animation: rotating 2s linear;
-    animation: rotating 2s linear;
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
 }
 
 .pImgAnimate{
     margin-left: 0px !important;
-    transform: rotate(720deg) !important;
+    transform: rotate(1080deg) !important;
 }
 
-@media screen and (max-width: 880px){
-    h2{
+@media screen and (min-width: 1020px){
 
+    .elcName{
+        font-size: 2.5vw;
     }
+
+    .mainText{
+        margin: 1%;
+        font-size: 1.3vw;
+    }
+
+    .hardBubble{
+        padding: 10px 20px;
+    }
+
+    .picWrapper{
+        width: 40%;
+    }
+
+    .socialBar{
+        grid-gap: 20px;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-areas: 
+            ".  linkedIn    gitHub  .   aboutTitle  .   twitter facebook    .";
+    }
+
+    .farLeftSoc{
+        grid-area: linkedIn !important;
+    }
+
+    .github{
+        grid-area: gitHub !important;
+    }
+
+    .aboutMeTitle{
+        grid-area: aboutTitle !important;
+    }
+
+    .twitter{
+        grid-area: twitter !important;
+    }
+
+    .facebook{
+        grid-area: facebook !important;
+    }
+
+    .portfolioItemWrapper{
+        width: 150px;
+        height: 150px;
+    }
+
+    .portfolioItem{
+        width: 155px;
+    }
+
+    .pImg{
+        width: 150px;
+        height: 150px;
+    }
+
+}
+
+@media screen and (min-width: 880px){
+    h2{
+        font-size: 1.5vw;
+    }
+
+    .picWrapper{
+        width: 75%;
+    }
+
+    .centralNav{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "navleft mePic navright"
+            "navleft mePic navright";
+    }
+
+    .navLeft{
+        justify-items: right !important;
+    }
+
+    .navRight{
+        justify-items: left !important;
+    }
+
+    .navItem{
+        padding: 10px 15px;
+    }
+
+    .primaryContent{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
 }
