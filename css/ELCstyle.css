@@ -1,3 +1,6 @@
+
+/* Animation CSS */
+
 /* The following rotation animation code came from Kirk Strobeck at Stack Overflow - Source: "https://stackoverflow.com/questions/6410730/how-to-do-a-webkit-css-endless-rotation-animation" */
 @-webkit-keyframes rotating /* Safari and Chrome */ {
     from {
@@ -65,12 +68,20 @@
 }
 .antirotator{
     position: absolute;
+    margin: auto;
     -webkit-animation: antirotating 2s linear infinite;
     -moz-animation: antirotating 2s linear infinite;
     -ms-animation: antirotating 2s linear infinite;
     -o-animation: antirotating 2s linear infinite;
     animation: antirotating 2s linear infinite;
 }
+
+.pImgAnimate{
+    margin-left: 0px !important;
+    transform: rotate(1080deg) !important;
+}
+
+/* CORE ROOT, DOM, AND GENERAL UTILITY CSS */
 
 :root{
     --ELCblack:  rgba(25, 25, 25, 1);
@@ -94,387 +105,186 @@ h2, h3, h4, h5, h6, ul, li {
     font-family: var(--utilityFont);
 }
 
-
-h1 {
-    font-family: var(--headFont);
-    font-size: 3vw;
-}
-
-h2 {
-    font-size: 2vw;
-}
-
-h3 {
-    font-size: 1.5vw;
+p{
+    margin: 0;
 }
 
 .buryIt{
     display: none !important;
 }
 
-.newBody {
-    background-color: var(--ELCblack);
-    background-image: url("../assets/images/grunge-overlay-3.png");
-    background-size: 100vw;
-    color: var(--ELCwhite);
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-gap: 10px;
-    grid-template-areas: 
-        "home   home header header header header header header features features"
-        "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-        "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-        "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
-        "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(auto-fill, 1fr)
-}
-
-.headMenu{
-    font-size: 3vw;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-.elcHeader{
-    font-size: 1.5vw;
-    margin-top: 15px;
-}
-
-.fas{
-    color: var(--ELCwhite);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--ELCblue);
-}
-
-.homeCorner{
-    grid-area: home;
-    padding-left: 20%;
-    text-align: left !important;
-}
-
-.elcHeader{
-    grid-area: header;
-}
-
-.featureCorner{
-    grid-area: features;
-    padding-right: 20%;
-    text-align: right !important;
-}
-
-.elcsubTitle{
-    font-family: var(--sketchFont);
-}
-
-.introSection{
-    position:relative;
-    background-color: transparent;
-    color: var(--ELCwhite);
-    border: 2px solid var(--ELCblue);
-    border-radius: 100px;
-    padding: 20px;
-}
-
-.introSection:after{
-    background-color: none;
-    background-color: var(--ELCthinwhite);
-    border-radius: 100px;
-    content:"";
-    display:block;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    z-index: -1
-}
-
-.hardBubble {
-    position:relative;
-    background-color: transparent;
-    color: var(--ELCblack);
-    border: 2px solid var(--ELCblue);
-    border-radius: 100px;
-    padding: 10px 20px;
-}
-
-.hardBubble:after {
-    background-color: none;
-    background-color: var(--ELCwhite);
-    border-radius: 100px;
-    content:"";
-    display:block;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    z-index: -1
-}
-
-.mainText{
-    font-size: 1.5vw;
-    font-family: var(--speechFont);
-    margin-top: 1%;
-}
-
-.aboutMeSection{
-
-}
-
-.socialBar{
-    display: grid;
-    font-size: 2vw;
-    grid-gap: 10px;
-    grid-template-columns: 1fr auto auto auto auto 1fr
-}
-
-.aboutMeTitle{
-    grid-column: 1 / -1;
-}
-
-.fa-file{
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.farLeftSoc{
-    grid-column: 2;
-}
-
-.sidebar1{
-    grid-area: webMap;
-}
-
-.primaryContent{
-    grid-area: pContent;
-}
-
-.sidebar2{
-    grid-area: feats;
-}
-
-.centralNav{
-    grid-area: centralNav;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-        "navleft mePic mePic navright"
-        "navleft mePic mePic navright";
-}
-
-.navAreas{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-}
-
-.navAreas{
-    list-style-type: none;
-}
-
-.navLeft{
-    grid-area: navleft;
-}
-
-.navRight{
-    grid-area: navright;
-}
-
-.navItem {
-    cursor: pointer;
-    position:relative;
-    background-color: transparent;
-    color: var(--ELCblack);
-    border: 2px solid var(--ELCblue);
-    border-radius: 100px;
-    padding: 10px 5px;
-}
-
-.navItem:after {
-    background-color: none;
-    background-color: var(--ELCwhite);
-    border-radius: 100px;
-    content:"";
-    display:block;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    z-index: -1
-}
-
-.navItem:hover{
-
-}
-
-.tail{
-    position: absolute;
-    color: var(--ELCwhite);
-    font-size: 45px;
-    top: 50%;
-    left: 0;
-    right: 5%;
-    bottom: 0;
-    z-index: -1;
-}
-
-.leftTail{
-    -webkit-transform: rotate(50deg);
-}
-
-.rightTail{
-    /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
-    -moz-transform: rotate(-50deg) scale(-1, 1);
-    -webkit-transform: rotate(-50deg) scale(-1, 1);
-    -o-transform: rotate(-50deg) scale(-1, 1);
-    -ms-transform: rotate(-50deg) scale(-1, 1);
-    transform: rotate(-50deg) scale(-1, 1);
-}
-
-.portfolioNavItem{
-    grid-row: span 2;
-}
-
-.myPicArea{
-    grid-area: mePic;
-}
-
-.picWrapper{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-content: center;
-    width: 85%;
-    margin: auto;
+.fas:hover {
+    background-color: var(--ELCteal);
     border-radius: 50%;
-    background: linear-gradient(to right, var(--ELCteal), var(--ELCblue));
-}
-/* This picture overlap to make height equal width stuff all came from von Marc Hinse at MadeMyDay.de - Source: "http://www.mademyday.de/css-height-equals-width-with-pure-css.html" */
-.picWrapper:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
+    -webkit-box-shadow: 0px 0px 8px 8px var(--ELCteal);
+    -moz-box-shadow: 0px 0px 8px 8px var(--ELCteal);
+    box-shadow: 0px 0px 8px 8px var(--ELCteal);
 }
 
-.antirotator{
-    width: 100%;
-    height: 100%;
-}
-
-.myPic{
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin: auto;
-    width: 97%;
+.fab:hover {
+    background-color: var(--ELCteal);
     border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 8px 8px var(--ELCteal);
+    -moz-box-shadow: 0px 0px 8px 8px var(--ELCteal);
+    box-shadow: 0px 0px 8px 8px var(--ELCteal);
 }
 
-.portfolioDisplay{
-    grid-area: portfolio;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: 150px;
-    margin-bottom: 15%;
-}
+/* START OF RESPONSIVE MEDIA QUERIES */
 
-.portfolioItemWrapper{
-    width: 100px;
-    height: 100px;
-    position:relative;
-    background-color: var(--ELCblack);
-    color: var(--ELCblack);
-    border: 2px solid var(--ELCblue);
-    border-radius: 50%;
-    padding: .5%;
-    margin-left: -5000px;
-    -webkit-transition: all 1.5s ease-in-out;
-    -moz-transition: all 1.5s ease-in-out;
-    -ms-transition: all 1.5s ease-in-out;
-    -o-transition: all 1.5s ease-in-out;
-    transition: all 1.5s ease-in-out;
-}
+@media screen and (min-width: 200px){
 
-.portfolioItemWrapper:before{
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.portfolioItem{
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 105px;
-    height: auto;
-    cursor: pointer;
-}
-
-.pImg{
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin: auto;
-    width: 100px;
-    height: 100px;
-    border: 2px white solid;
-    border-radius: 50%;
-}
-
-.rpsPic{
-    background-color: var(--ELCthinwhite)
-}
-
-.pImg:hover{
-
-}
-
-.pImgAnimate{
-    margin-left: 0px !important;
-    transform: rotate(1080deg) !important;
-}
-
-@media screen and (min-width: 1020px){
-
-    .elcName{
-        font-size: 2.5vw;
+    h1{
+        font-size: 7vw;
+        font-family: var(--headFont);
     }
 
-    .mainText{
-        margin: 1%;
-        font-size: 1.3vw;
+    h2{
+        font-size: 5vw;
     }
 
-    .hardBubble{
+    .newBody {
+        background-color: var(--ELCblack);
+        background-image: url("../assets/images/grunge-overlay-3.png");
+        background-size: 100vw;
+        color: var(--ELCwhite);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-gap: 10px;
+        padding: 0 2%;
+        grid-template-areas: 
+            "home   header  features"
+            "webMap  feats   feats"
+            "centralNav centralNav centralNav"
+            "centralNav centralNav centralNav"
+            "pContent pContent pContent"
+            "portfolio  portfolio portfolio";
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: repeat(auto-fill, 1fr);
+    }
+
+    .headMenu{
+        font-size: 6vw;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    .elcHeader{
+        margin-top: 15px;
+    }
+
+    .fas{
+        color: var(--ELCwhite);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--ELCblue);
+    }
+
+    .homeCorner{
+        grid-area: home;
+        padding-left: 20%;
+        text-align: left !important;
+    }
+
+    .elcHeader{
+        grid-area: header;
+    }
+
+    .featureCorner{
+        grid-area: features;
+        padding-right: 20%;
+        text-align: right !important;
+    }
+
+    .tail{
+        display: none;
+    }
+
+    .elcsubTitle{
+        font-family: var(--sketchFont);
+        font-size: 6vw;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .introSection{
+        position:relative;
+        background-color: transparent;
+        color: var(--ELCwhite);
+        border: 2px solid var(--ELCblue);
+        border-radius: 50px;
+        padding: 5px 12px;
+    }
+
+    .introSection:after{
+        background-color: none;
+        background-color: var(--ELCthinwhite);
+        border-radius: 50px;
+        content:"";
+        display:block;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        z-index: -1;
+    }
+
+    .introTitle{
+        margin-top: 15px;
+        font-size: 7vw;
+        font-weight: bold;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--ELCblack);
+    }
+    
+    .introText{
+        padding: 0px 5px;
+        margin-bottom: 5px;
+    }
+
+    .hardBubble {
+        position:relative;
+        background-color: transparent;
+        color: var(--ELCblack);
+        border: 2px solid var(--ELCblue);
+        border-radius: 90px;
         padding: 10px 20px;
     }
 
-    .picWrapper{
-        width: 40%;
+    .hardBubble:after {
+        background-color: none;
+        background-color: var(--ELCwhite);
+        border-radius: 90px;
+        content:"";
+        display:block;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        z-index: -1
     }
 
+    .mainText{
+        font-size: 4vw;
+        font-family: var(--speechFont);
+        margin-top: 2%;
+    }
+    
+    .aboutMeSection{
+    
+    }
+    
     .socialBar{
-        grid-gap: 20px;
+        display: grid;
+        font-size: 2vw;
+        margin-top: 2%;
+        grid-gap: 10px;
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas: 
-            ".  linkedIn    gitHub  .   aboutTitle  .   twitter facebook    .";
+            ".  linkedIn    gitHub  aboutTitle   aboutTitle  aboutTitle   twitter facebook    .";
+        /* grid-template-columns: 1fr auto auto auto auto 1fr */
     }
 
     .farLeftSoc{
@@ -489,12 +299,452 @@ h3 {
         grid-area: aboutTitle !important;
     }
 
+
     .twitter{
         grid-area: twitter !important;
     }
 
     .facebook{
         grid-area: facebook !important;
+    }
+
+    .fab{
+        font-size: 6vw;
+    }
+    
+    .aboutMeTitle{
+        grid-column: 1 / -1;
+    }
+    
+    .aboutMeText{
+        margin-bottom: 2% !important;
+    }
+
+    .downloadResume{
+        margin-bottom: 10%;
+    }
+    
+    .fa-file{
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+    .farLeftSoc{
+        grid-column: 2;
+    }
+
+    .contactMeTitle{
+        font-size: 6vw;
+    }
+
+    .formText{
+        font-family: var(--speechFont);
+        font-size: 5vw;
+        margin: 2% 0;
+    }
+
+    .messageBox{
+        width: 90%;
+    }
+
+    .submitBtn{
+        font-size: 6vw;
+        font-family: var(--utilityFont);
+        margin-bottom: 2%;
+    }
+    
+    .sidebar1{
+        grid-area: webMap;
+    }
+    
+    .primaryContent{
+        grid-area: pContent;
+    }
+    
+    .sidebar2{
+        grid-area: feats;
+    }
+    
+    .centralNav{
+        grid-area: centralNav;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* repeat(3, 1fr); */
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "navleft mePic navright"
+            "navleft mePic navright";
+    }
+    
+    .navAreas{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .navAreas{
+        list-style-type: none;
+    }
+    
+    .navLeft{
+        grid-area: navleft;
+    }
+    
+    .navRight{
+        grid-area: navright;
+    }
+    
+    .navItem {
+        cursor: pointer;
+        position:relative;
+        background-color: transparent;
+        color: var(--ELCblack);
+        border: 2px solid var(--ELCblue);
+        border-radius: 100px;
+        padding: 10px 5px;
+    }
+    
+    .navItem:after {
+        background-color: var(--ELCwhite);
+        border-radius: 100px;
+        content:"";
+        display:block;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        z-index: -1
+    }
+    
+    .navItem:hover{
+    
+    }
+    
+    .tail{
+        position: absolute;
+        color: var(--ELCwhite);
+        font-size: 45px;
+        left: 0;
+        right: 5%;
+        bottom: 0;
+        z-index: -1;
+    }
+    
+    .leftTail{
+        top: 70%;
+        -webkit-transform: rotate(50deg);
+    }
+    
+    .rightTail{
+        top: 50%;
+        /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
+        -moz-transform: rotate(-50deg) scale(-1, 1);
+        -webkit-transform: rotate(-50deg) scale(-1, 1);
+        -o-transform: rotate(-50deg) scale(-1, 1);
+        -ms-transform: rotate(-50deg) scale(-1, 1);
+        transform: rotate(-50deg) scale(-1, 1);
+    }
+    
+    .portfolioNavItem{
+        grid-row: span 2;
+    }
+    
+    .myPicArea{
+        grid-area: mePic;
+    }
+    
+    .picWrapper{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-content: center;
+        width: 85%;
+        margin: auto;
+        border-radius: 50%;
+        background: linear-gradient(to right, var(--ELCteal), var(--ELCblue));
+    }
+    /* This picture overlap to make height equal width stuff all came from von Marc Hinse at MadeMyDay.de - Source: "http://www.mademyday.de/css-height-equals-width-with-pure-css.html" */
+    .picWrapper:before{
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+    
+    .antirotator{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .myPic{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        width: 97%;
+        border-radius: 50%;
+    }
+    
+    .portfolioDisplay{
+        grid-area: portfolio;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 150px;
+        margin-bottom: 15%;
+    }
+    
+    .portfolioItemWrapper{
+        width: 100px;
+        height: 100px;
+        position:relative;
+        background-color: var(--ELCblack);
+        color: var(--ELCblack);
+        border: 2px solid var(--ELCblue);
+        border-radius: 50%;
+        padding: .5%;
+        margin-left: -5000px;
+        -webkit-transition: all 1.5s ease-in-out;
+        -moz-transition: all 1.5s ease-in-out;
+        -ms-transition: all 1.5s ease-in-out;
+        -o-transition: all 1.5s ease-in-out;
+        transition: all 1.5s ease-in-out;
+    }
+    
+    .portfolioItemWrapper:before{
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+    
+    .portfolioItem{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 105px;
+        height: auto;
+        cursor: pointer;
+    }
+    
+    .pImg{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        border: 2px white solid;
+        border-radius: 50%;
+    }
+    
+    .rpsPic{
+        background-color: var(--ELCthinwhite)
+    }
+    
+    .pImg:hover{
+    
+    }
+}
+
+@media screen and (min-width: 320px){
+
+    
+    .navItem {
+        border-radius: 25px;
+        padding: 5px 10px;
+    }
+
+    .navItem:after {
+        border-radius: 20px;
+    }
+
+    .tail{
+        display: block;
+        position: absolute;
+        color: var(--ELCwhite);
+        font-size: 35px;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    
+    .leftTail{
+        top: 40%;
+        right: -70%;
+        -webkit-transform: rotate(50deg);
+    }
+    
+    .rightTail{
+        top: 45%;
+        left: -70%;
+        /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
+        -moz-transform: rotate(-50deg) scale(-1, 1);
+        -webkit-transform: rotate(-50deg) scale(-1, 1);
+        -o-transform: rotate(-50deg) scale(-1, 1);
+        -ms-transform: rotate(-50deg) scale(-1, 1);
+        transform: rotate(-50deg) scale(-1, 1);
+    }
+
+}
+
+@media screen and (min-width: 450px){
+
+    h1{
+        font-size: 5vw;
+    }
+
+    h2{
+        font-size: 3.5vw;
+    }
+
+    .elcsubTitle{
+        font-size: 4vw;
+    }
+
+    .introTitle{
+        margin-top: 5px;
+        font-size: 5vw;
+    }
+
+    .introText{
+        font-size: 3vw;
+    }
+
+    .mainText{
+        font-size: 3vw;
+    }
+
+    .portfolioText{
+        margin-bottom: 2%;
+    }
+    
+    .fab{
+        font-size: 4vw;
+    }
+
+    .picWrapper{
+        width: 65%;
+    }
+
+    .contactMeTitle{
+        font-size: 5vw;
+    }
+
+    .formText{
+        font-size: 4vw;
+    }
+
+    .tail{
+        font-size: 6vw;
+        top: 55%;
+    }
+
+    .downloadResume{
+        margin-bottom: 2%;
+    }
+}
+
+@media screen and (min-width: 600px){
+
+    .picWrapper{
+        width: 65%;
+    }
+
+    .contactMeTitle{
+        font-size: 4vw;
+    }
+
+    .formText{
+        font-size: 3.2vw;
+    } 
+}
+
+@media screen and (min-width: 600px){
+
+    .headMenu{
+        font-size: 5vw;
+    }
+
+    .elcName{
+        font-size: 4.5vw;
+    }
+
+    .introTitle{
+        font-size: 4vw;
+    }
+
+    .contactMeTitle{
+        font-size: 3.5vw;
+    }
+
+    .formText{
+        font-size: 2.8vw;
+    } 
+
+    .mainText{
+        font-size: 2.5vw;
+    }
+
+    .submitBtn{
+        font-size: 4vw;
+    }
+
+}
+
+@media screen and (min-width: 1020px){
+
+    h2{
+        font-size: 2.8vw;
+    }
+
+    .newBody {
+        grid-gap: 10px;
+        grid-template-areas: 
+            "home   home header header header header header header features features"
+            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
+            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
+            "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
+            "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    .elcName{
+        font-size: 2.5vw;
+    }
+
+    .mainText{
+        margin: 1%;
+        font-size: 2vw;
+    }
+
+    .fab{
+        font-size: 3vw;
+    }
+
+    .downloadResume{
+        font-size: 2.5vw;
+    }
+
+    .hardBubble{
+        padding: 10px 20px;
+    }
+
+    .picWrapper{
+        width: 95%;
+    }
+
+    .formText{
+        font-size: 2vw;
     }
 
     .portfolioItemWrapper{
@@ -513,68 +763,5 @@ h3 {
 
 }
 
-@media screen and (min-width: 775px){
-    .newBody {
-        grid-gap: 10px;
-        grid-template-areas: 
-            "home   home header header header header header header features features"
-            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-            "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
-            "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
-        grid-template-columns: repeat(10, 1fr);
-    }
-}
+/* END OF RESPONSIVENESS */
 
-@media screen and (min-width: 450px){
-    .tail{
-        top: 70%;
-    }
-}
-
-@media screen and (min-width: 320px){
-    .tail{
-        display: block;
-        font-size: 35px;
-        top: 50%;
-        right: 5%;
-    }
-
-    .portfolioTail {
-        top: 70%;
-    }
-}
-
-@media screen and (min-width: 200px){
-
-    h1{
-        font-size: 5vw;
-    }
-
-    h2{
-        font-size: 4vw;
-    }
-
-    .newBody {
-        grid-gap: 10px;
-        grid-template-areas: 
-            "home   header  features"
-            "webMap  feats   feats"
-            "centralNav centralNav centralNav"
-            "centralNav centralNav centralNav"
-            "pContent pContent pContent"
-            "portfolio  portfolio portfolio";
-        grid-template-columns: 1fr auto 1fr  
-    }
-
-    .tail{
-        display: none;
-    }
-
-}
-
-@media screen and (min-width: 320px){
-    .tail{
-        display: block;
-    }
-}
