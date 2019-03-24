@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() { 
     //My JS starts past this point.
 
+//Global Page States
+let introUp = true;
+let aboutMeUp = false;
+let portfolioUp = false;
+let contactUp = false;
+
 //Global Button Grab
 const homeMenuBtn = document.querySelectorAll(".fa-home");
 const featuresMenuBtn = document.querySelectorAll(".fa-angle-double-down");
@@ -14,7 +20,7 @@ const gitHubBtn = document.querySelectorAll(".fa-github");
 const twitterBtn = document.querySelectorAll(".fa-twitter");
 const faceBookBtn = document.querySelectorAll(".fa-facebook-square");
 const resumeDownloadBtn = document.querySelectorAll(".downloadResume");
-// const contactBtn = document.querySelectorAll(".contactMeItem");
+const contactBtn = document.querySelectorAll(".contactMeItem");
 const contactSection = document.querySelectorAll(".contactMeSection");
 // const contactSubmitBtn = document.querySelectorAll("");
 const vgWordGuessGameBtn = document.querySelectorAll(".vgWGPic");
@@ -25,34 +31,33 @@ const allPortfolioItems = document.querySelectorAll(".portfolioItemWrapper");
 
 portfolioBtn.forEach(function(elm){ 
     elm.addEventListener('click', function(){
-        portfolioHeader.forEach(function(pSection){
-            if(hasClass(pSection, "buryIt")){
+        if(!portfolioUp){
+            portfolioHeader.forEach(function(pSection){
                 removeClass(pSection, "buryIt")
-            } else{
-                addClass(pSection, "buryIt");
-            }
-        });
-        allPortfolioItems.forEach( function(item){ 
-            if(!hasClass(item, "pImgAnimate")){
+            });
+            allPortfolioItems.forEach( function(item){ 
                 addClass(item, "pImgAnimate")
-            } else{                        
-                removeClass(item, "pImgAnimate")}
-        });
-        introSection.forEach(function(iSection){
-            if(!hasClass(iSection, "buryIt")){
-                addClass(iSection, "buryIt")
-            }
-        });
-        aboutSection.forEach(function(aSection){
-            if(!hasClass(aSection, "buryIt")){
-                addClass(aSection, "buryIt")
-            }
-        });
-        contactSection.forEach(function(cSection){
-            if(!hasClass(cSection, "buryIt")){
-                addClass(cSection, "buryIt")
-            }
-        });
+            });
+            introSection.forEach(function(iSection){
+                if(!hasClass(iSection, "buryIt")){
+                    addClass(iSection, "buryIt")
+                }
+            });
+            aboutSection.forEach(function(aSection){
+                if(!hasClass(aSection, "buryIt")){
+                    addClass(aSection, "buryIt")
+                }
+            });
+            contactSection.forEach(function(cSection){
+                if(!hasClass(cSection, "buryIt")){
+                    addClass(cSection, "buryIt")
+                }
+            });
+            portfolioUp = true;
+            introUp = false;
+            aboutMeUp = false;
+            contactUp = false;
+        }
     }, false);
 });
 
@@ -70,37 +75,71 @@ featuresMenuBtn.forEach(function(elm){
 
 aboutBtn.forEach(function(elm){ 
     elm.addEventListener('click', function(){
-        //if about section has the buryIt class, remove the buryIt class.
-        aboutSection.forEach(function(aSection){
-            if(hasClass(aSection, "buryIt")){
-                removeClass(aSection, "buryIt")
-            } else{
-                addClass(aSection, "buryIt");
-            }
-        });
-        introSection.forEach(function(iSection){
-            if(!hasClass(iSection, "buryIt")){
-                addClass(iSection, "buryIt")
-            }
-        });
-        portfolioHeader.forEach(function(pSection){
-            if(!hasClass(pSection, "buryIt")){
-                addClass(pSection, "buryIt")
-                allPortfolioItems.forEach( function(item){ 
-                    removeClass(item, "pImgAnimate")
-                });
-            }
-        });
-        //if contact section does not have the bury it class, add the bury it class.
-        //if profile section does not have buryit add bury it, and then remove animated class from each portfolio item.
+        if(!aboutMeUp){
+            aboutSection.forEach(function(aSection){
+                    removeClass(aSection, "buryIt")
+            });
+            portfolioHeader.forEach(function(pSection){
+                if(!hasClass(pSection, "buryIt")){
+                    addClass(pSection, "buryIt")
+                }
+            });
+            allPortfolioItems.forEach( function(item){ 
+                if(!hasClass(item, "buryIt")){
+                    removeClass(item, "pImgAnimate");
+                }
+            });
+            introSection.forEach(function(iSection){
+                if(!hasClass(iSection, "buryIt")){
+                    addClass(iSection, "buryIt")
+                }
+            });
+            contactSection.forEach(function(cSection){
+                if(!hasClass(cSection, "buryIt")){
+                    addClass(cSection, "buryIt")
+                }
+            });
+            portfolioUp = false;
+            introUp = false;
+            aboutMeUp = true;
+            contactUp = false;
+        }
     }, false);
 });
 
-// contactBtn.forEach(function(elm){ 
-//     elm.addEventListener('click', function(){
-//         //Do a thing
-//     }, false);
-// });
+contactBtn.forEach(function(elm){ 
+    elm.addEventListener('click', function(){
+        if(!contactUp){
+            contactSection.forEach(function(cSection){
+                    removeClass(cSection, "buryIt")
+            });
+            portfolioHeader.forEach(function(pSection){
+                if(!hasClass(pSection, "buryIt")){
+                    addClass(pSection, "buryIt")
+                }
+            });
+            allPortfolioItems.forEach( function(item){ 
+                if(!hasClass(item, "buryIt")){
+                    removeClass(item, "pImgAnimate");
+                }
+            });
+            introSection.forEach(function(iSection){
+                if(!hasClass(iSection, "buryIt")){
+                    addClass(iSection, "buryIt")
+                }
+            });
+            aboutSection.forEach(function(aSection){
+                if(!hasClass(aSection, "buryIt")){
+                    addClass(aSection, "buryIt")
+                }
+            });
+            portfolioUp = false;
+            introUp = false;
+            aboutMeUp = false;
+            contactUp = true;
+        }
+    }, false);
+});
 
 // contactSubmitBtn.forEach(function(elm){ 
 //     elm.addEventListener('click', function(){

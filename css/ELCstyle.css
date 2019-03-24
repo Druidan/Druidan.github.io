@@ -135,6 +135,7 @@ h3 {
 .headMenu{
     font-size: 3vw;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .elcHeader{
@@ -150,7 +151,7 @@ h3 {
 
 .homeCorner{
     grid-area: home;
-    padding-left: 20px;
+    padding-left: 20%;
     text-align: left !important;
 }
 
@@ -160,7 +161,7 @@ h3 {
 
 .featureCorner{
     grid-area: features;
-    padding-right: 20px;
+    padding-right: 20%;
     text-align: right !important;
 }
 
@@ -217,6 +218,7 @@ h3 {
 .mainText{
     font-size: 1.5vw;
     font-family: var(--speechFont);
+    margin-top: 1%;
 }
 
 .aboutMeSection{
@@ -236,6 +238,7 @@ h3 {
 
 .fa-file{
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .farLeftSoc{
@@ -285,6 +288,7 @@ h3 {
 }
 
 .navItem {
+    cursor: pointer;
     position:relative;
     background-color: transparent;
     color: var(--ELCblack);
@@ -307,19 +311,11 @@ h3 {
     z-index: -1
 }
 
-.leftTail{
-    position: absolute;
-    color: var(--ELCwhite);
-    font-size: 45px;
-    top: 50%;
-    left: 0;
-    right: 5%;
-    bottom: 0;
-    -webkit-transform: rotate(50deg);
-    z-index: -1
+.navItem:hover{
+
 }
 
-.rightTail{
+.tail{
     position: absolute;
     color: var(--ELCwhite);
     font-size: 45px;
@@ -328,6 +324,13 @@ h3 {
     right: 5%;
     bottom: 0;
     z-index: -1;
+}
+
+.leftTail{
+    -webkit-transform: rotate(50deg);
+}
+
+.rightTail{
     /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
     -moz-transform: rotate(-50deg) scale(-1, 1);
     -webkit-transform: rotate(-50deg) scale(-1, 1);
@@ -381,9 +384,10 @@ h3 {
     grid-area: portfolio;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    height: 100px;
-    margin-bottom: 5%;
+    height: 150px;
+    margin-bottom: 15%;
 }
 
 .portfolioItemWrapper{
@@ -418,6 +422,7 @@ h3 {
     margin: auto;
     width: 105px;
     height: auto;
+    cursor: pointer;
 }
 
 .pImg{
@@ -438,11 +443,7 @@ h3 {
 }
 
 .pImg:hover{
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
+
 }
 
 .pImgAnimate{
@@ -512,37 +513,68 @@ h3 {
 
 }
 
-@media screen and (min-width: 880px){
-    h2{
-        font-size: 1.5vw;
-    }
-
-    .picWrapper{
-        width: 75%;
-    }
-
-    .centralNav{
-        grid-template-columns: repeat(3, 1fr);
+@media screen and (min-width: 775px){
+    .newBody {
+        grid-gap: 10px;
         grid-template-areas: 
-            "navleft mePic navright"
-            "navleft mePic navright";
+            "home   home header header header header header header features features"
+            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
+            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
+            "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
+            "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
+        grid-template-columns: repeat(10, 1fr);
+    }
+}
+
+@media screen and (min-width: 450px){
+    .tail{
+        top: 70%;
+    }
+}
+
+@media screen and (min-width: 320px){
+    .tail{
+        display: block;
+        font-size: 35px;
+        top: 50%;
+        right: 5%;
     }
 
-    .navLeft{
-        justify-items: right !important;
+    .portfolioTail {
+        top: 70%;
+    }
+}
+
+@media screen and (min-width: 200px){
+
+    h1{
+        font-size: 5vw;
     }
 
-    .navRight{
-        justify-items: left !important;
+    h2{
+        font-size: 4vw;
     }
 
-    .navItem{
-        padding: 10px 15px;
+    .newBody {
+        grid-gap: 10px;
+        grid-template-areas: 
+            "home   header  features"
+            "webMap  feats   feats"
+            "centralNav centralNav centralNav"
+            "centralNav centralNav centralNav"
+            "pContent pContent pContent"
+            "portfolio  portfolio portfolio";
+        grid-template-columns: 1fr auto 1fr  
     }
 
-    .primaryContent{
-        margin-left: 5%;
-        margin-right: 5%;
+    .tail{
+        display: none;
     }
 
+}
+
+@media screen and (min-width: 320px){
+    .tail{
+        display: block;
+    }
 }
