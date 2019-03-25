@@ -865,7 +865,7 @@ a:active{
     .newBody {
         grid-gap: 10px;
         grid-template-areas: 
-            "home   home header header header header header header features features"
+            "home   home header header header header header header . ."
             "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
             "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
             "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
