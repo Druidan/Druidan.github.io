@@ -77,7 +77,8 @@
 }
 
 .pImgAnimate{
-    margin-left: 0px !important;
+    margin: 5% !important;
+    /* margin-left: 0px !important; */
     transform: rotate(1080deg) !important;
 }
 
@@ -139,7 +140,7 @@ p{
     }
 
     h2{
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .newBody {
@@ -284,11 +285,11 @@ p{
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas: 
             ".  linkedIn    gitHub  aboutTitle   aboutTitle  aboutTitle   twitter facebook    .";
-        /* grid-template-columns: 1fr auto auto auto auto 1fr */
     }
 
     .farLeftSoc{
         grid-area: linkedIn !important;
+        grid-column: 2;
     }
 
     .github{
@@ -329,28 +330,94 @@ p{
         cursor: pointer;
     }
     
-    .farLeftSoc{
-        grid-column: 2;
+    .contactMeSection{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "contactTitle  contactTitle"
+            "phoneNum   phoneNum"
+            "contactText  contactText"
+            "contactForm contactForm"
     }
 
     .contactMeTitle{
+        grid-area: contactTitle;
         font-size: 6vw;
+    }
+
+    .phoneText{
+        grid-area: phoneNum;
+    }
+
+    .contactMeText{
+        grid-area: contactText;
+    }
+
+    .contactForm{
+        display: grid;
+        grid-area: contactForm;
+        padding: 10px;
+        margin-bottom: 10px;
+        grid-gap: 10px;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "nameTitle  nameTitle"
+            "nameBox    nameBox"
+            "emailTitle emailTitle"
+            "emailBox emailBox"
+            "messageBox messageBox"
+            "submitBtn clearBtn";
     }
 
     .formText{
         font-family: var(--speechFont);
         font-size: 5vw;
-        margin: 2% 0;
+    }
+
+    .nameTitle{
+        grid-area: nameTitle;
+    }
+
+    .nameBox{
+        grid-area: nameBox;
+        width: 80%;
+    }
+
+    .emailTitle{
+        grid-area: emailTitle;
+    }
+
+    .emailBox{
+        grid-area: emailBox;
+        width: 80%;
     }
 
     .messageBox{
+        grid-area: messageBox;
         width: 90%;
     }
 
-    .submitBtn{
-        font-size: 6vw;
+    .contactBtns{
+        font-size: 5vw;
         font-family: var(--utilityFont);
         margin-bottom: 2%;
+    }
+
+    .submitBtn{
+        grid-area: submitBtn;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .clearBtn{
+        grid-area: clearBtn;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .sidebar1{
@@ -368,6 +435,9 @@ p{
     .centralNav{
         grid-area: centralNav;
         display: grid;
+        grid-gap: 5px;
+        padding: 5px;
+        justify-items: center;
         grid-template-columns: 1fr 1fr 1fr;
         /* repeat(3, 1fr); */
         grid-template-rows: repeat(2, 1fr);
@@ -390,10 +460,12 @@ p{
     
     .navLeft{
         grid-area: navleft;
+        justify-self: end;
     }
     
     .navRight{
         grid-area: navright;
+        justify-self: start;
     }
     
     .navItem {
@@ -451,9 +523,19 @@ p{
     .portfolioNavItem{
         grid-row: span 2;
     }
-    
-    .myPicArea{
+
+    .absolutePicArea{
         grid-area: mePic;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .myPicArea{
+        width: 100%;
     }
     
     .picWrapper{
@@ -461,7 +543,7 @@ p{
         position: relative;
         justify-content: center;
         align-content: center;
-        width: 85%;
+        width: 100%;
         margin: auto;
         border-radius: 50%;
         background: linear-gradient(to right, var(--ELCteal), var(--ELCblue));
@@ -490,18 +572,18 @@ p{
     }
     
     .portfolioDisplay{
+        display: grid;
+        grid-gap: 10px;
+        justify-items: center;
+        align-items: center;
         grid-area: portfolio;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        height: 150px;
-        margin-bottom: 15%;
+        grid-gap: 0;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
     
     .portfolioItemWrapper{
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         position:relative;
         background-color: var(--ELCblack);
         color: var(--ELCblack);
@@ -529,7 +611,7 @@ p{
         right: 0;
         bottom: 0;
         margin: auto;
-        width: 105px;
+        width: 150px;
         height: auto;
         cursor: pointer;
     }
@@ -541,8 +623,8 @@ p{
         right:0;
         bottom:0;
         margin: auto;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border: 2px white solid;
         border-radius: 50%;
     }
@@ -595,6 +677,12 @@ p{
         transform: rotate(-50deg) scale(-1, 1);
     }
 
+    .absolutePicArea{
+        width: 120px;
+        height: 120px;
+    }
+
+
 }
 
 @media screen and (min-width: 450px){
@@ -632,8 +720,9 @@ p{
         font-size: 4vw;
     }
 
-    .picWrapper{
-        width: 65%;
+    .absolutePicArea{
+        width: 150px;
+        height: 150px;
     }
 
     .contactMeTitle{
@@ -656,8 +745,9 @@ p{
 
 @media screen and (min-width: 600px){
 
-    .picWrapper{
-        width: 65%;
+    .absolutePicArea{
+        width: 175px;
+        height: 175px;
     }
 
     .contactMeTitle{
@@ -667,9 +757,27 @@ p{
     .formText{
         font-size: 3.2vw;
     } 
+
+    .contactForm{
+        grid-template-columns: 1fr auto repeat(3, 1fr);
+        grid-template-areas: 
+            ". nameTitle nameBox nameBox ."
+            ". emailTitle emailBox emailBox emailBox"
+            "messageBox messageBox messageBox messageBox messageBox"
+            ". submitBtn submitBtn clearBtn .";
+    }
+
+    .nameTitle, .emailTitle{
+        text-align: end;
+    }
+
+    .nameBox, .emailBox{
+        justify-self: start;
+    }
+
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 775px){
 
     .headMenu{
         font-size: 5vw;
@@ -677,6 +785,11 @@ p{
 
     .elcName{
         font-size: 4.5vw;
+    }
+
+    .absolutePicArea{
+        width: 200px;
+        height: 200px;
     }
 
     .introTitle{
@@ -695,7 +808,7 @@ p{
         font-size: 2.5vw;
     }
 
-    .submitBtn{
+    .contactBtns{
         font-size: 4vw;
     }
 
@@ -739,8 +852,33 @@ p{
         padding: 10px 20px;
     }
 
-    .picWrapper{
-        width: 95%;
+    .absolutePicArea{
+        width: 205px;
+        height: 205px;
+    }
+
+    .contactMeSection{
+        grid-gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        grid-template-areas: 
+            "contactTitle  contactTitle contactTitle"
+            "phoneNum   contactForm    contactForm"
+            "contactText  contactForm   contactForm"
+            "contactText contactForm    contactForm"
+    }
+
+    .contactMeText{
+        align-self: flex-start;
+    }
+
+    .contactForm{
+        grid-template-columns: 1fr auto repeat(3, 1fr);
+        grid-template-areas: 
+            "nameTitle nameBox nameBox . ."
+            "emailTitle emailBox emailBox ."
+            "messageBox messageBox messageBox messageBox messageBox"
+            ". submitBtn submitBtn clearBtn .";
     }
 
     .formText{

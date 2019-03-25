@@ -22,7 +22,7 @@
             <h1 class="elcName">Edward L. Cheever II</h1>
             <p class="elcsubTitle">Web Developer</p>
         </header>
-        <div class="featureCorner">
+        <div class="featureCorner buryIt">
             <i class="fas headMenu fa-angle-double-down"></i>
         </div>
         <!-- Primary Content -->
@@ -50,7 +50,7 @@
                 <p class="mainText aboutMeText">For a long time, throughout highschool and college, I more or less fell into the classes that caught my interests, particularly literature and history. 
                     Because of this focus, I ended up never really deciding what I truly wanted to do with my career, and just continued along the path that seemed 
                     most appropriate to the classes I had taken. </p>
-                <a href="" target="_blank">
+                <a href="/assets/resume_material/edward_cheever_resume_2018v.pdf" download="EdwardCheeverResume.pdf">
                 <h3 class="downloadResume"><i class="fas fa-file"></i> Download My Resume</h3>
                 </a>
             </section>
@@ -62,14 +62,16 @@
             <!-- Contact Me Section -->
             <section class="hardBubble contactMeSection buryIt">
                 <h2 class="contactMeTitle">Contact Me</h2>
-                <p class="mainText contactMeText">My Phone: 817-240-2839</p>
+                <p class="mainText phoneText">My Cell: 817-240-2839</p>
                 <p class="mainText contactMeText">While I often can't pick up the phone for an unscheduled call, I try to respond in a timely manner to voicemails and text messages.</p>
-                <form class="row">
-                    <p class="formText">Name: <br><input type="text" placeholder="John Smith" name="firstname"></p>
-                    <p class="formText">Email: <br><input type="text" placeholder="example@gmail.com" name="email"></p>
-                    <p class="formText">Message: <br><textarea class="messageBox" type="text" placeholder="What do you want to say?" style="height:200px" name="message"></textarea><br></p>
-                    <input class="submitBtn" type="submit" value="Submit">
-                </form>
+                    <form class="row contactForm">
+                        <p class="formText nameTitle">Name:</p>
+                        <input class="nameBox" type="text" placeholder="John Smith" name="firstname">
+                        <p class="formText emailTitle">Email: </p>
+                        <input class="emailBox" type="text" placeholder="example@gmail.com" name="email">
+                        <textarea class="messageBox" type="text" placeholder="What do you want to say?" style="height:200px" name="message"></textarea>
+                        <input class="contactBtns submitBtn" type="submit" value="Submit">
+                    </form>
             </section>
         </main>
         <aside class="sidebar2">
@@ -87,13 +89,16 @@
                     <i class="fab fa-affiliatetheme tail contactTail leftTail"></i>
                 </li>
             </ul>
-            <div class="myPicArea">
-                <div class="picWrapper">
-                    <div class="antirotator">
-                    <img class="myPic" src="assets/images/me.jpg">
-                </div>
-                </div>
+            <div class="absolutePicArea">
+                <div class="myPicArea">
+                    <div class="picWrapper">
+                        <div class="antirotator">
+                        <img class="myPic" src="assets/images/me.jpg">
+                    </div>
+                    </div>
+                </div>                
             </div>
+
             <ul class="navAreas navRight">
                 <li class="navItem portfolioNavItem">
                     <h2>My Portfolio</h2> 
