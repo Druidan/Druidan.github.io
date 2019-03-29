@@ -165,7 +165,7 @@ a:active{
         justify-content: center;
         align-items: center;
         text-align: center;
-        grid-gap: 10px;
+        /* grid-gap: 10px; */
         padding: 0 2%;
         grid-template-areas: 
             "home   header  features"
@@ -345,12 +345,13 @@ a:active{
     
     .contactMeSection{
         display: grid;
+        justify-items: center;
+        align-content: center;
         grid-gap: 10px;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         grid-template-areas: 
             "contactTitle  contactTitle"
-            "phoneNum   phoneNum"
             "contactText  contactText"
             "contactForm contactForm"
     }
@@ -360,18 +361,15 @@ a:active{
         font-size: 6vw;
     }
 
-    .phoneText{
-        grid-area: phoneNum;
-    }
-
     .contactMeText{
         grid-area: contactText;
+        margin-top: 0;
     }
 
     .contactForm{
         display: grid;
         grid-area: contactForm;
-        padding: 10px;
+        padding: 0px 10px 10px;
         margin-bottom: 10px;
         grid-gap: 10px;
         align-items: center;
@@ -913,7 +911,7 @@ a:active{
         align-items: center;
         grid-template-areas: 
             "contactTitle  contactTitle contactTitle"
-            "phoneNum   contactForm    contactForm"
+            "contactText   contactForm    contactForm"
             "contactText  contactForm   contactForm"
             "contactText contactForm    contactForm"
     }
