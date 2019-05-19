@@ -1,0 +1,1011 @@
+/* UNIVERSAL ROOT, DOM, AND GENERAL UTILITY CSS */
+@media screen and (min-width: 0px) {
+:root {
+    --ELCblack: rgba(25, 25, 25, 1);
+    --ELCblackthin: rgba(25, 25, 25, .7);
+    --ELCpaperyellow: rgb(243, 243, 214);
+    --ELCpaperfade: rgb(223, 206, 109);
+    --ELCpaperborder: rgb(177, 156, 40);
+    --ELCpaperUsed: rgb(122, 35, 0);
+    --ELCpaperHighlight: rgb(255, 153, 0);
+    --ELCpaperLink: rgb(95, 70, 34);
+    --ELCOldType: rgb(51, 37, 18);
+    --ELCwhite: rgba(247, 252, 255, 1);
+    --ELCthinwhite: rgba(247, 252, 255, .4);
+    --ELCsky: rgb(214, 255, 254);
+    --ELCdenim: rgb(74, 112, 156);
+    --ELCnavy: rgb(34, 63, 95);
+    --ELCteal: rgb(11, 228, 224);
+    --ELCtealthin: rgba(139, 232, 230, .7);
+    --ELCgray: rgba(129, 127, 130, 1);
+    --headFont: 'Philosopher', sans-serif;
+    --utilityFont: 'Bree Serif', serif;
+    --sketchFont: 'Indie Flower', cursive;
+    --speechFont: 'Montserrat Alternates', sans-serif;
+}
+
+body {
+    background-color: var(--ELCblack);
+    --folderHeight: 300px;
+    --folderWidth: 280px;
+    --coverHeight: calc(var(--folderHeight) - 10px);
+    --coverWidth: calc(var(--folderWidth) - 2px);
+    --ffLeft: 25px;
+    --mfLeft: calc(var(--ffLeft) - 15px);
+    --bfLeft: calc(var(--ffLeft) - 30px);
+    --ffTop: 65px;
+    --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
+    --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
+    --folderDivH: calc(var(--folderHeight) + 20%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+    font-family: var(--utilityFont);
+}
+
+p {
+    margin: 0;
+}
+
+a.genLink {
+    color: var(--ELCsky);
+}
+
+a.genLink:visited {
+    color: var(--ELCsky);
+}
+
+a.genLink:active {
+    color: var(--ELCteal);
+}
+
+a.genLink:hover {
+    text-decoration: underline;
+    color: var(--ELCteal);
+}
+
+a.paperLink:link {
+    color: var(--ELCpaperLink);
+}
+
+a.paperLink:visited {
+    color: var(--ELCpaperUsed);
+}
+
+a.paperLink:active {
+    color: var(--ELCpaperHighlight);
+}
+
+a.paperLink:hover {
+    text-decoration: underline;
+    color: var(--ELCpaperHighlight);
+}
+
+.buryIt {
+    display: none !important;
+}
+
+/* UNIVERSAL STYLING */
+
+/* Header CSS */
+
+.headerBack {
+    position: fixed;
+    z-index: 1;
+    background-color: var(--ELCdenim);
+    color: var(--ELCsky);
+}
+
+/* Footer CSS */
+
+.asideBack {
+    position: fixed;
+    z-index: 0;
+    background-color: var(--ELCteal);
+}
+
+.footerBack {
+    position: fixed;
+    z-index: 5;
+    background-color: var(--ELCnavy);
+    color: var(--ELCsky);
+}
+
+.socialBar {
+    color: var(--ELCsky);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 4fr repeat(4, auto) 4fr;
+    text-align: center;
+    align-content: center;
+    margin-left: 8vw;
+    margin-top: 5vw;
+}
+
+.socImg {
+    font-size: 6vw;
+}
+
+.farLeftSoc {
+    grid-column-start: 2;
+}
+
+.fa-file {
+    position: absolute;
+    top: -8vw;
+}
+
+.downloadText {
+    font-size: 3vw;
+}
+
+/* Main Content CSS */
+
+
+.primaryContent {
+    z-index: 2;
+    width: 90vw;
+    height: 30vw;
+    padding: 10px;
+    top: 0;
+    bottom: 0;
+    color: var(--ELCOldType);
+}
+
+.folderDiv {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    height: var(--folderDivH);
+    padding-top: 12%;
+}
+
+.folder {
+    display: flex;
+    background-color: var(--ELCpaperyellow);
+    border: 2px var(--ELCpaperborder) solid;
+    border-radius: 10px;
+    height: var(--folderHeight);
+    width: var(--folderWidth);
+    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+}
+
+.frontFolder {
+    position: relative;
+    top: var(--ffTop);
+    left: var(--ffLeft);
+    z-index: 4;
+}
+
+.bioFolder::after {
+    display: flex;
+    content: "Biography";
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 30px;
+    top: -29.5px;
+    padding: 5px 10px;
+    background-color: var(--ELCpaperyellow);
+    border: 2px var(--ELCpaperborder) solid;
+    border-bottom: 1px transparent;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+}
+
+.middleFolder {
+    position: relative;
+    top: var(--mfTop);
+    left: var(--mfLeft);
+    z-index: 3;
+}
+
+.portfolioFolder::after {
+    display: flex;
+    content: "Portfolio";
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 100px;
+    top: -29.5px;
+    padding: 5px 10px;
+    background-color: var(--ELCpaperyellow);
+    border: 2px var(--ELCpaperborder) solid;
+    border-bottom: 1px transparent;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+}
+
+.backFolder {
+    position: relative;
+    top: var(--bfTop);
+    left: var(--bfLeft);
+    z-index: 2;
+}
+
+.contactFolder::after {
+    display: flex;
+    content: "Contact Me";
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 155px;
+    top: -29.5px;
+    padding: 5px 10px;
+    background-color: var(--ELCpaperyellow);
+    border: 2px var(--ELCpaperborder) solid;
+    border-bottom: 1px transparent;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+}
+
+.folderCover {
+    width: var(--coverWidth);
+    height: var(--coverHeight);
+    align-self: flex-end;
+    margin-left: 4px;
+    background-color: var(--ELCpaperyellow);
+    border: 2px var(--ELCpaperborder) solid;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+}
+
+.frontCover {}
+
+.middleCover {}
+
+.backCover {}
+
+.selectFolder {
+    -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2 alternate-reverse both;
+    animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2 alternate-reverse both;
+}
+
+.openFolder {
+    -webkit-animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.closedFolder {
+    -webkit-filter: grayscale(40%);
+    filter: grayscale(40%);
+}
+}
+
+/* START OF RESPONSIVE MEDIA QUERIES */
+
+/* For phones, primarily */
+@media screen and (min-width: 200px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 325px;
+        --folderWidth: 290px;
+        --ffLeft: 20px;
+        --ffTop: 65px;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 25vw;
+        top: -5vw;
+        left: -4vw;
+        transform: rotate(-4deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .elcHeader {
+        position: relative;
+        transform: rotate(4deg);
+        top: 4vw;
+        left: 2vw;
+        padding: 10px;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "mypic   name  name"
+            "mypic  subtitle   ."
+            "mypic  .   .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        width: 90%;
+        border-radius: 50%;
+        border: 2px var(--ELCdenim) solid;
+    }
+
+    .elcName {
+        grid-area: name;
+        font-size: 7vw;
+        color: var(--ELCsky);
+    }
+
+    .elcsubTitle {
+        grid-area: subtitle;
+        text-align: end;
+        margin-right: -15%;
+        font-size: 4vw;
+        color: var(--ELCsky);
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 100vw;
+        height: 25vw;
+        bottom: -5vw;
+        left: -2vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(5deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 110vw;
+        height: 25vw;
+        bottom: -6vw;
+        right: -2vw;
+        border: 1px transparent solid;
+        transform: rotate(-6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        transform: rotate(6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        height: 70vh;
+        padding: 35vw 4vw 20vw 3vw;
+    }
+
+    .folderDiv {}
+
+}
+
+@media screen and (min-width: 400px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 345px;
+        --folderWidth: 350px;
+        --ffLeft: 20px;
+        --ffTop: 55px;
+    }
+
+}
+
+
+@media screen and (min-width: 500px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 325px;
+        --folderWidth: 420px;
+        --ffLeft: 20px;
+        --ffTop: 30px;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 305px;
+        --folderWidth: 480px;
+        --ffLeft: 20px;
+        --ffTop: 30px;
+    }
+
+}
+
+@media screen and (min-width: 650px) {
+
+    /* DOM element adjustments */
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 110vw;
+        height: 25vw;
+        top: -6vw;
+        left: -2vw;
+        transform: rotate(-4deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .elcHeader {
+        position: relative;
+        transform: rotate(4deg);
+        width: 90vw;
+        top: 6vw;
+        left: 2vw;
+        padding: 10px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "mypic  mypic   name    name  name name"
+            "mypic  mypic   subtitle    subtitle   subtitle subtitle"
+            "mypic  mypic   .   .   .   .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        width: 90%;
+        border-radius: 50%;
+        border: 2px var(--ELCdenim) solid;
+    }
+
+    .elcName {
+        grid-area: name;
+        font-size: 7vw;
+    }
+
+    .elcsubTitle {
+        grid-area: subtitle;
+        font-size: 4vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 100vw;
+        height: 25vw;
+        bottom: -10vw;
+        left: -2vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(5deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 110vw;
+        height: 25vw;
+        bottom: -11vw;
+        right: -2vw;
+        border: 1px transparent solid;
+        transform: rotate(-6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        transform: rotate(6.5deg);
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        padding: 30vw 4vw 20vw 3vw;
+    }
+
+}
+
+@media screen and (min-width: 700px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 355px;
+        --folderWidth: 530px;
+        --ffLeft: 20px;
+        --ffTop: -35px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 335px;
+        --folderWidth: 630px;
+        --ffLeft: 20px;
+        --ffTop: -55px;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 25vw;
+        top: -8vw;
+    }
+
+    .elcHeader {
+        top: 8vw;
+    }
+
+    .elcName {
+        font-size: 6vw;
+    }
+
+    .elcsubTitle {
+        font-size: 3.5vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        height: 25vw;
+        bottom: -12vw;
+    }
+
+    .footerBack {
+        height: 25vw;
+        bottom: -13vw;
+    }
+
+    .socialBar {
+        margin-top: 3vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {}
+
+}
+
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 900px) {
+
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 605px;
+        --folderWidth: 680px;
+        --ffLeft: 10px;
+        --ffTop: -35px;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 40vw;
+        top: -22vw;
+        left: -54vw;
+        transform: rotate(-55deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .elcHeader {
+        transform: rotate(55deg);
+        width: 45vw;
+        top: 19.5vw;
+        left: 35vw;
+        padding: 10px;
+        display: grid;
+        grid-gap: 5px;
+        margin-top: 10px;
+        text-align: left;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "name name  ."
+            "mypic mypic    ."
+            "subtitle .  .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        width: 65%;
+        margin-left: 20px;
+        border-radius: 50%;
+        border: 2px var(--ELCnavy) solid;
+    }
+
+    .elcName {
+
+        font-size: 4vw;
+    }
+
+    .elcsubTitle {
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 160vw;
+        height: 25vw;
+        bottom: -10vw;
+        left: -35vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(30deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 160vw;
+        height: 55vw;
+        bottom: -45vw;
+        left: -45vw;
+        border: 1px transparent solid;
+        transform: rotate(30deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        position: relative;
+        width: 20vw;
+        margin-left: 0;
+        left: 30vw;
+        transform: rotate(-30deg);
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        align-content: center;
+        margin-left: 8vw;
+        margin-top: 5vw;
+    }
+
+    .farLeftSoc {
+        grid-column-start: 1;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 15vw 5vw 5vw 30vw;
+    }
+
+}
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 1000px) {
+
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 605px;
+        --folderWidth: 780px;
+        --ffLeft: 10px;
+        --ffTop: -35px;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 38vw;
+        top: -22vw;
+        left: -56vw;
+    }
+
+    .elcHeader {
+        top: 21vw;
+        left: 37vw;
+    }
+
+    .myPic {
+        width: 55%;
+        margin-left: 20px;
+    }
+
+    .elcName {
+        font-size: 4vw;
+    }
+
+    .elcsubTitle {
+        font-size: 2.7vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        bottom: -25vw;
+        left: -20vw;
+    }
+
+    .footerBack {
+        bottom: -62vw;
+        left: -25vw;
+    }
+
+    .socialBar {
+        margin-top: 4vw;
+        left: 2vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 10vw 5vw 5vw 30vw;
+    }
+
+}
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 1200px) {
+
+
+    /* DOM element adjustments */
+
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 38vw;
+        top: -22vw;
+        left: -56vw;
+    }
+
+    .elcHeader {
+        top: 21.5vw;
+        left: 38vw;
+    }
+
+    .myPic {
+        width: 55%;
+        margin-left: 20px;
+    }
+
+    .elcName {
+        font-size: 4vw;
+    }
+
+    .elcsubTitle {
+        font-size: 2.7vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 200vw;
+        transform: rotate(20deg);
+        bottom: -31vw;
+        left: -15vw;
+    }
+
+    .footerBack {
+        width: 200vw;
+        transform: rotate(20deg);
+        bottom: -65vw;
+        left: -20vw;
+    }
+
+    .socialBar {
+        width: 15vw;
+        transform: rotate(-20deg);
+    }
+
+    .socImg {
+        font-size: 4vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+    }
+
+}
+
+/* For computer monitors */
+@media screen and (min-width: 1400px) {
+
+    /* DOM element adjustments */
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 30vw;
+        top: -22vw;
+        left: -54vw;
+    }
+
+    .elcHeader {
+        width: 35vw;
+        top: 17vw;
+        right: -39vw;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    .myPic {
+        /* grid-area: mypic;
+        width: 65%;
+        margin-left: 20px;
+        border-radius: 50%;
+        border: 2px var(--ELCnavy) solid; */
+    }
+
+    .elcName {
+        font-size: 3vw;
+    }
+
+    .elcsubTitle {
+        font-size: 2vw;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 160vw;
+        height: 11vw;
+        bottom: -10vw;
+        left: -15vw;
+    }
+
+    .footerBack {
+        width: 160vw;
+        height: 42vw;
+        bottom: -45vw;
+        left: -22vw;
+    }
+
+    .socialBar {
+        margin-top: 3vw;
+        left: 9vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 60vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 10vw 5vw 5vw 20vw;
+    }
+
+
+
+
+
+
+
+
+
+}
+
+/* For especially large screens */
+@media screen and (min-width: 1800px) {}
+
+/*
+ * ----------------------------------------
+ * animation openFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes openFolder {
+    0% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+
+    100% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+@keyframes openFolder {
+    0% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%) grayscale(0%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+    100% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation selectFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes selectFolder {
+    0% {
+        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
+        transform: translateY(calc(var(--folderHeight) * -1));
+        z-index: 4;
+    }
+
+    50% {
+        z-index: 10;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        z-index: 10;
+    }
+}
+
+@keyframes selectFolder {
+    0% {
+        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
+        transform: translateY(calc(var(--folderHeight) * -1));
+    }
+    
+    50% {
+        z-index: 10;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        z-index: 10;
+    }
+}
