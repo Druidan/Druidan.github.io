@@ -30,6 +30,7 @@ body {
     background-repeat: repeat;
     --folderHeight: 300px;
     --folderWidth: 280px;
+    --transitionHeight: -600px;
     --coverHeight: calc(var(--folderHeight) - 10px);
     --coverWidth: calc(var(--folderWidth) - 2px);
     --ffLeft: 25px;
@@ -1080,8 +1081,8 @@ a.paperLink:hover {
     }
     
     50%{
-        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
-        transform: translateY(calc(var(--folderHeight) * -1));
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
     100% {
@@ -1103,8 +1104,8 @@ a.paperLink:hover {
     }
 
     50%{
-        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
-        transform: translateY(calc(var(--folderHeight) * -1));
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
     100% {
