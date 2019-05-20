@@ -25,15 +25,51 @@
         <!-- Primary Content -->
         <main class="primaryContent">
             <div class="folderDiv">
-                <article class="folder frontFolder bioFolder selectFolder">
-                    <div class="frontCover folderCover openFolder"></div>
+                <article class="folder frontFolder bioFolder closedFolder">
+                    <!-- About Me Section -->
+                    <section class="folderInterior aboutMeSection">
+                        <p class="mainText aboutMeText">Edward Cheever is a full stack Web Developer currently completing a rigorous coding Bootcamp at Northwestern University in Evanston, IL, gaining extensive skills in JavaScript, HTML, CSS, Node.js, as well as JavaScript libraries like JQuery and React.<br>
+                        Before that, he spent five years as an accredited and accomplished full and part time teacher of middle and high school students in the areas of technology, english/language arts, history, social science, and geography. <br>
+                        Alongside his teaching certification, he has a B.A. in English, and a B.S. in Social Science from Southwestern Adventist University in Keene, TX. He received several University Writing and tutoring awards, and is a founding member of the student organization, the Rough Writers.<br>
+                        In everything he does, Edward brings a strong sense of determination and responsibility to see a task through from beginning to end, and to do so with quality and creativity.
+                        </p>
+                    </section>
+                    <div class="frontCover folderCover">
+                        <!-- Introductory Text -->
+                        <section class="introSection">
+                            <h2 class="introTitle">Welcome to my Webpage!</h2>
+                            <p class="mainText introText">I am a determined fullstack Web Developer     eager to jump into the coding field. <br>
+                                As a former teacher I honed critical thinking, organization, feedback and communication skills, but my love of technology and problem solving drew me into programming, and I feel like I have finally discovered my true professional passion. <br>                    
+                                I have experience and training in Github, ES6 JavaScript, CSS3, HTML5, Node.js, NPM, as well as JQuery and Firebase. By the end of my current training program, my skill set will include React,  Mocha, and Chai.
+                            </p>
+                        </section>
+                    </div>
                 </article>
                 <article class="folder middleFolder portfolioFolder closedFolder">
+                    <!-- Portfolio Section -->
+                    <section class="folderInterior portfolioDiv">
+                            <h2 class="portfolioTitle">My Portfolio</h2>
+                    </section>
                     <div class="middleCover folderCover"></div>
                 </article>
                 <article class="folder backFolder contactFolder closedFolder">
+                    <!-- Contact Me Section -->
+                    <section class="folderInterior contactMeSection">
+                        <h2 class="contactMeTitle">Contact Me</h2>
+                        <p class="mainText contactMeText">While I often can't pick up the phone for an unscheduled call, I try to respond in a timely manner to voicemails and text messages.</p>
+                            <form class="row contactForm">
+                                <p class="formText nameTitle">Name:</p>
+                                <input class="nameBox" type="text" placeholder="John Smith" name="firstname">
+                                <p class="formText emailTitle">Email: </p>
+                                <input class="emailBox" type="text" placeholder="example@gmail.com" name="email">
+                                <textarea class="messageBox" type="text" placeholder="What do you want to say?" name="message"></textarea>
+                                <input class="contactBtns submitBtn" type="submit" value="Submit">
+                            </form>
+                    </section>
                     <div class="backCover folderCover"></div>
                 </article>
+                <!-- Dummy Folder Div to make up for the fact that one of my functions was misreading the last div always -->
+                <article class="folder"></article> 
             </div>
 
         </main>
@@ -114,17 +150,7 @@
                 I have experience and training in Github, ES6 JavaScript, CSS3, HTML5, Node.js, NPM, as well as JQuery and Firebase. By the end of my current training program, my skill set will include React,  Mocha, and Chai.
             </p>
         </article>
-        <!-- About Me Section -->
-        <section class="hardBubble aboutMeSection buryIt">
 
-
-                <p class="mainText aboutMeText">Edward Cheever is a full stack Web Developer currently completing a rigorous coding Bootcamp at Northwestern University in Evanston, IL, gaining extensive skills in JavaScript, HTML, CSS, Node.js, as well as JavaScript libraries like JQuery and React.<br>
-                Before that, he spent five years as an accredited and accomplished full and part time teacher of middle and high school students in the areas of technology, english/language arts, history, social science, and geography. <br>
-                Alongside his teaching certification, he has a B.A. in English, and a B.S. in Social Science from Southwestern Adventist University in Keene, TX. He received several University Writing and tutoring awards, and is a founding member of the student organization, the Rough Writers.<br>
-                In everything he does, Edward brings a strong sense of determination and responsibility to see a task through from beginning to end, and to do so with quality and creativity.
-                </p>
-
-        </section>
         <!-- Portfolio Header Section -->
         <section class="hardBubble portfolioHeader buryIt">
             <h2 class="portfolioTitle">My Portfolio</h2>
@@ -144,6 +170,8 @@
                 </form>
         </section>
     <script type="text/javascript" src="js/ELCjs.js"></script>
+    <script type="text/javascript" src="js/elcFunctions.js"></script>
+    <script type="text/javascript" src="js/sound.js"></script>
     </body>
 </html>
                         

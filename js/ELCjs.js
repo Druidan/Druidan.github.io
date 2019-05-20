@@ -17,153 +17,66 @@ const aboutSection = document.querySelectorAll(".aboutMeSection");
 const contactBtn = document.querySelectorAll(".contactMeItem");
 const contactSection = document.querySelectorAll(".contactMeSection");
 const allPortfolioItems = document.querySelectorAll(".portfolioItemWrapper");
+const header = document.querySelectorAll(".elcHeader");
 
-portfolioBtn.forEach(function(elm){ 
-    elm.addEventListener('click', function(){
-        if(!portfolioUp){
-            portfolioHeader.forEach(function(pSection){
-                removeClass(pSection, "buryIt")
-            });
-            allPortfolioItems.forEach( function(item){ 
-                addClass(item, "pImgAnimate")
-            });
-            introSection.forEach(function(iSection){
-                if(!hasClass(iSection, "buryIt")){
-                    addClass(iSection, "buryIt")
-                }
-            });
-            aboutSection.forEach(function(aSection){
-                if(!hasClass(aSection, "buryIt")){
-                    addClass(aSection, "buryIt")
-                }
-            });
-            contactSection.forEach(function(cSection){
-                if(!hasClass(cSection, "buryIt")){
-                    addClass(cSection, "buryIt")
-                }
-            });
-            portfolioUp = true;
-            aboutMeUp = false;
-            contactUp = false;
-        }
-    }, false);
-});
 
-homeMenuBtn.forEach(function(elm){ 
-    elm.addEventListener('click', function(){
-        //Do a thing
-    }, false);
-});
+const folder = document.querySelectorAll(".folder");
 
-featuresMenuBtn.forEach(function(elm){ 
-    elm.addEventListener('click', function(){
-        //Do a thing
-    }, false);
-});
+// clickClass(header, helloWorld);
+clickClass(folder, swapFolder);
 
-aboutBtn.forEach(function(elm){ 
-    elm.addEventListener('click', function(){
-        if(!aboutMeUp){
-            aboutSection.forEach(function(aSection){
-                    removeClass(aSection, "buryIt")
-            });
-            portfolioHeader.forEach(function(pSection){
-                if(!hasClass(pSection, "buryIt")){
-                    addClass(pSection, "buryIt")
-                }
-            });
-            allPortfolioItems.forEach( function(item){ 
-                if(!hasClass(item, "buryIt")){
-                    removeClass(item, "pImgAnimate");
-                }
-            });
-            introSection.forEach(function(iSection){
-                if(!hasClass(iSection, "buryIt")){
-                    addClass(iSection, "buryIt")
-                }
-            });
-            contactSection.forEach(function(cSection){
-                if(!hasClass(cSection, "buryIt")){
-                    addClass(cSection, "buryIt")
-                }
-            });
-            portfolioUp = false;
-            aboutMeUp = true;
-            contactUp = false;
-        }
-    }, false);
-});
+// function helloWorld(header) {
+//     alert(`Hello World! ${header}`)
+// }
 
-contactBtn.forEach(function(elm){ 
-    elm.addEventListener('click', function(){
-        if(!contactUp){
-            contactSection.forEach(function(cSection){
-                    removeClass(cSection, "buryIt")
-            });
-            portfolioHeader.forEach(function(pSection){
-                if(!hasClass(pSection, "buryIt")){
-                    addClass(pSection, "buryIt")
-                }
-            });
-            allPortfolioItems.forEach( function(item){ 
-                if(!hasClass(item, "buryIt")){
-                    removeClass(item, "pImgAnimate");
-                }
-            });
-            introSection.forEach(function(iSection){
-                if(!hasClass(iSection, "buryIt")){
-                    addClass(iSection, "buryIt")
-                }
-            });
-            aboutSection.forEach(function(aSection){
-                if(!hasClass(aSection, "buryIt")){
-                    addClass(aSection, "buryIt")
-                }
-            });
-            portfolioUp = false;
-            aboutMeUp = false;
-            contactUp = true;
-        }
-    }, false);
-});
-
-//This beautiful little series of functions essentially creates functions that add or remove classes by pluging in the right arguments. I found this sweet puppy which was made by Jake Trent at "https://jaketrent.com/post/addremove-classes-raw-javascript/".  
-function hasClass(el, className) {
-    if (el.classList)
-        return el.classList.contains(className)
-    else
-        return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+function swapFolder(folder) {
+    let thisElement;
+    if(hasClass(folder.srcElement, "folderCover")) {
+        thisElement = folder.srcElement.parentElement
+    } else if(hasClass(folder.srcElement, "folder")){
+        thisElement = folder.srcElement
     }
-function addClass(el, className) {
-    if (el.classList)
-        el.classList.add(className)
-    else if (!hasClass(el, className)) el.className += " " + className
-    }
-function removeClass(el, className) {
-        if (el.classList)
-        el.classList.remove(className)
-    else if (hasClass(el, className)) {
-        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-        el.className=el.className.replace(reg, ' ')
+    const childrenEle = thisElement.children[1];
+
+    // If this folder is already selected and open, deselect it and close it.
+    if (hasClass(thisElement, "selectFolder")) {
+        removeClass(thisElement, "selectFolder");
+        if(hasClass(childrenEle, "openFolder")) {
+            removeClass(childrenEle, "openFolder");
+            addClass(thisElement, "closedFolder")
+            addClass(childrenEle, "closeFolder");
+        }
+    } else {
+        // If this folder has not already been selected, find the other folder that's open and close it
+        const allFolders = document.querySelectorAll(".folder");
+        //Put all of the folders through the checkIfOpen function
+        selectedClass(allFolders, checkIfOpen)
+        // The selectedClass function will do this function for each folder.
+        function checkIfOpen(arr) {
+            //Establish the children elements (the folder cover) of this folder.
+            const children = arr.children[0];
+            //If this folder is selected, remove the selectedFolder class to deselect it.
+            if(hasClass(arr, "selectFolder")) {
+                if(hasClass(arr, "selectFolder")){
+                    removeClass(arr, "selectFolder");
+                }
+                // If this folder's cover is open, close it.
+                if(hasClass(children, "openFolder")) {
+                    removeClass(children, "openFolder");
+                    addClass(arr, "closedFolder")
+                    addClass(children, "closeFolder")
+                }
+            }
+            else if(hasClass(arr, "folder")){
+                addClass(thisElement, "selectFolder");
+                removeClass(thisElement, "closedFolder");
+                addClass(childrenEle, "openFolder");
+                removeClass(childrenEle, "closeFolder");
+            }
+        }
     }
 }
 
-//NOTE: I'm leaving this in because I eventually want to add sounds, but for now it's just inactive code.
-// //Constructors and Prototypes
-// function sound(src) {
-//     this.sound = document.createElement("audio");
-//     this.sound.src = src;
-//     this.sound.setAttribute("preload", "auto");
-//     this.sound.setAttribute("controls", "none");
-//     this.sound.style.display = "none";
-//     document.body.appendChild(this.sound);
-//     this.play = function(){
-//         this.sound.play();
-//     }
-//     this.stop = function(){
-//         this.sound.pause();
-//     }
-// } 
-    
+
 //My JS Ends beyond this point.
 });

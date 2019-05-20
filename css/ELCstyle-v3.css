@@ -26,6 +26,8 @@
 
 body {
     background-color: var(--ELCblack);
+    background-image: url('../assets/images/ice_wheat_dark.png');
+    background-repeat: repeat;
     --folderHeight: 300px;
     --folderWidth: 280px;
     --coverHeight: calc(var(--folderHeight) - 10px);
@@ -37,6 +39,16 @@ body {
     --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
     --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
     --folderDivH: calc(var(--folderHeight) + 20%);
+    --titleSize: 7vw;
+    --subtitleSize: 5vw;
+    --sectionHeaderSize: 6vw;
+    --subHeaderSize: 5vw;
+    --standardSize: ;
+    --socMediaSize: 6vw;
+    --tabTop: -29.5px;
+    --ftRight: 100px;
+    --mtRight: calc(var(--ftRight) + 40px + 11vw);
+    --btRight: calc(var(--ftRight) + 80px + 20vw);
 }
 
 h1,
@@ -141,7 +153,7 @@ a.paperLink:hover {
 }
 
 .socImg {
-    font-size: 6vw;
+    font-size: var(--socMediaSize);
 }
 
 .farLeftSoc {
@@ -153,12 +165,7 @@ a.paperLink:hover {
     top: -8vw;
 }
 
-.downloadText {
-    font-size: 3vw;
-}
-
 /* Main Content CSS */
-
 
 .primaryContent {
     z-index: 2;
@@ -191,6 +198,10 @@ a.paperLink:hover {
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
 }
 
+.folderInterior {
+    padding: 5%;
+}
+
 .frontFolder {
     position: relative;
     top: var(--ffTop);
@@ -204,8 +215,8 @@ a.paperLink:hover {
     position: absolute;
     width: auto;
     height: auto;
-    right: 30px;
-    top: -29.5px;
+    right: var(--ftRight);
+    top: var(--tabTop);
     padding: 5px 10px;
     background-color: var(--ELCpaperyellow);
     border: 2px var(--ELCpaperborder) solid;
@@ -216,6 +227,8 @@ a.paperLink:hover {
     -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    font-family: var(--utilityFont);
+    font-size: var(--subHeaderSize);
 }
 
 .middleFolder {
@@ -231,8 +244,8 @@ a.paperLink:hover {
     position: absolute;
     width: auto;
     height: auto;
-    right: 100px;
-    top: -29.5px;
+    right: var(--mtRight);
+    top: var(--tabTop);
     padding: 5px 10px;
     background-color: var(--ELCpaperyellow);
     border: 2px var(--ELCpaperborder) solid;
@@ -243,6 +256,8 @@ a.paperLink:hover {
     -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    font-family: var(--utilityFont);
+    font-size: var(--subHeaderSize);
 }
 
 .backFolder {
@@ -258,8 +273,8 @@ a.paperLink:hover {
     position: absolute;
     width: auto;
     height: auto;
-    right: 155px;
-    top: -29.5px;
+    right: var(--btRight);
+    top: var(--tabTop);
     padding: 5px 10px;
     background-color: var(--ELCpaperyellow);
     border: 2px var(--ELCpaperborder) solid;
@@ -270,9 +285,12 @@ a.paperLink:hover {
     -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    font-family: var(--utilityFont);
+    font-size: var(--subHeaderSize);
 }
 
 .folderCover {
+    position: absolute;
     width: var(--coverWidth);
     height: var(--coverHeight);
     align-self: flex-end;
@@ -285,6 +303,10 @@ a.paperLink:hover {
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
 }
 
+.introSection {
+    padding: 5%;
+}
+
 .frontCover {}
 
 .middleCover {}
@@ -292,8 +314,8 @@ a.paperLink:hover {
 .backCover {}
 
 .selectFolder {
-    -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2 alternate-reverse both;
-    animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2 alternate-reverse both;
+    -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+    animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
 }
 
 .openFolder {
@@ -301,10 +323,16 @@ a.paperLink:hover {
     animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.closeFolder {
+    -webkit-animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 .closedFolder {
     -webkit-filter: grayscale(40%);
-    filter: grayscale(40%);
+    filter: grayscale(40%)
 }
+
 }
 
 /* START OF RESPONSIVE MEDIA QUERIES */
@@ -314,10 +342,12 @@ a.paperLink:hover {
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 325px;
+        --folderHeight: 355px;
         --folderWidth: 290px;
         --ffLeft: 20px;
-        --ffTop: 65px;
+        --ffTop: 10vh;
+        --ftRight: 10px;
+        --tabTop: -32.5px;
     }
 
     /* Header Content CSS */
@@ -335,6 +365,7 @@ a.paperLink:hover {
     .elcHeader {
         position: relative;
         transform: rotate(4deg);
+        width: 100vw;
         top: 4vw;
         left: 2vw;
         padding: 10px;
@@ -356,7 +387,7 @@ a.paperLink:hover {
 
     .elcName {
         grid-area: name;
-        font-size: 7vw;
+        font-size: var(--titleSize);
         color: var(--ELCsky);
     }
 
@@ -364,7 +395,7 @@ a.paperLink:hover {
         grid-area: subtitle;
         text-align: end;
         margin-right: -15%;
-        font-size: 4vw;
+        font-size: var(--subtitleSize);
         color: var(--ELCsky);
     }
 
@@ -414,9 +445,22 @@ a.paperLink:hover {
     /* DOM element adjustments */
     body {
         --folderHeight: 345px;
-        --folderWidth: 350px;
+        --folderWidth: 340px;
         --ffLeft: 20px;
         --ffTop: 55px;
+        --subHeaderSize: 4.8vw;
+        --ftRight: 10px;
+        --tabTop: -6.3vw;
+    }
+
+}
+
+@media screen and (min-width: 450px) {
+
+    /* DOM element adjustments */
+    body {
+        --tabTop: -7.3vw;
+        --subHeaderSize: 4.2vw;
     }
 
 }
@@ -426,10 +470,11 @@ a.paperLink:hover {
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 325px;
+        --folderHeight: 375px;
         --folderWidth: 420px;
         --ffLeft: 20px;
-        --ffTop: 30px;
+        --ffTop: -20px;
+        --tabTop: -32px;
     }
 
 }
@@ -438,10 +483,11 @@ a.paperLink:hover {
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 305px;
+        --folderHeight: 355px;
         --folderWidth: 480px;
         --ffLeft: 20px;
-        --ffTop: 30px;
+        --ffTop: -20px;
+        --tabTop: -6.5vw;
     }
 
 }
@@ -449,6 +495,11 @@ a.paperLink:hover {
 @media screen and (min-width: 650px) {
 
     /* DOM element adjustments */
+
+    body {
+        --tabTop: -6vw;
+        --subHeaderSize: 3.8vw;
+    }
 
     /* Header Content CSS */
 
@@ -487,12 +538,10 @@ a.paperLink:hover {
 
     .elcName {
         grid-area: name;
-        font-size: 7vw;
     }
 
     .elcsubTitle {
         grid-area: subtitle;
-        font-size: 4vw;
     }
 
     /* Footer Content CSS */
@@ -539,6 +588,8 @@ a.paperLink:hover {
         --folderWidth: 530px;
         --ffLeft: 20px;
         --ffTop: -35px;
+        --tabTop: -5.4vw;
+        --subHeaderSize: 3.5vw;
     }
 
 }
@@ -548,10 +599,14 @@ a.paperLink:hover {
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 335px;
+        --folderHeight: 315px;
         --folderWidth: 630px;
         --ffLeft: 20px;
         --ffTop: -55px;
+        --titleSize: 6vw;
+        --subtitleSize: 3.5vw;
+        --subHeaderSize: 3.5vw;
+        --tabTop: -5.2vw;
     }
 
     /* Header Content CSS */
@@ -563,14 +618,6 @@ a.paperLink:hover {
 
     .elcHeader {
         top: 8vw;
-    }
-
-    .elcName {
-        font-size: 6vw;
-    }
-
-    .elcsubTitle {
-        font-size: 3.5vw;
     }
 
     /* Footer Content CSS */
@@ -603,10 +650,14 @@ a.paperLink:hover {
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 605px;
-        --folderWidth: 680px;
-        --ffLeft: 10px;
-        --ffTop: -35px;
+        --folderHeight: 505px;
+        --folderWidth: 580px;
+        --ffLeft: -60px;
+        --ffTop: -85px;
+        --tabTop: -4.7vw;
+        --titleSize: 4vw;
+        --subtitleSize: 3vw;
+        --subHeaderSize: 3.1vw;
     }
 
     /* Header Content CSS */
@@ -646,14 +697,8 @@ a.paperLink:hover {
         border: 2px var(--ELCnavy) solid;
     }
 
-    .elcName {
-
-        font-size: 4vw;
-    }
-
     .elcsubTitle {
         text-align: center;
-        font-size: 3vw;
     }
 
     /* Footer Content CSS */
@@ -715,10 +760,14 @@ a.paperLink:hover {
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 605px;
-        --folderWidth: 780px;
-        --ffLeft: 10px;
+        --folderHeight: 505px;
+        --folderWidth: 580px;
+        --ffLeft: -60px;
         --ffTop: -35px;
+        --tabTop: -4.3vw;
+        --titleSize: 4vw;
+        --subtitleSize: 2.7vw;
+        --subHeaderSize: 2.9vw;
     }
 
     /* Header Content CSS */
@@ -737,14 +786,6 @@ a.paperLink:hover {
     .myPic {
         width: 55%;
         margin-left: 20px;
-    }
-
-    .elcName {
-        font-size: 4vw;
-    }
-
-    .elcsubTitle {
-        font-size: 2.7vw;
     }
 
     /* Footer Content CSS */
@@ -781,6 +822,15 @@ a.paperLink:hover {
 
     /* DOM element adjustments */
 
+    body {
+        --folderHeight: 505px;
+        --folderWidth: 680px;
+        --ffLeft: -90px;
+        --ffTop: -75px;
+        --tabTop: -3.7vw;
+        --subHeaderSize: 2.5vw;
+    }
+
     /* Header Content CSS */
 
     .headerBack {
@@ -797,14 +847,6 @@ a.paperLink:hover {
     .myPic {
         width: 55%;
         margin-left: 20px;
-    }
-
-    .elcName {
-        font-size: 4vw;
-    }
-
-    .elcsubTitle {
-        font-size: 2.7vw;
     }
 
     /* Footer Content CSS */
@@ -847,6 +889,17 @@ a.paperLink:hover {
 
     /* DOM element adjustments */
 
+    body {
+        --folderHeight: 580px;
+        --folderWidth: 880px;
+        --ffLeft: -60px;
+        --ffTop: -70px;
+        --tabTop: -3.3vw;
+        --titleSize: 3vw;
+        --subtitleSize: 2vw;
+        --subHeaderSize: 2.3vw;
+    }
+
     /* Header Content CSS */
 
     .headerBack {
@@ -871,14 +924,6 @@ a.paperLink:hover {
         margin-left: 20px;
         border-radius: 50%;
         border: 2px var(--ELCnavy) solid; */
-    }
-
-    .elcName {
-        font-size: 3vw;
-    }
-
-    .elcsubTitle {
-        font-size: 2vw;
     }
 
     /* Footer Content CSS */
@@ -912,14 +957,16 @@ a.paperLink:hover {
     }
 
 
-
-
-
-
-
-
-
 }
+
+@media screen and (min-width: 1600px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --tabTop: -3vw;
+        --subHeaderSize: 2.1vw;
+    }
 
 /* For especially large screens */
 @media screen and (min-width: 1800px) {}
@@ -970,6 +1017,52 @@ a.paperLink:hover {
     }
 }
 
+/*
+ * ----------------------------------------
+ * animation closeFolder
+ * ----------------------------------------
+ */
+ @-webkit-keyframes closeFolder {
+    0% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+
+    100% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+@keyframes closeFolder {
+    0% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+    100% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
 /**
  * ----------------------------------------
  * animation selectFolder
@@ -977,35 +1070,46 @@ a.paperLink:hover {
  */
 @-webkit-keyframes selectFolder {
     0% {
-        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
-        transform: translateY(calc(var(--folderHeight) * -1));
-        z-index: 4;
+        z-index: initial !important;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    50% {
-        z-index: 10;
+    20%{
+        z-index: initial !important;
+    }
+    
+    50%{
+        -webkit-transform: translateY(calc(var(--folderHeight) * -1));
+        transform: translateY(calc(var(--folderHeight) * -1));
     }
 
     100% {
+        z-index: 10;
         -webkit-transform: translateY(0);
         transform: translateY(0);
-        z-index: 10;
     }
 }
 
 @keyframes selectFolder {
     0% {
+        z-index: initial !important;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20%{
+        z-index: initial !important;
+    }
+
+    50%{
         -webkit-transform: translateY(calc(var(--folderHeight) * -1));
         transform: translateY(calc(var(--folderHeight) * -1));
     }
-    
-    50% {
-        z-index: 10;
-    }
 
     100% {
+        z-index: 10;
         -webkit-transform: translateY(0);
         transform: translateY(0);
-        z-index: 10;
     }
 }
