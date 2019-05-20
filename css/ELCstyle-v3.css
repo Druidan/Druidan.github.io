@@ -966,8 +966,9 @@ a.paperLink:hover {
 
     body {
         --tabTop: -3vw;
-        --subHeaderSize: 2.1vw;
-    }
+        --subHeaderSize: 
+}
+}
 
 /* For especially large screens */
 @media screen and (min-width: 1800px) {}
