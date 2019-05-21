@@ -28,6 +28,7 @@ body {
     background-color: var(--ELCblack);
     background-image: url('../assets/images/ice_wheat_dark.png');
     background-repeat: repeat;
+    overflow: hidden;
     --folderHeight: 300px;
     --folderWidth: 280px;
     --transitionHeight: -600px;
@@ -43,8 +44,8 @@ body {
     --titleSize: 7vw;
     --subtitleSize: 5vw;
     --sectionHeaderSize: 6vw;
-    --subHeaderSize: 5vw;
-    --standardSize: ;
+    --subHeaderSize: 4.5vw;
+    --standardSize: 3.5vw;
     --socMediaSize: 6vw;
     --tabTop: -29.5px;
     --ftRight: 100px;
@@ -75,6 +76,8 @@ li {
 }
 
 p {
+    font-family: var(--speechFont);
+    font-size: var(--standardSize);
     margin: 0;
 }
 
@@ -304,15 +307,42 @@ a.paperLink:hover {
     box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
 }
 
-.introSection {
-    padding: 5%;
+.mainText {
+    width: 100%;
+    height: 100%;
 }
 
-.frontCover {}
+.introSection {
+    width: calc(var(--folderWidth) - 12%);
+    height: calc(var(--folderHeight) - 22%);
+    margin-top: 5%;
+    padding: 0 5% 5% 5%;
+    overflow: auto;
+}
 
-.middleCover {}
+.aboutMeSection {
+    width: calc(var(--folderWidth) - 12%);
+    height: calc(var(--folderHeight) - 22%);
+    margin-top: 5%;
+    padding: 0 5% 5% 5%;
+    overflow: auto;
+}
 
-.backCover {}
+.portfolioDiv {
+    width: calc(var(--folderWidth) - 12%);
+    height: calc(var(--folderHeight) - 22%);
+    margin-top: 5%;
+    padding: 0 5% 5% 5%;
+    overflow: auto;
+}
+
+.contactMeSection {
+    width: calc(var(--folderWidth) - 12%);
+    height: calc(var(--folderHeight) - 22%);
+    margin-top: 5%;
+    padding: 0 5% 5% 5%;
+    overflow: auto;
+}
 
 .selectFolder {
     -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
@@ -349,6 +379,11 @@ a.paperLink:hover {
         --ffTop: 10vh;
         --ftRight: 10px;
         --tabTop: -32.5px;
+        --titleSize: 7vw;
+        --subtitleSize: 4.5vw;
+        --sectionHeaderSize: 6vw;
+        --subHeaderSize: 4.5vw;
+        --standardSize: 3.5vw;
     }
 
     /* Header Content CSS */
@@ -388,6 +423,7 @@ a.paperLink:hover {
 
     .elcName {
         grid-area: name;
+        font-family: var(--headFont);
         font-size: var(--titleSize);
         color: var(--ELCsky);
     }
