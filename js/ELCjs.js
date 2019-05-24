@@ -21,9 +21,10 @@ const header = document.querySelectorAll(".elcHeader");
 
 
 const folder = document.querySelectorAll(".folder");
+const folioList = document.querySelectorAll(".folioList");
+const itemDisplayDiv = document.querySelectorAll(".folioDisplay");
 
-// clickClass(header, helloWorld);
-clickClass(folder, swapFolder);
+
 
 // function helloWorld(header) {
 //     alert(`Hello World! ${header}`)
@@ -50,7 +51,7 @@ function swapFolder(folder) {
         // If this folder has not already been selected, find the other folder that's open and close it
         const allFolders = document.querySelectorAll(".folder");
         //Put all of the folders through the checkIfOpen function
-        selectedClass(allFolders, checkIfOpen)
+        funcOnClass(allFolders, checkIfOpen)
         // The selectedClass function will do this function for each folder.
         function checkIfOpen(arr) {
             //Establish the children elements (the folder cover) of this folder.
@@ -76,6 +77,61 @@ function swapFolder(folder) {
         }
     }
 }
+
+function populatePortfolio() {
+    for (project in portfolio) {
+        const folioListDiv = elemByClass(folioList);
+        const listClass = portfolio[project].listClass;
+        const listItem = document.createElement('li');
+        addClass(listItem, 'folioItem');
+        addClass(listItem, `${listClass}`);
+        listItem.setAttribute('onclick', 'event.stopPropagation()')
+        clickClass(listItem, displayFolioItem);
+        listItem.append(`${portfolio[project].title}`);
+        folioListDiv.prepend(listItem);
+    }
+}
+
+function displayFolioItem() {
+    const displayDiv = elemByClass(itemDisplayDiv);
+    while (displayDiv.firstChild) displayDiv.removeChild(displayDiv.firstChild);
+    for(project in portfolio) {
+        if (hasClass(this, portfolio[project].listClass)){
+            const itemTitleEl = document.createElement('h3');
+            itemTitleEl.append(`${portfolio[project].title}`)
+            displayDiv.append(itemTitleEl);
+            if(portfolio[project].pic !== null){
+                const itemPic = document.createElement('img');
+                itemPic.setAttribute('src', `${portfolio[project].pic}`);
+                addClass(itemPic, 'folioPic');
+                displayDiv.append(itemPic);
+            }
+            if(portfolio[project].description !== null || portfolio[project].description !== ''){
+                const itemDesc = document.createElement('p');
+                addClass(itemDesc, 'descriptionText');
+                itemDesc.append(`${portfolio[project].description}`);
+                displayDiv.append(itemDesc);
+            }
+            if(portfolio[project].deployed !== null || portfolio[project].deployed !== ''){
+                const deployedLink = document.createElement('a');
+                deployedLink.setAttribute('href', `${portfolio[project].deployed}`);
+                deployedLink.setAttribute('onclick', 'event.stopPropagation()');
+                deployedLink.setAttribute('target', '_blank');
+                addClass(deployedLink, 'deployedLink');
+                const deployedButton = document.createElement('button');
+                addClass(deployedButton, 'deployedButton');
+                deployedButton.append('Visit Site');
+                deployedLink.append(deployedButton);
+                displayDiv.append(deployedLink);
+            }
+        } 
+    }
+}
+
+populatePortfolio();
+
+//Click Events
+clickClass(folder, swapFolder);
 
 
 //My JS Ends beyond this point.

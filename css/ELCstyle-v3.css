@@ -1,368 +1,412 @@
 /* UNIVERSAL ROOT, DOM, AND GENERAL UTILITY CSS */
 @media screen and (min-width: 0px) {
-:root {
-    --ELCblack: rgba(25, 25, 25, 1);
-    --ELCblackthin: rgba(25, 25, 25, .7);
-    --ELCpaperyellow: rgb(243, 243, 214);
-    --ELCpaperfade: rgb(223, 206, 109);
-    --ELCpaperborder: rgb(177, 156, 40);
-    --ELCpaperUsed: rgb(122, 35, 0);
-    --ELCpaperHighlight: rgb(255, 153, 0);
-    --ELCpaperLink: rgb(95, 70, 34);
-    --ELCOldType: rgb(51, 37, 18);
-    --ELCwhite: rgba(247, 252, 255, 1);
-    --ELCthinwhite: rgba(247, 252, 255, .4);
-    --ELCsky: rgb(214, 255, 254);
-    --ELCdenim: rgb(74, 112, 156);
-    --ELCnavy: rgb(34, 63, 95);
-    --ELCteal: rgb(11, 228, 224);
-    --ELCtealthin: rgba(139, 232, 230, .7);
-    --ELCgray: rgba(129, 127, 130, 1);
-    --headFont: 'Philosopher', sans-serif;
-    --utilityFont: 'Bree Serif', serif;
-    --sketchFont: 'Indie Flower', cursive;
-    --speechFont: 'Montserrat Alternates', sans-serif;
-}
+    :root {
+        --ELCblack: rgba(25, 25, 25, 1);
+        --ELCblackthin: rgba(25, 25, 25, .7);
+        --ELCpaperyellow: rgb(243, 243, 214);
+        --ELCpaperfade: rgb(223, 206, 109);
+        --ELCpaperborder: rgb(177, 156, 40);
+        --ELCpaperUsed: rgb(122, 35, 0);
+        --ELCpaperHighlight: rgb(255, 153, 0);
+        --ELCpaperLink: rgb(95, 70, 34);
+        --ELCOldType: rgb(51, 37, 18);
+        --ELCwhite: rgba(247, 252, 255, 1);
+        --ELCthinwhite: rgba(247, 252, 255, .4);
+        --ELCsky: rgb(214, 255, 254);
+        --ELCdenim: rgb(74, 112, 156);
+        --ELCnavy: rgb(34, 63, 95);
+        --ELCteal: rgb(11, 228, 224);
+        --ELCtealthin: rgba(139, 232, 230, .7);
+        --ELCgray: rgba(129, 127, 130, 1);
+        --headFont: 'Philosopher', sans-serif;
+        --utilityFont: 'Bree Serif', serif;
+        --sketchFont: 'Indie Flower', cursive;
+        --speechFont: 'Montserrat Alternates', sans-serif;
+    }
 
-body {
-    background-color: var(--ELCblack);
-    background-image: url('../assets/images/ice_wheat_dark.png');
-    background-repeat: repeat;
-    overflow: hidden;
-    --folderHeight: 300px;
-    --folderWidth: 280px;
-    --transitionHeight: -600px;
-    --coverHeight: calc(var(--folderHeight) - 10px);
-    --coverWidth: calc(var(--folderWidth) - 2px);
-    --ffLeft: 25px;
-    --mfLeft: calc(var(--ffLeft) - 15px);
-    --bfLeft: calc(var(--ffLeft) - 30px);
-    --ffTop: 65px;
-    --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
-    --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
-    --folderDivH: calc(var(--folderHeight) + 20%);
-    --titleSize: 7vw;
-    --subtitleSize: 5vw;
-    --sectionHeaderSize: 6vw;
-    --subHeaderSize: 4.5vw;
-    --standardSize: 3.5vw;
-    --socMediaSize: 6vw;
-    --tabTop: -29.5px;
-    --ftRight: 100px;
-    --mtRight: calc(var(--ftRight) + 40px + 11vw);
-    --btRight: calc(var(--ftRight) + 80px + 20vw);
-}
+    body {
+        background-color: var(--ELCblack);
+        background-image: url('../assets/images/ice_wheat_dark.png');
+        background-repeat: repeat;
+        overflow: hidden;
+        --folderHeight: 300px;
+        --folderWidth: 280px;
+        --transitionHeight: -600px;
+        --coverHeight: calc(var(--folderHeight) - 10px);
+        --coverWidth: calc(var(--folderWidth) - 2px);
+        --ffLeft: 25px;
+        --mfLeft: calc(var(--ffLeft) - 15px);
+        --bfLeft: calc(var(--ffLeft) - 30px);
+        --ffTop: 65px;
+        --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
+        --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
+        --folderDivH: calc(var(--folderHeight) + 20%);
+        --titleSize: 7vw;
+        --subtitleSize: 5vw;
+        --sectionHeaderSize: 6vw;
+        --subHeaderSize: 4.5vw;
+        --standardSize: 3.5vw;
+        --socMediaSize: 6vw;
+        --tabTop: -29.5px;
+        --ftRight: 100px;
+        --mtRight: calc(var(--ftRight) + 40px + 11vw);
+        --btRight: calc(var(--ftRight) + 80px + 20vw);
+    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li {
-    margin: 0;
-    padding: 0;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
 
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li {
-    font-family: var(--utilityFont);
-}
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    li {
+        font-family: var(--utilityFont);
+    }
 
-p {
-    font-family: var(--speechFont);
-    font-size: var(--standardSize);
-    margin: 0;
-}
+    p, ol {
+        font-family: var(--speechFont);
+        font-size: var(--standardSize);
+        margin: 0;
+    }
 
-a.genLink {
-    color: var(--ELCsky);
-}
+    a.genLink {
+        color: var(--ELCsky);
+    }
 
-a.genLink:visited {
-    color: var(--ELCsky);
-}
+    a.genLink:visited {
+        color: var(--ELCsky);
+    }
 
-a.genLink:active {
-    color: var(--ELCteal);
-}
+    a.genLink:active {
+        color: var(--ELCteal);
+    }
 
-a.genLink:hover {
-    text-decoration: underline;
-    color: var(--ELCteal);
-}
+    a.genLink:hover {
+        text-decoration: underline;
+        color: var(--ELCteal);
+    }
 
-a.paperLink:link {
-    color: var(--ELCpaperLink);
-}
+    a.paperLink:link {
+        color: var(--ELCpaperLink);
+    }
 
-a.paperLink:visited {
-    color: var(--ELCpaperUsed);
-}
+    a.paperLink:visited {
+        color: var(--ELCpaperUsed);
+    }
 
-a.paperLink:active {
-    color: var(--ELCpaperHighlight);
-}
+    a.paperLink:active {
+        color: var(--ELCpaperHighlight);
+    }
 
-a.paperLink:hover {
-    text-decoration: underline;
-    color: var(--ELCpaperHighlight);
-}
+    a.paperLink:hover {
+        text-decoration: underline;
+        color: var(--ELCpaperHighlight);
+    }
 
-.buryIt {
-    display: none !important;
-}
+    .buryIt {
+        display: none !important;
+    }
 
-/* UNIVERSAL STYLING */
+    .squishIt {
+        width: 0vw !important;
+    }
 
-/* Header CSS */
+    /* UNIVERSAL STYLING */
 
-.headerBack {
-    position: fixed;
-    z-index: 1;
-    background-color: var(--ELCdenim);
-    color: var(--ELCsky);
-}
+    /* Header CSS */
 
-/* Footer CSS */
+    .headerBack {
+        position: fixed;
+        z-index: 1;
+        background-color: var(--ELCdenim);
+        color: var(--ELCsky);
+    }
 
-.asideBack {
-    position: fixed;
-    z-index: 0;
-    background-color: var(--ELCteal);
-}
+    /* Footer CSS */
 
-.footerBack {
-    position: fixed;
-    z-index: 5;
-    background-color: var(--ELCnavy);
-    color: var(--ELCsky);
-}
+    .asideBack {
+        position: fixed;
+        z-index: 0;
+        background-color: var(--ELCteal);
+    }
 
-.socialBar {
-    color: var(--ELCsky);
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 4fr repeat(4, auto) 4fr;
-    text-align: center;
-    align-content: center;
-    margin-left: 8vw;
-    margin-top: 5vw;
-}
+    .footerBack {
+        position: fixed;
+        z-index: 5;
+        background-color: var(--ELCnavy);
+        color: var(--ELCsky);
+    }
 
-.socImg {
-    font-size: var(--socMediaSize);
-}
+    .socialBar {
+        color: var(--ELCsky);
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 4fr repeat(4, auto) 4fr;
+        text-align: center;
+        align-content: center;
+        margin-left: 8vw;
+        margin-top: 5vw;
+    }
 
-.farLeftSoc {
-    grid-column-start: 2;
-}
+    .socImg {
+        font-size: var(--socMediaSize);
+    }
 
-.fa-file {
-    position: absolute;
-    top: -8vw;
-}
+    .farLeftSoc {
+        grid-column-start: 2;
+    }
 
-/* Main Content CSS */
+    .fa-file {
+        position: absolute;
+        top: -8vw;
+    }
 
-.primaryContent {
-    z-index: 2;
-    width: 90vw;
-    height: 30vw;
-    padding: 10px;
-    top: 0;
-    bottom: 0;
-    color: var(--ELCOldType);
-}
+    /* Main Content CSS */
 
-.folderDiv {
-    position: relative;
-    display: grid;
-    justify-items: center;
-    width: 100%;
-    height: var(--folderDivH);
-    padding-top: 12%;
-}
+    .primaryContent {
+        z-index: 2;
+        width: 90vw;
+        height: 30vw;
+        padding: 10px;
+        top: 0;
+        bottom: 0;
+        color: var(--ELCOldType);
+    }
 
-.folder {
-    display: flex;
-    background-color: var(--ELCpaperyellow);
-    border: 2px var(--ELCpaperborder) solid;
-    border-radius: 10px;
-    height: var(--folderHeight);
-    width: var(--folderWidth);
-    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-}
+    .folderDiv {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        width: 100%;
+        height: var(--folderDivH);
+        padding-top: 12%;
+    }
 
-.folderInterior {
-    padding: 5%;
-}
+    .folder {
+        display: flex;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-radius: 10px;
+        height: var(--folderHeight);
+        width: var(--folderWidth);
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    }
 
-.frontFolder {
-    position: relative;
-    top: var(--ffTop);
-    left: var(--ffLeft);
-    z-index: 4;
-}
+    .folderInterior {
+        padding: 5%;
+    }
 
-.bioFolder::after {
-    display: flex;
-    content: "Biography";
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: var(--ftRight);
-    top: var(--tabTop);
-    padding: 5px 10px;
-    background-color: var(--ELCpaperyellow);
-    border: 2px var(--ELCpaperborder) solid;
-    border-bottom: 1px transparent;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    font-family: var(--utilityFont);
-    font-size: var(--subHeaderSize);
-}
+    .frontFolder {
+        position: relative;
+        top: var(--ffTop);
+        left: var(--ffLeft);
+        z-index: 4;
+    }
 
-.middleFolder {
-    position: relative;
-    top: var(--mfTop);
-    left: var(--mfLeft);
-    z-index: 3;
-}
+    .bioFolder::after {
+        display: flex;
+        content: "Biography";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--ftRight);
+        top: var(--tabTop);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
 
-.portfolioFolder::after {
-    display: flex;
-    content: "Portfolio";
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: var(--mtRight);
-    top: var(--tabTop);
-    padding: 5px 10px;
-    background-color: var(--ELCpaperyellow);
-    border: 2px var(--ELCpaperborder) solid;
-    border-bottom: 1px transparent;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    font-family: var(--utilityFont);
-    font-size: var(--subHeaderSize);
-}
+    .middleFolder {
+        position: relative;
+        top: var(--mfTop);
+        left: var(--mfLeft);
+        z-index: 3;
+    }
 
-.backFolder {
-    position: relative;
-    top: var(--bfTop);
-    left: var(--bfLeft);
-    z-index: 2;
-}
+    .portfolioFolder::after {
+        display: flex;
+        content: "Portfolio";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--mtRight);
+        top: var(--tabTop);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
 
-.contactFolder::after {
-    display: flex;
-    content: "Contact Me";
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: var(--btRight);
-    top: var(--tabTop);
-    padding: 5px 10px;
-    background-color: var(--ELCpaperyellow);
-    border: 2px var(--ELCpaperborder) solid;
-    border-bottom: 1px transparent;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    font-family: var(--utilityFont);
-    font-size: var(--subHeaderSize);
-}
+    .backFolder {
+        position: relative;
+        top: var(--bfTop);
+        left: var(--bfLeft);
+        z-index: 2;
+    }
 
-.folderCover {
-    position: absolute;
-    width: var(--coverWidth);
-    height: var(--coverHeight);
-    align-self: flex-end;
-    margin-left: 4px;
-    background-color: var(--ELCpaperyellow);
-    border: 2px var(--ELCpaperborder) solid;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-    box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
-}
+    .contactFolder::after {
+        display: flex;
+        content: "Contact Me";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--btRight);
+        top: var(--tabTop);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
 
-.mainText {
-    width: 100%;
-    height: 100%;
-}
+    .folderCover {
+        position: absolute;
+        width: var(--coverWidth);
+        height: var(--coverHeight);
+        align-self: flex-end;
+        margin-left: 4px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    }
 
-.introSection {
-    width: calc(var(--folderWidth) - 12%);
-    height: calc(var(--folderHeight) - 22%);
-    margin-top: 5%;
-    padding: 0 5% 5% 5%;
-    overflow: auto;
-}
+    .mainText {
+        width: 100%;
+        height: 100%;
+    }
 
-.aboutMeSection {
-    width: calc(var(--folderWidth) - 12%);
-    height: calc(var(--folderHeight) - 22%);
-    margin-top: 5%;
-    padding: 0 5% 5% 5%;
-    overflow: auto;
-}
+    .introSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+    }
 
-.portfolioDiv {
-    width: calc(var(--folderWidth) - 12%);
-    height: calc(var(--folderHeight) - 22%);
-    margin-top: 5%;
-    padding: 0 5% 5% 5%;
-    overflow: auto;
-}
+    .aboutMeSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+    }
 
-.contactMeSection {
-    width: calc(var(--folderWidth) - 12%);
-    height: calc(var(--folderHeight) - 22%);
-    margin-top: 5%;
-    padding: 0 5% 5% 5%;
-    overflow: auto;
-}
+    .portfolioDiv {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "list   fdisplay";
+    }
 
-.selectFolder {
-    -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
-    animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
-}
+    .contactMeSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+    }
 
-.openFolder {
-    -webkit-animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
+    .selectFolder {
+        -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+        animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+    }
 
-.closeFolder {
-    -webkit-animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
+    .openFolder {
+        -webkit-animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
 
-.closedFolder {
-    -webkit-filter: grayscale(40%);
-    filter: grayscale(40%)
-}
+    .closeFolder {
+        -webkit-animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    .closedFolder {
+        -webkit-filter: grayscale(40%);
+        filter: grayscale(40%)
+    }
+
+    /* Folder Content CSS */
+
+    .folioList {
+        grid-area: list;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 15px;
+        margin-top: 30px;
+    }
+
+    .folioDisplay {
+        grid-area: fdisplay;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .portfolioTitle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .folioIntroText {
+        display: flex;
+    }
+
+    .folioItem {
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
 
 }
 
@@ -1002,8 +1046,8 @@ a.paperLink:hover {
 
     body {
         --tabTop: -3vw;
-        --subHeaderSize: 
-}
+        --subHeaderSize:
+    }
 }
 
 /* For especially large screens */
@@ -1060,7 +1104,7 @@ a.paperLink:hover {
  * animation closeFolder
  * ----------------------------------------
  */
- @-webkit-keyframes closeFolder {
+@-webkit-keyframes closeFolder {
     0% {
         -webkit-filter: brightness(50%);
         filter: brightness(50%);
@@ -1113,11 +1157,11 @@ a.paperLink:hover {
         transform: translateY(0);
     }
 
-    20%{
+    20% {
         z-index: initial !important;
     }
-    
-    50%{
+
+    50% {
         -webkit-transform: translateY(var(--transitionHeight));
         transform: translateY(var(--transitionHeight));
     }
@@ -1136,11 +1180,11 @@ a.paperLink:hover {
         transform: translateY(0);
     }
 
-    20%{
+    20% {
         z-index: initial !important;
     }
 
-    50%{
+    50% {
         -webkit-transform: translateY(var(--transitionHeight));
         transform: translateY(var(--transitionHeight));
     }

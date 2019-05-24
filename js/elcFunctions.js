@@ -1,7 +1,16 @@
 
 // This file holds utility functions we can use if we do vanilla js to do similar things to jQuery. If we use jQuery we can delete this file.
 
-function selectedClass (querySeleced, func) {
+//This function will grab an element by its class, but only the last one in the array of elements by class. Most useful when replacing html IDs with Classes.
+function elemByClass (selectedClass) {
+    let result;
+    selectedClass.forEach(element => {
+        result = element
+    });
+    return result;
+};
+
+function funcOnClass (querySeleced, func) {
     querySeleced.forEach(element => {
         func(element)
     });
@@ -9,16 +18,16 @@ function selectedClass (querySeleced, func) {
 
 function clickClass (querySeleced, func) {
     if (typeof querySeleced === 'object' && querySeleced !== null){
-        if(querySeleced.length === 1){
+        if(querySeleced.length >= 1){
             querySeleced.forEach(element => {
                 element.addEventListener('click', func)
             });
-        } else if(querySeleced.length > 1){
-            querySeleced.forEach(element => {
-                element.addEventListener('click', func)
-            })
+        } else if (objectLength(querySeleced) === 0) {
+            querySeleced.addEventListener('click', func)
         } else if (querySeleced === null) {
-            say ("The element is Null.");
+            say ("The element is null.");
+        } else if (querySeleced === undefined) {
+            say ("The element is undefined.");
         } else {
             say ("Something is wrong here!")
         };
