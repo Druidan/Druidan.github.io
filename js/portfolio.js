@@ -31,14 +31,14 @@ const portfolio = {
         repo: 'https://github.com/Druidan/RPS-Multiplayer.git', 
         listClass: 'rpsLi',
     },
-    5: {
-        title: 'Jeopardy Training',
-        pic: './assets/images/JeopardyLogo.jpg',
-        description: 'Train yourself for Jeopardy using these actual questions from the show!',
-        deployed: 'https://druidan.github.io/project1/index.html',
-        repo: 'https://github.com/Druidan/project1.git', 
-        listClass: 'jepoLi',
-    },
+    // 5: {
+    //     title: 'Jeopardy Training',
+    //     pic: './assets/images/JeopardyLogo.jpg',
+    //     description: 'Train yourself for Jeopardy using these actual questions from the show!',
+    //     deployed: 'https://druidan.github.io/project1/index.html',
+    //     repo: 'https://github.com/Druidan/project1.git', 
+    //     listClass: 'jepoLi',
+    // },
     6: {
         title: 'Liribot',
         pic: './assets/images/LiriBot.png',
@@ -73,3 +73,4 @@ const portfolio = {
         listClass: 'bbLi',
     },
 }
+

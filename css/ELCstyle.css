@@ -29,9 +29,9 @@
         background-image: url('../assets/images/ice_wheat_dark.png');
         background-repeat: repeat;
         overflow: hidden;
-        --folderHeight: 300px;
+        --folderHeight: 80vh;
         --folderWidth: 280px;
-        --transitionHeight: -600px;
+        --transitionHeight: -70vh;
         --coverHeight: calc(var(--folderHeight) - 10px);
         --coverWidth: calc(var(--folderWidth) - 2px);
         --ffLeft: 25px;
@@ -317,25 +317,24 @@
 
     .mainText {
         width: 100%;
-        height: 100%;
+        text-indent: 8%;
+        margin-bottom: 2%;
     }
 
     .introSection {
+        display: flex;
+        flex-direction: column;
         width: calc(var(--folderWidth) - 12%);
         height: calc(var(--coverHeight) - 22%);
         margin-top: 5%;
         padding: 0 5% 5% 5%;
-        overflow: auto;
+        overflow: hidden;
     }
 
     .introTitle {
         text-align: center;
         margin-bottom: 2%;
         font-size: var(--subHeaderSize);
-    }
-
-    .introText {
-
     }
 
     .aboutMeSection {
@@ -451,12 +450,15 @@
     .folioPic {
         grid-area: itemImg;
         justify-self: center;
+        align-self: center;
         width: 60%;
         border-radius: 10px;
     }
 
     .descriptionText {
         grid-area: ItemDesc;
+        justify-self: center;
+        align-self: center;
     }
 
     .vidDiv {
@@ -584,7 +586,7 @@
     /* DOM element adjustments */
     body {
         --folderTopPadding: -5%;
-        --folderHeight: 355px;
+        --folderHeight: 60vh;
         --folderWidth: 290px;
         --ffLeft: 20px;
         --ffTop: 10vh;
@@ -690,10 +692,9 @@
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 345px;
+        --folderHeight: 60vh;
         --folderWidth: 340px;
         --ffLeft: 20px;
-        --ffTop: 55px;
         --subHeaderSize: 4.8vw;
         --ftRight: 10px;
     }
@@ -715,10 +716,10 @@
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 375px;
+        --folderHeight: 60vh;
         --folderWidth: 480px;
         --ffLeft: 20px;
-        --ffTop: -20px;
+        --ffTop: -2vh;
         --folderTopMargin: 8%;
     }
 
@@ -728,11 +729,11 @@
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 355px;
+        --folderHeight: 60vh;
         --folderWidth: 500px;
         --folderTopMargin: 6%;
         --ffLeft: 20px;
-        --ffTop: -20px;
+        --ffTop: -3vh;
         --titleSize: 7vw;
         --subtitleSize: 6vw;
         --sectionHeaderSize: 5vw;
@@ -747,6 +748,7 @@
     /* DOM element adjustments */
 
     body {
+        --ffTop: -5vh;
         --folderWidth: 550px;
         --folderTopMargin: 10%;
         --subHeaderSize: 3.8vw;
@@ -836,10 +838,9 @@
 
     /* DOM element adjustments */
     body {
-        --folderHeight: 355px;
+        --folderHeight: 60vh;
         --folderWidth: 630px;
         --ffLeft: 20px;
-        --ffTop: -25px;
         --folderTopMargin: 8%;
         --titleSize: 7vw;
         --subtitleSize: 6vw;
@@ -878,11 +879,10 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 380px;
+        --folderHeight: 60vh;
         --folderWidth: 720px;
         --folderTopMargin: 2%;
         --ffLeft: 20px;
-        --ffTop: -55px;
         --titleSize: 5.5vw;
         --subtitleSize: 3.5vw;
         --sectionHeaderSize: 3.5vw;
@@ -925,7 +925,7 @@
     /* Main Content CSS */
 
     .folioDisplay {
-        padding-top: 0;
+        margin-top: 1%;
     }
 
     .portfolioDiv {
@@ -950,16 +950,17 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 455px;
-        --folderWidth: 580px;
-        --folderTopMargin: 8%;
-        --ffLeft: -50px;
-        --ffTop: -85px;
+        --folderHeight: 75vh;
+        --folderWidth: 65vw;
+        --transitionHeight: -85vh;
+        --folderTopMargin: 10vh;
+        --ffLeft: -6vw;
+        --ffTop: -15vh;
         --titleSize: 4vw;
-        --subtitleSize: 2.5vw;
-        --sectionHeaderSize: 3.5vw;
-        --subHeaderSize: 3vw;
-        --standardSize: 2.5vw;
+        --subtitleSize: 2.2vw;
+        --sectionHeaderSize: 3vw;
+        --subHeaderSize: 2.7vw;
+        --standardSize: 2vw;
         --socMediaSize: 4vw;
     }
 
@@ -981,6 +982,7 @@
         top: 19.5vw;
         left: 38vw;
         padding: 10px;
+        padding-left: 20px;
         display: grid;
         grid-gap: 5px;
         margin-top: 25px;
@@ -1074,27 +1076,22 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 505px;
-        --folderWidth: 580px;
-        --folderTopMargin: 10%;
-        --ffLeft: -60px;
-        --ffTop: -35px;
+        --ffTop: -7vh;
         --titleSize: 4vw;
         --subtitleSize: 2.7vw;
-        --subHeaderSize: 2.9vw;
+        --subHeaderSize: 2.6vw;
     }
 
     /* Header Content CSS */
 
     .headerBack {
-        height: 38vw;
         top: -22vw;
         left: -56vw;
     }
 
     .elcHeader {
-        top: 21vw;
-        left: 37vw;
+        top: 22vw;
+        left: 40vw;
     }
 
     .myPic {
@@ -1115,8 +1112,9 @@
     }
 
     .socialBar {
-        margin-top: 4vw;
-        left: 2vw;
+        margin-top: 5.5vw;
+        left: 2.2vw;
+        grid-gap: 10px;
     }
 
     /* Main Content CSS */
@@ -1130,6 +1128,29 @@
 
 }
 
+@media screen and (min-width: 1100px) {
+
+    body {
+        --subHeaderSize: 2.5vw;
+        --subtitleSize: 2.2vw;
+    }
+
+    .elcHeader {
+        top: 24vw;
+        left: 41vw;
+    }
+
+    .asideBack {
+        bottom: -28vw;
+        left: -23vw;
+    }
+
+    .footerBack {
+        bottom: -65vw;
+        left: -28vw;
+    }
+}
+
 /* For large tablets in portrait and small in landscape */
 @media screen and (min-width: 1200px) {
 
@@ -1137,24 +1158,26 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 505px;
-        --folderWidth: 680px;
-        --ffLeft: -90px;
-        --ffTop: -75px;
-        --subHeaderSize: 2.5vw;
+        --ffTop: -10vh;
+        --ffLeft: -6vw;
+        --titleSize: 3.5vw;
+        --subHeaderSize: 2.2vw;
+        --subtitleSize: 2.2vw;
+        --sectionHeaderSize: 2.2vw;
+        --standardSize: 1.8vw;
     }
 
     /* Header Content CSS */
 
     .headerBack {
-        height: 38vw;
+        height: 40vw;
         top: -22vw;
         left: -56vw;
     }
 
     .elcHeader {
-        top: 21.5vw;
-        left: 38vw;
+        top: 21vw;
+        left: 40vw;
     }
 
     .myPic {
@@ -1199,7 +1222,24 @@
 
 @media screen and (min-width: 1300px) {
     body {
-        --folderTopMargin: 8%;
+        --ffTop: -12vh;
+        --titleSize: 3.8vw;
+        --subHeaderSize: 2vw;
+        --standardSize: 1.7vw;
+    }
+
+    .headerBack {
+        top: -23vw;
+        left: -57vw;
+    }
+
+    .elcHeader {
+        top: 24vw;
+        left: 40vw;
+    }
+
+    .myPic {
+        width: 45%;
     }
 }
 
@@ -1209,12 +1249,7 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 500px;
-        --folderWidth: 880px;
-        --folderTopMargin: 3%;
-        --ffLeft: -60px;
-        --ffTop: -70px;
-        --titleSize: 3vw;
+        --titleSize: 3.2vw;
         --subtitleSize: 2vw;
         --subHeaderSize: 2.3vw;
     }
@@ -1230,19 +1265,11 @@
 
     .elcHeader {
         width: 35vw;
-        top: 17vw;
-        right: -39vw;
+        top: 16vw;
+        left: 39vw;
         padding: 10px;
         margin-top: 10px;
         margin-left: 15px;
-    }
-
-    .myPic {
-        /* grid-area: mypic;
-        width: 65%;
-        margin-left: 20px;
-        border-radius: 50%;
-        border: 2px var(--ELCnavy) solid; */
     }
 
     /* Footer Content CSS */
@@ -1274,8 +1301,30 @@
         right: 0vw;
         padding: 10vw 5vw 5vw 20vw;
     }
+}
 
+@media screen and (min-width: 1500px) {
 
+    body {
+        --titleSize: 3vw;
+        --subtitleSize: 2vw;
+        --subHeaderSize: 2vw;
+    }
+
+    .asideBack {
+        bottom: -17vw;
+        left: -10vw;
+    }
+
+    .footerBack {
+        bottom: -48vw;
+        left: -22vw;
+    }
+
+    .socialBar {
+        margin-top: 2.2vw;
+        left: 7.5vw;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -1283,13 +1332,17 @@
     /* DOM element adjustments */
 
     body {
-        --folderHeight: 580px;
-        --folderWidth: 880px;
-        --ffLeft: -60px;
-        --ffTop: -70px;
-        --titleSize: 3vw;
-        --subtitleSize: 2vw;
-        --subHeaderSize: 2.5vw;
+        --ffTop: -85px;
+        --titleSize: 2.8vw;
+        --subtitleSize: 1.6vw;
+        --subHeaderSize: 1.7vw;
+        --standardSize: 1.3vw;
+    }
+
+    .elcHeader {
+        top: 18vw;
+        left: 40.5vw;
+        margin-top: 10px;
     }
 
 }
