@@ -27,7 +27,7 @@ const stork = nodemailer.createTransport({
 app.post('/message', (req, res) => {
 	stork.sendMail(
 		{
-			from: req.body.email,
+			from: process.env.GMAIL_ADD,
 			to: process.env.GMAIL_ADD,
 			subject: 'Message From Portfolio Page',
 			html: `From: ${req.body.email}\n\nMessage: ${req.body.message}`
