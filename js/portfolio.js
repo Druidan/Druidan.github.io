@@ -23,14 +23,14 @@ const portfolio = {
         repo: 'https://github.com/Druidan/TriviaGame.git', 
         listClass: 'whaleDipLi',
     },
-    4: {
-        title: 'Rock, Paper, Scissors Online',
-        pic: './assets/images/RPS.png',
-        description: 'Battle random strangers online in the school-yard classic game.',
-        deployed: 'https://druidan.github.io/RPS-Multiplayer/index.html',
-        repo: 'https://github.com/Druidan/RPS-Multiplayer.git', 
-        listClass: 'rpsLi',
-    },
+    // 4: {
+    //     title: 'Rock, Paper, Scissors Online',
+    //     pic: './assets/images/RPS.png',
+    //     description: 'Battle random strangers online in the school-yard classic game.',
+    //     deployed: 'https://druidan.github.io/RPS-Multiplayer/index.html',
+    //     repo: 'https://github.com/Druidan/RPS-Multiplayer.git', 
+    //     listClass: 'rpsLi',
+    // },
     // 5: {
     //     title: 'Jeopardy Training',
     //     pic: './assets/images/JeopardyLogo.jpg',
