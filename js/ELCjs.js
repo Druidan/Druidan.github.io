@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Global Page States
     let backFoldersOpen = false;
+    let mailSent = false;
 
     // Sounds array
     const sounds = ['./assets/sounds/paper1.mp3', './assets/sounds/paper2.mp3', './assets/sounds/paper3.mp3', './assets/sounds/paper4.mp3', './assets/sounds/paper5.mp3', ]
@@ -227,27 +228,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendMessage(event) {
-        event.preventDefault();
-        
-        const contactInfo = {
-            name: elemByClass(contactName).value,
-            email: elemByClass(contactEmail).value,
-            message: elemByClass(contactMessage).value,
-        };
+        if(!mailSent){
+            event.preventDefault();
+            mailSent = true;
 
-        axios.post('/message', contactInfo)
-            .then(response => {
-                if (response.data) {
-                    if (response.data.success === true) {
-                        messageInput.value = '';
-                        messageInput.placeholder = 'Thank you for your message! I will get back to you as soon as possible.';
+            const contactInfo = {
+                name: elemByClass(contactName).value,
+                email: elemByClass(contactEmail).value,
+                message: elemByClass(contactMessage).value,
+            };
+
+            axios.post('/message', contactInfo)
+                .then(response => {
+                    if (response.data) {
+                        if (response.data.success === true) {
+                            elemByClass(contactMessage).value = '';
+                            elemByClass(contactMessage).placeholder = 'Thank you for your message! I will get back to you as soon as possible.';
+                        }
+                    } else {
+                        elemByClass(contactMessage).value = '';
+                        elemByClass(contactMessage).placeholder = 'It looks like there is a problem at the moment. I\'m working on fixing it, and we should be up and running again soon. Thank you for your patience!';
                     }
-                } else {
-                    messageInput.value = '';
-                    messageInput.placeholder = 'It looks like there is a problem at the moment. I\'m working on fixing it, and we should be up and running again soon. Thank you for your patience!';
-                }
-            })
-            .catch(err => q(err));
+                })
+                .catch(err => q(err));
+        } else {
+            alert("You've already sent a message today! Please try again later.");
+        }        
     };
 
     populatePortfolio();

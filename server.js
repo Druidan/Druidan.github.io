@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 const stork = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
-		user: 'mredwardcheever@gmail.com',
-		pass: 'Team77Rush',
+		user: process.env.GMAIL_ADD,
+		pass: process.env.GMAIL_PASS
 	},
 });
 
@@ -27,8 +27,8 @@ const stork = nodemailer.createTransport({
 app.post('/message', (req, res) => {
 	stork.sendMail(
 		{
-			from: 'mredwardcheever@gmail.com',
-			to: 'mredwardcheever@gmail.com',
+			from: process.env.GMAIL_ADD,
+			to: process.env.GMAIL_ADD,
 			subject: 'Message From Portfolio Page',
 			html: `From: ${req.body.email}\n\nMessage: ${req.body.message}`
 		},
