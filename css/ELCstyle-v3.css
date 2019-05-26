@@ -1,5 +1,5 @@
 /* UNIVERSAL ROOT, DOM, AND GENERAL UTILITY CSS */
-@media screen and (min-width: 0px) {
+/* @media screen and (min-width: 0px) { */
     :root {
         --ELCblack: rgba(25, 25, 25, 1);
         --ELCblackthin: rgba(25, 25, 25, .7);
@@ -37,10 +37,11 @@
         --ffLeft: 25px;
         --mfLeft: calc(var(--ffLeft) - 15px);
         --bfLeft: calc(var(--ffLeft) - 30px);
-        --ffTop: 65px;
+        --ffTop: -25px;
         --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
         --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
         --folderDivH: calc(var(--folderHeight) + 20%);
+        --folderTopMargin: -15%;
         --titleSize: 7vw;
         --subtitleSize: 5vw;
         --sectionHeaderSize: 6vw;
@@ -192,7 +193,7 @@
         justify-items: center;
         width: 100%;
         height: var(--folderDivH);
-        padding-top: 12%;
+        margin-top: var(--folderTopMargin);
     }
 
     .folder {
@@ -215,7 +216,7 @@
         position: relative;
         top: var(--ffTop);
         left: var(--ffLeft);
-        z-index: 4;
+        z-index: 4 !important;
     }
 
     .bioFolder::after {
@@ -319,10 +320,19 @@
 
     .introSection {
         width: calc(var(--folderWidth) - 12%);
-        height: calc(var(--folderHeight) - 22%);
+        height: calc(var(--coverHeight) - 22%);
         margin-top: 5%;
         padding: 0 5% 5% 5%;
         overflow: auto;
+    }
+
+    .introTitle {
+        text-align: center;
+        margin-bottom: 2%;
+    }
+
+    .introText {
+
     }
 
     .aboutMeSection {
@@ -346,17 +356,23 @@
             "list   fdisplay";
     }
 
-    .contactMeSection {
-        width: calc(var(--folderWidth) - 12%);
-        height: calc(var(--folderHeight) - 22%);
-        margin-top: 5%;
-        padding: 0 5% 5% 5%;
-        overflow: auto;
+    .selectFolder {
     }
 
-    .selectFolder {
-        -webkit-animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
-        animation: selectFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 both;
+    .presentFolder {
+        margin-top: 35px;
+        -webkit-animation: presentFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: presentFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+    }
+
+    .replaceFolder {
+        -webkit-animation: replaceFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: replaceFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+    }
+
+    .replaceBackFolder {
+        -webkit-animation: replaceBackFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: replaceBackFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
     }
 
     .openFolder {
@@ -374,7 +390,7 @@
         filter: grayscale(40%)
     }
 
-    /* Folder Content CSS */
+    /* Portfolio Folder Content CSS */
 
     .folioList {
         grid-area: list;
@@ -387,19 +403,31 @@
 
     .folioDisplay {
         grid-area: fdisplay;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(0px, max-content);
+        grid-gap: 5px;
         justify-content: center;
+        text-align: center;
+        padding-top: 5%;
+        grid-template-areas: 
+            "itemTitle  itemTitle"
+            "itemImg    itemImg"
+            "ItemDesc   ItemDesc"
+            "deployed   repo"
+            "video  .";
     }
 
     .portfolioTitle {
+        grid-area: itemTitle;
+        width: 100%;
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
     }
 
     .folioIntroText {
+        grid-area: itemImg;
         display: flex;
     }
 
@@ -408,7 +436,108 @@
         cursor: pointer;
     }
 
-}
+    .folioItemTitle {
+        grid-area: itemTitle;
+    }
+
+    .folioPic {
+        grid-area: itemImg;
+        justify-self: center;
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    .descriptionText {
+        grid-area: ItemDesc;
+    }
+
+    .vidDiv {
+        display: block;
+        grid-area: video;
+    }
+
+    .vidDivDep {
+        display: block;
+        grid-area: deployed;
+    }
+
+    .deployedLink {
+        display: block;
+        grid-area: deployed;
+    }
+
+    .repoDiv {
+        display: block;
+        grid-area: repo;
+    }
+
+    /* Contact Me Folder Contents CSS */
+
+
+    .contactMeSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+        display: grid;
+    }
+
+    .contactForm{
+        display: grid;
+        margin-bottom: 10px;
+        grid-gap: 10px;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "nameTitle  nameTitle"
+            "nameBox    nameBox"
+            "emailTitle emailTitle"
+            "emailBox emailBox"
+            "messageBox messageBox"
+            "submitBtn submitBtn";
+    }
+
+    .formText{
+        font-family: var(--speechFont);
+        font-size: 4.5vw;
+    }
+
+    .nameTitle{
+        grid-area: nameTitle;
+    }
+
+    .nameBox{
+        grid-area: nameBox;
+        width: 80%;
+    }
+
+    .emailTitle{
+        grid-area: emailTitle;
+    }
+
+    .emailBox{
+        grid-area: emailBox;
+        width: 80%;
+    }
+
+    .messageBox{
+        grid-area: messageBox;
+        width: 90%;
+        height: 100px;
+    }
+
+    .submitBtn{
+        grid-area: submitBtn;
+        font-size: 5vw;
+        font-family: var(--utilityFont);
+        margin-bottom: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+/* } */
 
 /* START OF RESPONSIVE MEDIA QUERIES */
 
@@ -417,6 +546,7 @@
 
     /* DOM element adjustments */
     body {
+        --folderTopPadding: -5%;
         --folderHeight: 355px;
         --folderWidth: 290px;
         --ffLeft: 20px;
@@ -445,7 +575,7 @@
     .elcHeader {
         position: relative;
         transform: rotate(4deg);
-        width: 100vw;
+        width: 90vw;
         top: 4vw;
         left: 2vw;
         padding: 10px;
@@ -454,7 +584,7 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
             "mypic   name  name"
-            "mypic  subtitle   ."
+            "mypic  subtitle   subtitle"
             "mypic  .   .";
     }
 
@@ -474,8 +604,8 @@
 
     .elcsubTitle {
         grid-area: subtitle;
-        text-align: end;
-        margin-right: -15%;
+        text-align: center;
+        /* margin-right: -15%; */
         font-size: var(--subtitleSize);
         color: var(--ELCsky);
     }
@@ -570,7 +700,6 @@
         --ffTop: -20px;
         --tabTop: -6.5vw;
     }
-
 }
 
 @media screen and (min-width: 650px) {
@@ -623,6 +752,7 @@
 
     .elcsubTitle {
         grid-area: subtitle;
+        text-align: center;
     }
 
     /* Footer Content CSS */
@@ -673,6 +803,35 @@
         --subHeaderSize: 3.5vw;
     }
 
+    .contactMeSection{
+        align-items: center;
+    }
+
+
+    .contactForm{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+            "nameTitle nameBox nameBox  nameBox ."
+            "emailTitle emailBox emailBox emailBox  ."
+            "messageBox messageBox messageBox messageBox messageBox"
+            ". submitBtn submitBtn submitBtn .";
+    }
+
+    .messageBox{
+        height: 150px;
+    }
+
+    .formText{
+        font-size: 2vw;
+    }
+
+    .submitBtn{
+        font-size: 3vw;
+    }
+
+    .projectBtn{
+        font-size: 2vw;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -1045,9 +1204,16 @@
     /* DOM element adjustments */
 
     body {
-        --tabTop: -3vw;
-        --subHeaderSize:
+        --folderHeight: 580px;
+        --folderWidth: 880px;
+        --ffLeft: -60px;
+        --ffTop: -70px;
+        --tabTop: -1vw;
+        --titleSize: 3vw;
+        --subtitleSize: 2vw;
+        --subHeaderSize: 4vw;
     }
+
 }
 
 /* For especially large screens */
@@ -1145,12 +1311,12 @@
     }
 }
 
-/**
+/*
  * ----------------------------------------
- * animation selectFolder
+ * animation presentFolder
  * ----------------------------------------
  */
-@-webkit-keyframes selectFolder {
+@-webkit-keyframes presentFolder {
     0% {
         z-index: initial !important;
         -webkit-transform: translateY(0);
@@ -1173,7 +1339,7 @@
     }
 }
 
-@keyframes selectFolder {
+@keyframes presentFolder {
     0% {
         z-index: initial !important;
         -webkit-transform: translateY(0);
@@ -1191,6 +1357,163 @@
 
     100% {
         z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation presentBackFolder
+ * ----------------------------------------
+ */
+ @-webkit-keyframes presentBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        z-index: 2;
+    }
+
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes presentBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        z-index: 2;
+    }
+
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation replaceFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes replaceFolder {
+    0% {
+        z-index: 5;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    51% {
+        z-index: 3;
+    }
+
+    100% {
+        z-index: 3;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes replaceFolder {
+    0% {
+        z-index: 5;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    51% {
+        z-index: 3;
+    }
+
+    100% {
+        z-index: 3;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation replaceBackFolder
+ * ----------------------------------------
+ */
+ @-webkit-keyframes replaceBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    51% {
+        z-index: 2;
+    }
+
+    100% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes replaceBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    51% {
+        z-index: 2;
+    }
+
+    100% {
+        z-index: 2;
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }

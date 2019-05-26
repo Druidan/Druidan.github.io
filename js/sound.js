@@ -11,9 +11,9 @@ class Sound{
         document.body.appendChild(this.sound);
     }
     play() {
-        this.sound.play();
+        this.sound.play().catch(error => {});
     }
     stop() {
-        this.sound.pause();
+        this.sound.pause().catch(error => {});
     }
 }

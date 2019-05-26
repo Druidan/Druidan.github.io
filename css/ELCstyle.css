@@ -1,388 +1,516 @@
-
-/* Animation CSS */
-
-/* The following rotation animation code came from Kirk Strobeck at Stack Overflow - Source: "https://stackoverflow.com/questions/6410730/how-to-do-a-webkit-css-endless-rotation-animation" */
-@-webkit-keyframes rotating /* Safari and Chrome */ {
-    from {
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotating {
-    from {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-}
-    to {
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-.myPicArea{
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
-}
-
-@-webkit-keyframes antirotating /* Safari and Chrome */ {
-    from {
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-    to {
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-}
-@keyframes antirotating {
-    from {
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-}
-    to {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-}
-.antirotator{
-    position: absolute;
-    margin: auto;
-    -webkit-animation: antirotating 2s linear infinite;
-    -moz-animation: antirotating 2s linear infinite;
-    -ms-animation: antirotating 2s linear infinite;
-    -o-animation: antirotating 2s linear infinite;
-    animation: antirotating 2s linear infinite;
-}
-
-.pImgAnimate{
-    margin-left: 0px !important;
-    transform: rotate(1080deg) !important;
-}
-
-/* CORE ROOT, DOM, AND GENERAL UTILITY CSS */
-
-:root{
-    --ELCblack:  rgba(25, 25, 25, 1);
-    --ELCblackthin:  rgba(25, 25, 25, .7);
-    --ELCwhite: rgba(247, 252, 255, 1);
-    --ELCthinwhite: rgba(247, 252, 255, .4);
-    --ELCblue: rgba(0, 84, 181, 1);
-    --ELCteal: rgba(139, 232, 230, 1);
-    --ELCtealthin: rgba(139, 232, 230, .7);
-    --ELCgray: rgba(129, 127, 130, 1);
-    --headFont: 'Philosopher', sans-serif;
-    --utilityFont: 'Bree Serif', serif;
-    --sketchFont: 'Indie Flower', cursive;
-    --speechFont: 'Montserrat Alternates', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-h2, h3, h4, h5, h6, ul, li {
-    font-family: var(--utilityFont);
-}
-
-p{
-    margin: 0;
-}
-
-a:link {
-    color: var(--ELCblue);
-}
-
-a:visited{
-    color: var(--ELCgray);
-}
-
-a:active{
-    color: var(--ELCteal);
-}
-
-.buryIt{
-    display: none !important;
-}
-
-.fas:hover {
-    background-color: var(--ELCthinwhite);
-    border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-    -moz-box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-    box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-}
-
-.fab:hover {
-    background-color: var(--ELCtealthin);
-    border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-    -moz-box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-    box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-}
-
-/* START OF RESPONSIVE MEDIA QUERIES */
-
-@media screen and (min-width: 200px){
-
-    h1{
-        font-size: 7vw;
-        font-family: var(--headFont);
+/* UNIVERSAL ROOT, DOM, AND GENERAL UTILITY CSS */
+/* @media screen and (min-width: 0px) { */
+    :root {
+        --ELCblack: rgba(25, 25, 25, 1);
+        --ELCblackthin: rgba(25, 25, 25, .7);
+        --ELCpaperyellow: rgb(243, 243, 214);
+        --ELCpaperfade: rgb(223, 206, 109);
+        --ELCpaperborder: rgb(177, 156, 40);
+        --ELCpaperUsed: rgb(122, 35, 0);
+        --ELCpaperHighlight: rgb(255, 153, 0);
+        --ELCpaperLink: rgb(95, 70, 34);
+        --ELCOldType: rgb(51, 37, 18);
+        --ELCwhite: rgba(247, 252, 255, 1);
+        --ELCthinwhite: rgba(247, 252, 255, .4);
+        --ELCsky: rgb(214, 255, 254);
+        --ELCdenim: rgb(74, 112, 156);
+        --ELCnavy: rgb(34, 63, 95);
+        --ELCteal: rgb(11, 228, 224);
+        --ELCtealthin: rgba(139, 232, 230, .7);
+        --ELCgray: rgba(129, 127, 130, 1);
+        --headFont: 'Philosopher', sans-serif;
+        --utilityFont: 'Bree Serif', serif;
+        --sketchFont: 'Indie Flower', cursive;
+        --speechFont: 'Montserrat Alternates', sans-serif;
     }
 
-    h2{
-        font-size: 4vw;
-    }
-
-    .newBody {
+    body {
         background-color: var(--ELCblack);
-        background-image: url("../assets/images/grunge-overlay-3.png");
-        background-size: 100vw;
-        color: var(--ELCwhite);
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        grid-gap: 10px;
-        padding: 0 2%;
-        grid-template-areas: 
-            "home   header  features"
-            "webMap  feats   feats"
-            "centralNav centralNav centralNav"
-            "centralNav centralNav centralNav"
-            "pContent pContent pContent"
-            "portfolio  portfolio portfolio";
-        grid-template-columns: 1fr auto 1fr;
-        grid-template-rows: repeat(auto-fill, 1fr);
+        background-image: url('../assets/images/ice_wheat_dark.png');
+        background-repeat: repeat;
+        overflow: hidden;
+        --folderHeight: 300px;
+        --folderWidth: 280px;
+        --transitionHeight: -600px;
+        --coverHeight: calc(var(--folderHeight) - 10px);
+        --coverWidth: calc(var(--folderWidth) - 2px);
+        --ffLeft: 25px;
+        --mfLeft: calc(var(--ffLeft) - 15px);
+        --bfLeft: calc(var(--ffLeft) - 30px);
+        --ffTop: -25px;
+        --mfTop: calc(var(--ffTop) - calc(var(--folderHeight) + 25px));
+        --bfTop: calc(var(--ffTop) - calc(calc(var(--folderHeight) * 2) + 50px));
+        --folderDivH: calc(var(--folderHeight) + 20%);
+        --folderTopMargin: -5%;
+        --titleSize: 7vw;
+        --subtitleSize: 5vw;
+        --sectionHeaderSize: 6vw;
+        --subHeaderSize: 4.5vw;
+        --standardSize: 3.5vw;
+        --socMediaSize: 6vw;
+        --ftRight: 100px;
+        --mtRight: calc(var(--ftRight) + 40px + 11vw);
+        --btRight: calc(var(--ftRight) + 80px + 20vw);
     }
 
-    .headMenu{
-        font-size: 6vw;
-        margin-top: 15px;
-        cursor: pointer;
-    }
-
-    .elcHeader{
-        margin-top: 15px;
-    }
-
-    .fas{
-        color: var(--ELCwhite);
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--ELCblue);
-    }
-
-    .homeCorner{
-        grid-area: home;
-        padding-left: 20%;
-        text-align: left !important;
-    }
-
-    .elcHeader{
-        grid-area: header;
-    }
-
-    .featureCorner{
-        grid-area: features;
-        padding-right: 20%;
-        text-align: right !important;
-    }
-
-    .tail{
-        display: none;
-    }
-
-    .elcsubTitle{
-        font-family: var(--sketchFont);
-        font-size: 6vw;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    ul,
+    li {
         margin: 0;
-        font-weight: bold;
+        padding: 0;
     }
 
-    .introSection{
-        position:relative;
-        background-color: transparent;
-        color: var(--ELCwhite);
-        border: 2px solid var(--ELCblue);
-        border-radius: 50px;
-        padding: 5px 12px;
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    li {
+        font-family: var(--utilityFont);
     }
 
-    .introSection:after{
-        background-color: none;
-        background-color: var(--ELCthinwhite);
-        border-radius: 50px;
-        content:"";
-        display:block;
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        bottom: 4px;
-        z-index: -1;
-    }
-
-    .introTitle{
-        margin-top: 15px;
-        font-size: 7vw;
-        font-weight: bold;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--ELCblack);
-    }
-    
-    .introText{
-        padding: 0px 5px;
-        margin-bottom: 5px;
-    }
-
-    .hardBubble {
-        position:relative;
-        background-color: transparent;
-        color: var(--ELCblack);
-        border: 2px solid var(--ELCblue);
-        border-radius: 90px;
-        padding: 10px 20px;
-    }
-
-    .hardBubble:after {
-        background-color: none;
-        background-color: var(--ELCwhite);
-        border-radius: 90px;
-        content:"";
-        display:block;
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        bottom: 4px;
-        z-index: -1
-    }
-
-    .mainText{
-        font-size: 4vw;
+    p, ol {
         font-family: var(--speechFont);
-        margin-top: 2%;
+        font-size: var(--standardSize);
+        margin: 0;
     }
 
-    input, textarea{
-        padding: 2%;
-        font-size: 4.5vw;
-        font-family: var(--sketchFont);
+    a.genLink, a.genLink::before{
+        color: var(--ELCsky) !important;
     }
-    
-    .aboutMeSection{
-    
+
+    a.genLink:visited, a.genLink:visited::before {
+        color: var(--ELCsky) !important;
     }
-    
-    .socialBar{
+
+    a.genLink:active, a.genLink:active::before {
+        color: var(--ELCteal) !important;
+    }
+
+    a.genLink:hover {
+        text-decoration: underline;
+        color: var(--ELCteal) !important;
+    }
+
+    a.paperLink:link, i.paperLink:link, i.paperLink {
+        color: var(--ELCpaperLink) !important;
+    }
+
+    a.paperLink:visited, i.paperLink:visited {
+        color: var(--ELCpaperUsed) !important;
+    }
+
+    a.paperLink:active, i.paperLink:active {
+        color: var(--ELCpaperHighlight) !important;
+    }
+
+    a.paperLink:hover, .paperLink:hover {
+        text-decoration: underline;
+        color: var(--ELCpaperHighlight) !important;
+    }
+
+    .buryIt {
+        display: none !important;
+    }
+
+    .squishIt {
+        width: 0vw !important;
+    }
+
+    /* UNIVERSAL STYLING */
+
+    /* Header CSS */
+
+    .headerBack {
+        position: fixed;
+        z-index: 1;
+        background-color: var(--ELCdenim);
+        color: var(--ELCsky);
+    }
+
+    /* Footer CSS */
+
+    .asideBack {
+        position: fixed;
+        z-index: 0;
+        background-color: var(--ELCteal);
+    }
+
+    .footerBack {
+        position: fixed;
+        z-index: 5;
+        background-color: var(--ELCnavy);
+        color: var(--ELCsky);
+    }
+
+    .socialBar {
+        color: var(--ELCsky);
         display: grid;
-        font-size: 2vw;
-        margin-top: 2%;
+        grid-gap: 20px;
+        grid-template-columns: 4fr repeat(4, auto) 4fr;
+        text-align: center;
+        align-content: center;
+        margin-left: 8vw;
+        margin-top: 5vw;
+    }
+
+    .socImg {
+        font-size: var(--socMediaSize);
+    }
+
+    .farLeftSoc {
+        grid-column-start: 2;
+    }
+
+    .fa-file {
+        position: absolute;
+        top: -8vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        z-index: 2;
+        width: 90vw;
+        height: 30vw;
+        padding: 10px;
+        top: 0;
+        bottom: 0;
+        color: var(--ELCOldType);
+    }
+
+    .folderDiv {
+        position: relative;
+        display: grid;
+        justify-items: center;
+        width: 100%;
+        height: var(--folderDivH);
+        margin-top: var(--folderTopMargin);
+    }
+
+    .folder {
+        display: flex;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-radius: 10px;
+        height: var(--folderHeight);
+        width: var(--folderWidth);
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    }
+
+    .folderInterior {
+        padding: 5%;
+    }
+
+    .frontFolder {
+        position: relative;
+        top: var(--ffTop);
+        left: var(--ffLeft);
+        z-index: 4 !important;
+    }
+
+    .bioFolder::after {
+        display: flex;
+        content: "Biography";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--ftRight);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
+
+    .middleFolder {
+        position: relative;
+        top: var(--mfTop);
+        left: var(--mfLeft);
+        z-index: 3;
+    }
+
+    .portfolioFolder::after {
+        display: flex;
+        content: "Portfolio";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--mtRight);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
+
+    .backFolder {
+        position: relative;
+        top: var(--bfTop);
+        left: var(--bfLeft);
+        z-index: 2;
+    }
+
+    .contactFolder::after {
+        display: flex;
+        content: "Contact Me";
+        position: absolute;
+        width: auto;
+        height: auto;
+        right: var(--btRight);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        padding: 5px 10px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-bottom: 1px transparent;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        font-family: var(--utilityFont);
+        font-size: var(--subHeaderSize);
+    }
+
+    .folderCover {
+        position: absolute;
+        width: var(--coverWidth);
+        height: var(--coverHeight);
+        align-self: flex-end;
+        margin-left: 4px;
+        background-color: var(--ELCpaperyellow);
+        border: 2px var(--ELCpaperborder) solid;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        -moz-box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+        box-shadow: 0px 0px 50px 30px var(--ELCpaperfade) inset;
+    }
+
+    .mainText {
+        width: 100%;
+        height: 100%;
+    }
+
+    .introSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--coverHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+    }
+
+    .introTitle {
+        text-align: center;
+        margin-bottom: 2%;
+        font-size: var(--subHeaderSize);
+    }
+
+    .introText {
+
+    }
+
+    .aboutMeSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+    }
+
+    .portfolioDiv {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
+        display: grid;
         grid-gap: 10px;
-        grid-template-columns: repeat(9, 1fr);
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-            ".  linkedIn    gitHub  aboutTitle   aboutTitle  aboutTitle   twitter facebook    .";
+            "list   fdisplay";
     }
 
-    .farLeftSoc{
-        grid-area: linkedIn !important;
-        grid-column: 2;
+    .frontZ {
+        z-index: 10 !important;
     }
 
-    .github{
-        grid-area: gitHub !important;
+    .presentFolder {
+        margin-top: 35px;
+        -webkit-animation: presentFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: presentFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
     }
 
-    .aboutMeTitle{
-        grid-area: aboutTitle !important;
+    .replaceFolder {
+        -webkit-animation: replaceFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: replaceFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
     }
 
-
-    .twitter{
-        grid-area: twitter !important;
+    .replaceBackFolder {
+        -webkit-animation: replaceBackFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
+        animation: replaceBackFolder 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1 alternate both;
     }
 
-    .facebook{
-        grid-area: facebook !important;
+    .openFolder {
+        -webkit-animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: openFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 
-    .fab{
-        font-size: 6vw;
+    .closeFolder {
+        -webkit-animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: closeFolder 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 
-    .gitIt{
-        font-size: 7.5vw;
-    }
-    
-    .aboutMeTitle{
-        grid-column: 1 / -1;
-    }
-    
-    .aboutMeText{
-        margin-bottom: 2% !important;
+    .closedFolder {
+        -webkit-filter: grayscale(40%);
+        filter: grayscale(40%)
     }
 
-    .downloadResume{
-        margin-bottom: 10%;
+    /* Portfolio Folder Content CSS */
+
+    .folioList {
+        grid-area: list;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 15px;
+        margin-top: 30px;
     }
-    
-    .fa-file{
-        margin-left: auto;
-        margin-right: 10px;
+
+    .folioDisplay {
+        grid-area: fdisplay;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(0px, max-content);
+        grid-gap: 5px;
+        justify-content: center;
+        text-align: center;
+        padding-top: 5%;
+        grid-template-areas: 
+            "itemTitle  itemTitle"
+            "itemImg    itemImg"
+            "ItemDesc   ItemDesc"
+            "deployed   repo"
+            "video  .";
+    }
+
+    .portfolioTitle {
+        grid-area: itemTitle;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        font-size: var(--subHeaderSize);
+    }
+
+    .folioIntroText {
+        grid-area: itemImg;
+        display: flex;
+        font-size: var(--standardSize);
+    }
+
+    .folioItem {
+        margin-bottom: 5px;
         cursor: pointer;
-        justify-self: flex-end;
+        font-size: var(--standardSize);
     }
-    
-    .contactMeSection{
+
+    .folioItemTitle {
+        grid-area: itemTitle;
+        font-size: var(--subHeaderSize);
+    }
+
+    .folioPic {
+        grid-area: itemImg;
+        justify-self: center;
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    .descriptionText {
+        grid-area: ItemDesc;
+    }
+
+    .vidDiv {
+        grid-area: video;
+    }
+
+    .vidDivDep {
+        grid-area: deployed;
+    }
+
+    .fa-youtube {
+        font-size: var(--titleSize);
+    }
+
+    .deployedLink {
+        grid-area: deployed;
+        display: flex;
+    }
+
+    .deployedButton {
+        display: inline;
+        cursor: pointer;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 8px;
+        font-family: var(--utilityFont);
+        font-size: var(--sectionHeaderSize);
+        background-color: var(--ELCpaperfade);
+        color: var(--ELCOldType);
+        border: 2px var(--ELCpaperLink) solid;
+        border-radius: 20px;
+    }
+
+    .repoDiv {
+        grid-area: repo;
+        justify-content: center;
+        align-self: center;
+        font-size: var(--titleSize);
+    }
+
+    /* Contact Me Folder Contents CSS */
+
+
+    .contactMeSection {
+        width: calc(var(--folderWidth) - 12%);
+        height: calc(var(--folderHeight) - 22%);
+        margin-top: 5%;
+        padding: 0 5% 5% 5%;
+        overflow: auto;
         display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas: 
-            "contactTitle  contactTitle"
-            "contactText  contactText"
-            "contactForm contactForm"
-    }
-
-    .contactMeTitle{
-        grid-area: contactTitle;
-        font-size: 6vw;
-    }
-
-    .contactMeText{
-        grid-area: contactText;
-        padding-right: 2%;
-        padding-left: 2%;
-        justify-self: center !important;
-        align-self: center !important;
-        margin: auto !important;
     }
 
     .contactForm{
         display: grid;
-        grid-area: contactForm;
         margin-bottom: 10px;
         grid-gap: 10px;
         align-items: center;
@@ -405,660 +533,337 @@ a:active{
 
     .nameTitle{
         grid-area: nameTitle;
+        font-size: var(--subHeaderSize);
     }
 
     .nameBox{
         grid-area: nameBox;
         width: 80%;
+        font-size: var(--standardSize);
     }
 
     .emailTitle{
         grid-area: emailTitle;
+        font-size: var(--subHeaderSize);
     }
 
     .emailBox{
         grid-area: emailBox;
         width: 80%;
+        font-size: var(--standardSize);
     }
 
     .messageBox{
         grid-area: messageBox;
         width: 90%;
         height: 100px;
+        font-size: var(--standardSize);
     }
 
     .submitBtn{
         grid-area: submitBtn;
-        font-size: 5vw;
+        font-size: var(--subHeaderSize);
         font-family: var(--utilityFont);
         margin-bottom: 2%;
         margin-left: auto;
         margin-right: auto;
-    }
-    
-    .sidebar1{
-        grid-area: webMap;
-    }
-    
-    .primaryContent{
-        grid-area: pContent;
-    }
-    
-    .sidebar2{
-        grid-area: feats;
-    }
-    
-    .centralNav{
-        grid-area: centralNav;
-        display: grid;
-        grid-gap: 5px;
-        padding: 5px;
-        justify-items: center;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-            "navleft mePic navright"
-            "navleft mePic navright";
-    }
-    
-    .navAreas{
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr);
-    }
-    
-    .navAreas{
-        list-style-type: none;
-    }
-    
-    .navLeft{
-        grid-area: navleft;
-        justify-self: end;
-    }
-    
-    .navRight{
-        grid-area: navright;
-        justify-self: start;
-    }
-    
-    .navItem {
         cursor: pointer;
-        position:relative;
-        background-color: transparent;
-        color: var(--ELCblack);
-        border: 2px solid var(--ELCblue);
-        border-radius: 100px;
-        padding: 10px 5px;
-    }
-    
-    .navItem:after {
-        background-color: var(--ELCwhite);
-        border-radius: 100px;
-        content:"";
-        display:block;
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        right: 4px;
-        bottom: 4px;
-        z-index: -1
-    }
-    
-    .navItem:hover{
-        background-color: var(--ELCthinwhite);
-        -webkit-box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-        -moz-box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-        box-shadow: 0px 0px 8px 8px var(--ELCthinwhite);
-    }
-    
-    .tail{
-        position: absolute;
-        color: var(--ELCwhite);
-        font-size: 45px;
-        left: 0;
-        right: 5%;
-        bottom: 0;
-        z-index: -1;
-    }
-    
-    .leftTail{
-        top: 70%;
-        -webkit-transform: rotate(50deg);
-    }
-    
-    .rightTail{
-        top: 50%;
-        /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
-        -moz-transform: rotate(-50deg) scale(-1, 1);
-        -webkit-transform: rotate(-50deg) scale(-1, 1);
-        -o-transform: rotate(-50deg) scale(-1, 1);
-        -ms-transform: rotate(-50deg) scale(-1, 1);
-        transform: rotate(-50deg) scale(-1, 1);
-    }
-    
-    .portfolioNavItem{
-        grid-row: span 2;
-    }
-
-    .absolutePicArea{
-        grid-area: mePic;
-        width: 100px;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .myPicArea{
-        width: 100%;
-    }
-    
-    .picWrapper{
-        display: flex;
-        position: relative;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        margin: auto;
-        border-radius: 50%;
-        background: linear-gradient(to right, var(--ELCteal), var(--ELCblue));
-    }
-    /* This picture overlap to make height equal width stuff all came from von Marc Hinse at MadeMyDay.de - Source: "http://www.mademyday.de/css-height-equals-width-with-pure-css.html" */
-    .picWrapper:before{
-        content: "";
-        display: block;
-        padding-top: 100%;
-    }
-    
-    .antirotator{
-        width: 100%;
-        height: 100%;
-    }
-    
-    .myPic{
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        margin: auto;
-        width: 97%;
-        border-radius: 50%;
-    }
-    
-    .portfolioDisplay{
-        display: grid;
-        grid-gap: 10px;
-        margin-bottom: 200px;
-        justify-items: center;
-        align-items: center;
-        grid-area: portfolio;
-        grid-gap: 0;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .projectBtn{
-        display: flex;
-        position: absolute;
-        justify-content: center;
-        align-items: center;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        opacity: 0;
-        padding: 2%;
-        width: 95%;
-        border-radius: 50%;
-        background-color: var(--ELCblackthin);
-        color: var(--ELCwhite) !important;
-        font-family: var(--utilityFont);
-        font-size: 6vw;
-        text-decoration: none;
-        z-index: 1;
-    }
-
-    .projectBtn:hover{
-        opacity: 1;
-    }
-
-    .projectGit{
-        font-size: 4vw;
-        color: var(--ELCwhite) !important;
-        position: absolute;
-        text-align: center;
-        right: -5%;
-        bottom: -5%;
-        z-index: 2;
-    }
-    
-    .portfolioItemWrapper{
-        width: 150px;
-        height: 150px;
-        position:relative;
-        background-color: var(--ELCblack);
-        color: var(--ELCblack);
-        border: 2px solid var(--ELCblue);
-        border-radius: 50%;
-        padding: .5%;
-        margin-left: -5000px;
-        margin-bottom: 55px;
-        -webkit-transition: all 1.5s ease-in-out;
-        -moz-transition: all 1.5s ease-in-out;
-        -ms-transition: all 1.5s ease-in-out;
-        -o-transition: all 1.5s ease-in-out;
-        transition: all 1.5s ease-in-out;
-    }
-    
-    .portfolioItemWrapper:before{
-        content: "";
-        display: block;
-        padding-top: 100%;
-    }
-    
-    .portfolioItem{
-        position: absolute;
-        top:0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        width: 150px;
-        height: auto;
-        cursor: pointer;
-    }
-    
-    .pImg{
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        margin: auto;
-        width: 150px;
-        height: 150px;
-        border: 2px white solid;
-        border-radius: 50%;
-    }
-    
-    .rpsPic{
-        background-color: var(--ELCthinwhite)
-    }
-    
-    .pImg:hover{
-    
-    }
-}
-
-@media screen and (min-width: 320px){
-
-    
-    .navItem {
-        border-radius: 25px;
-        padding: 5px 10px;
-    }
-
-    .navItem:after {
+        padding: 8px;
+        background-color: var(--ELCpaperfade);
+        color: var(--ELCOldType);
+        border: 2px var(--ELCpaperLink) solid;
         border-radius: 20px;
     }
+/* } */
 
-    .tail{
-        display: block;
-        position: absolute;
-        color: var(--ELCwhite);
-        font-size: 35px;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-    }
-    
-    .leftTail{
-        top: 40%;
-        right: -70%;
-        -webkit-transform: rotate(50deg);
-    }
-    
-    .rightTail{
-        top: 45%;
-        left: -70%;
-        /* The following technique to mirror text came from methodofaction at Stack Overflow. Source: "https://stackoverflow.com/questions/5406368/can-you-use-css-to-mirror-flip-text" */
-        -moz-transform: rotate(-50deg) scale(-1, 1);
-        -webkit-transform: rotate(-50deg) scale(-1, 1);
-        -o-transform: rotate(-50deg) scale(-1, 1);
-        -ms-transform: rotate(-50deg) scale(-1, 1);
-        transform: rotate(-50deg) scale(-1, 1);
+/* START OF RESPONSIVE MEDIA QUERIES */
+
+/* For phones, primarily */
+@media screen and (min-width: 200px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderTopPadding: -5%;
+        --folderHeight: 355px;
+        --folderWidth: 290px;
+        --ffLeft: 20px;
+        --ffTop: 10vh;
+        --ftRight: 10px;
+        --titleSize: 7vw;
+        --subtitleSize: 4.5vw;
+        --sectionHeaderSize: 6vw;
+        --subHeaderSize: 4.5vw;
+        --standardSize: 3.9vw;
     }
 
-    .absolutePicArea{
-        width: 120px;
-        height: 120px;
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 25vw;
+        top: -5vw;
+        left: -4vw;
+        transform: rotate(-4deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
     }
+
+    .elcHeader {
+        position: relative;
+        transform: rotate(4deg);
+        width: 90vw;
+        top: 4vw;
+        left: 2vw;
+        padding: 10px;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "mypic   name  name"
+            "mypic  subtitle   subtitle"
+            "mypic  .   .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        width: 90%;
+        border-radius: 50%;
+        border: 2px var(--ELCdenim) solid;
+    }
+
+    .elcName {
+        grid-area: name;
+        font-family: var(--headFont);
+        font-size: var(--titleSize);
+        color: var(--ELCsky);
+    }
+
+    .elcsubTitle {
+        grid-area: subtitle;
+        text-align: center;
+        font-size: var(--subtitleSize);
+        color: var(--ELCsky);
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 100vw;
+        height: 25vw;
+        bottom: -5vw;
+        left: -2vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(5deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 110vw;
+        height: 25vw;
+        bottom: -6vw;
+        right: -2vw;
+        border: 1px transparent solid;
+        transform: rotate(-6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        transform: rotate(6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        height: 70vh;
+        padding: 35vw 4vw 20vw 3vw;
+    }
+
+    .folderDiv {}
+
 }
 
-@media screen and (min-width: 400px){
+@media screen and (min-width: 400px) {
 
-    .projectBtn{
-        font-size: 4vw;
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 345px;
+        --folderWidth: 340px;
+        --ffLeft: 20px;
+        --ffTop: 55px;
+        --subHeaderSize: 4.8vw;
+        --ftRight: 10px;
     }
 
 }
 
-@media screen and (min-width: 450px){
+@media screen and (min-width: 450px) {
 
-    h1{
-        font-size: 5vw;
-    }
-
-    h2{
-        font-size: 3.5vw;
-    }
-
-    .elcsubTitle{
-        font-size: 4vw;
-    }
-
-    .introTitle{
-        margin-top: 5px;
-        font-size: 5vw;
-    }
-
-    .introText{
-        font-size: 3vw;
-    }
-
-    .mainText{
-        font-size: 3vw;
-    }
-    
-    input, textarea{
-        font-size: 3.5vw;
-    }
-
-    .portfolioText{
-        margin-bottom: 2%;
-    }
-    
-    .fab{
-        font-size: 4vw;
-    }
-
-    .absolutePicArea{
-        width: 150px;
-        height: 150px;
-    }
-
-    .contactMeTitle{
-        font-size: 5vw;
-    }
-
-    .formText{
-        font-size: 3.7vw;
-    }
-
-    .tail{
-        font-size: 6vw;
-        top: 55%;
-    }
-
-    .downloadResume{
-        margin-bottom: 2%;
-    }
-}
-
-@media screen and (min-width: 600px){
-
-    .downloadResume{
-        font-size: 3vw;
-    }
-
-    .absolutePicArea{
-        width: 175px;
-        height: 175px;
-    }
-
-    .projectBtn{
-        font-size: 3.5vw;
-    }
-
-    .contactMeTitle{
-        font-size: 4vw;
-    }
-
-    .formText{
-        font-size: 3.2vw;
-    } 
-
-    .contactForm{
-        grid-template-columns: 1fr auto repeat(3, 1fr);
-        grid-template-areas: 
-            ". nameTitle nameBox nameBox ."
-            ". emailTitle emailBox emailBox emailBox"
-            "messageBox messageBox messageBox messageBox messageBox"
-            ". submitBtn submitBtn submitBtn .";
-    }
-
-    .nameTitle, .emailTitle{
-        text-align: end;
-    }
-
-    .nameBox, .emailBox{
-        justify-self: start;
+    /* DOM element adjustments */
+    body {
+        --folderWidth: 380px;
+        --subHeaderSize: 4.2vw;
     }
 
 }
 
 
-@media screen and (min-width: 675px){
+@media screen and (min-width: 500px) {
 
-    .projectBtn{
-        font-size: 3.1vw;
-    }
-
-    .gitIt{
-        font-size: inherit;
-    }
-
-}
-
-@media screen and (min-width: 775px){
-
-    h2{
-        font-size: 2.8vw;
-    }
-
-    .headMenu{
-        font-size: 5vw;
-    }
-
-    .elcName{
-        font-size: 4.5vw;
-    }
-
-    .tail{
-        font-size: 5.5vw;
-        top: 50%;
-    }
-
-    .absolutePicArea{
-        width: 200px;
-        height: 200px;
-    }
-
-    .projectBtn{
-        font-size: 2.8vw;
-    }
-
-    .introTitle{
-        font-size: 4vw;
-    }
-
-    .contactMeTitle{
-        font-size: 3.2vw;
-    }
-
-    .formText{
-        font-size: 2.8vw;
-    } 
-
-    .mainText{
-        font-size: 2.5vw;
-        margin-top: 1%;
-    }
-
-    input, textarea{
-        font-size: 3vw;
-    }
-
-    .submitBtn{
-        font-size: 4vw;
-    }
-
-    .gitIt{
-        font-size: 3.5vw;
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 375px;
+        --folderWidth: 480px;
+        --ffLeft: 20px;
+        --ffTop: -20px;
+        --folderTopMargin: 8%;
     }
 
 }
 
-@media screen and (min-width: 820px){
-    .formText{
-        font-size: 2.5vw;
+@media screen and (min-width: 600px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 355px;
+        --folderWidth: 500px;
+        --folderTopMargin: 6%;
+        --ffLeft: 20px;
+        --ffTop: -20px;
+        --titleSize: 7vw;
+        --subtitleSize: 6vw;
+        --sectionHeaderSize: 5vw;
+        --subHeaderSize: 4vw;
+        --standardSize: 3.2vw;
+        --socMediaSize: 6vw;
+    }
+}
+
+@media screen and (min-width: 650px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --folderWidth: 550px;
+        --folderTopMargin: 10%;
+        --subHeaderSize: 3.8vw;
     }
 
-    .projectBtn{
-        font-size: 2.4vw;
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 110vw;
+        height: 25vw;
+        top: -6vw;
+        left: -2vw;
+        transform: rotate(-4deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .elcHeader {
+        position: relative;
+        transform: rotate(4deg);
+        width: 90vw;
+        top: 6vw;
+        left: 2vw;
+        padding: 10px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "mypic  mypic   name    name  name name"
+            "mypic  mypic   subtitle    subtitle   subtitle subtitle"
+            "mypic  mypic   .   .   .   .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        width: 80%;
+        border-radius: 50%;
+        border: 2px var(--ELCdenim) solid;
+    }
+
+    .elcName {
+        grid-area: name;
+    }
+
+    .elcsubTitle {
+        grid-area: subtitle;
+        text-align: center;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 100vw;
+        height: 25vw;
+        bottom: -10vw;
+        left: -2vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(5deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 110vw;
+        height: 25vw;
+        bottom: -11vw;
+        right: -2vw;
+        border: 1px transparent solid;
+        transform: rotate(-6deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        transform: rotate(6.5deg);
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        padding: 30vw 4vw 20vw 3vw;
     }
 
 }
 
-@media screen and (min-width: 920px){
-    .formText{
-        font-size: 2.2vw;
+@media screen and (min-width: 700px) {
+
+    /* DOM element adjustments */
+    body {
+        --folderHeight: 355px;
+        --folderWidth: 630px;
+        --ffLeft: 20px;
+        --ffTop: -25px;
+        --folderTopMargin: 8%;
+        --titleSize: 7vw;
+        --subtitleSize: 6vw;
+        --sectionHeaderSize: 5vw;
+        --subHeaderSize: 3.5vw;
+        --standardSize: 3.2vw;
+        --socMediaSize: 6vw;
     }
 
-    .mainText{
-        margin-top: .5%;
-        font-size: 2.3vw;
-    }
-
-    input, textarea{
-        padding: 1%;
-        font-size: 2.6vw;
-    }
-
-    .gitIt{
-        font-size: 3vw;
-    }
-
-}
-
-@media screen and (min-width: 1020px){
-
-    h2{
-        font-size: 2.6vw;
-    }
-
-    .newBody {
-        grid-gap: 10px;
-        grid-template-areas: 
-            "home   home header header header header header header . ."
-            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-            "webMap webMap  centralNav centralNav centralNav centralNav centralNav centralNav feats feats"
-            "pContent pContent pContent pContent pContent pContent pContent pContent pContent pContent"
-            "portfolio  portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio portfolio";
-        grid-template-columns: repeat(10, 1fr);
-    }
-
-    .elcName{
-        font-size: 2.8vw;
-    }
-
-    .elcsubTitle{
-        font-size: 2.4vw;
-    }
-
-    .introTitle{
-        font-size: 3vw;
-    }
-
-    .mainText{
-        margin: 1%;
-        font-size: 2vw;
-    }
-
-    input, textarea{
-        padding: 1%;
-        font-size: 2.3vw;
-    }
-
-    .fab{
-        font-size: 3vw;
-    }
-
-    .tail{
-        font-size: 3.5vw !important;
-    }
-
-    .socialBar{
-        margin-top: 1%;
-    }
-
-    .downloadResume{
-        display: flex;
-        flex-direction: row;
-        font-size: 2.4vw;
-        margin-bottom: 1%;
-    }
-
-    .downloadText{
-        margin-right: auto;
-        justify-self: flex-start;
-    }
-
-    .downloadText:hover, .fa-file:hover{
-        background-color: var(--ELCtealthin);
-        border-radius: 30%;
-        -webkit-box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-        -moz-box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-        box-shadow: 0px 0px 8px 8px var(--ELCtealthin);
-    }
-
-    .hardBubble{
-        padding: 10px 20px;
-    }
-
-    .absolutePicArea{
-        width: 205px;
-        height: 205px;
-    }
-
-    .contactMeTitle{
-        font-size: 2.5vw;
+    .myPic {
+        justify-self: center;
+        width: 75%;
     }
 
     .contactMeSection{
-        grid-gap: 15px;
-        grid-template-columns: repeat(3, 1fr);
         align-items: center;
-        grid-template-areas: 
-            "contactTitle  contactTitle contactTitle"
-            "contactText   contactForm    contactForm"
-            "contactText  contactForm   contactForm"
-            "contactText contactForm    contactForm"
     }
 
-    .contactMeText{
-        align-self: flex-start;
-    }
 
     .contactForm{
-        grid-template-columns: 1fr auto repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
-            "nameTitle nameBox nameBox . ."
-            "emailTitle emailBox emailBox ."
+            "nameTitle nameBox nameBox  nameBox ."
+            "emailTitle emailBox emailBox emailBox  ."
             "messageBox messageBox messageBox messageBox messageBox"
             ". submitBtn submitBtn submitBtn .";
     }
@@ -1066,140 +871,728 @@ a:active{
     .messageBox{
         height: 150px;
     }
+}
 
-    .formText{
-        font-size: 2vw;
+@media screen and (min-width: 800px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 380px;
+        --folderWidth: 720px;
+        --folderTopMargin: 2%;
+        --ffLeft: 20px;
+        --ffTop: -55px;
+        --titleSize: 5.5vw;
+        --subtitleSize: 3.5vw;
+        --sectionHeaderSize: 3.5vw;
+        --subHeaderSize: 3vw;
+        --standardSize: 2.5vw;
+        --socMediaSize: 4vw;
     }
 
-    .submitBtn{
-        font-size: 3vw;
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 23vw;
+        top: -9vw;
     }
 
-    .projectBtn{
-        font-size: 2vw;
+    .elcHeader {
+        top: 8vw;
     }
 
-    .portfolioItemWrapper{
-        width: 150px;
-        height: 150px;
+    .myPic {
+        width: 65%;
     }
 
-    .portfolioItem{
-        width: 155px;
+    /* Footer Content CSS */
+
+    .asideBack {
+        height: 25vw;
+        bottom: -15vw;
     }
 
-    .pImg{
-        width: 150px;
-        height: 150px;
+    .footerBack {
+        height: 25vw;
+        bottom: -16vw;
     }
 
-    .projectGit{
-        right: -10%;
-        bottom: -5%;
+    .socialBar {
+        margin-top: 3vw;
+    }
+
+    /* Main Content CSS */
+
+    .folioDisplay {
+        padding-top: 0;
+    }
+
+    .portfolioDiv {
+        margin-top: 3%;
+    }
+
+    .nameBox {
+        justify-self: left;
+    }
+
+    .emailBox{
+        justify-self: left;
+    }
+
+}
+
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 900px) {
+
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 455px;
+        --folderWidth: 580px;
+        --folderTopMargin: 8%;
+        --ffLeft: -50px;
+        --ffTop: -85px;
+        --titleSize: 4vw;
+        --subtitleSize: 2.5vw;
+        --sectionHeaderSize: 3.5vw;
+        --subHeaderSize: 3vw;
+        --standardSize: 2.5vw;
+        --socMediaSize: 4vw;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 45vw;
+        top: -22vw;
+        left: -54vw;
+        transform: rotate(-55deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .elcHeader {
+        transform: rotate(55deg);
+        width: 45vw;
+        top: 19.5vw;
+        left: 38vw;
+        padding: 10px;
+        display: grid;
+        grid-gap: 5px;
+        margin-top: 25px;
+        text-align: left;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "name name  ."
+            "mypic mypic    ."
+            "subtitle subtitle  .";
+    }
+
+    .myPic {
+        grid-area: mypic;
+        justify-self: left;
+        width: 65%;
+        margin-left: 20px;
+        border-radius: 50%;
+        border: 2px var(--ELCnavy) solid;
+    }
+
+    .elcsubTitle {
+        text-align: left;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 160vw;
+        height: 25vw;
+        bottom: -15vw;
+        left: -40vw;
+        border: 1px transparent solid;
+        -webkit-backface-visibility: hidden;
+        transform: rotate(30deg);
+        -webkit-background-clip: content-box;
+    }
+
+    .footerBack {
+        width: 160vw;
+        height: 55vw;
+        bottom: -50vw;
+        left: -50vw;
+        border: 1px transparent solid;
+        transform: rotate(30deg);
+        -webkit-backface-visibility: hidden;
+        -webkit-background-clip: content-box;
+    }
+
+    .socialBar {
+        position: relative;
+        width: 20vw;
+        margin-left: 0;
+        left: 30vw;
+        transform: rotate(-30deg);
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        align-content: center;
+        margin-left: 8vw;
+        margin-top: 5vw;
+    }
+
+    .farLeftSoc {
+        grid-column-start: 1;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 15vw 5vw 5vw 30vw;
+    }
+
+    .folioDisplay {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            "itemTitle  itemTitle"
+            "itemImg    itemImg"
+            "ItemDesc   ItemDesc"
+            "deployed   repo"
+            "video  .";
+    }
+
+}
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 1000px) {
+
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 505px;
+        --folderWidth: 580px;
+        --folderTopMargin: 10%;
+        --ffLeft: -60px;
+        --ffTop: -35px;
+        --titleSize: 4vw;
+        --subtitleSize: 2.7vw;
+        --subHeaderSize: 2.9vw;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 38vw;
+        top: -22vw;
+        left: -56vw;
+    }
+
+    .elcHeader {
+        top: 21vw;
+        left: 37vw;
+    }
+
+    .myPic {
+        width: 55%;
+        margin-left: 20px;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        bottom: -25vw;
+        left: -20vw;
+    }
+
+    .footerBack {
+        bottom: -62vw;
+        left: -25vw;
+    }
+
+    .socialBar {
+        margin-top: 4vw;
+        left: 2vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 10vw 5vw 5vw 30vw;
+    }
+
+}
+
+/* For large tablets in portrait and small in landscape */
+@media screen and (min-width: 1200px) {
+
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 505px;
+        --folderWidth: 680px;
+        --ffLeft: -90px;
+        --ffTop: -75px;
+        --subHeaderSize: 2.5vw;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        height: 38vw;
+        top: -22vw;
+        left: -56vw;
+    }
+
+    .elcHeader {
+        top: 21.5vw;
+        left: 38vw;
+    }
+
+    .myPic {
+        width: 55%;
+        margin-left: 20px;
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 200vw;
+        transform: rotate(20deg);
+        bottom: -31vw;
+        left: -15vw;
+    }
+
+    .footerBack {
+        width: 200vw;
+        transform: rotate(20deg);
+        bottom: -65vw;
+        left: -20vw;
+    }
+
+    .socialBar {
+        width: 15vw;
+        transform: rotate(-20deg);
+    }
+
+    .socImg {
+        font-size: 4vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 80vw;
+        margin-left: auto;
+        right: 0vw;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        --folderTopMargin: 8%;
+    }
+}
+
+/* For computer monitors */
+@media screen and (min-width: 1400px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 500px;
+        --folderWidth: 880px;
+        --folderTopMargin: 3%;
+        --ffLeft: -60px;
+        --ffTop: -70px;
+        --titleSize: 3vw;
+        --subtitleSize: 2vw;
+        --subHeaderSize: 2.3vw;
+    }
+
+    /* Header Content CSS */
+
+    .headerBack {
+        width: 140vw;
+        height: 30vw;
+        top: -22vw;
+        left: -54vw;
+    }
+
+    .elcHeader {
+        width: 35vw;
+        top: 17vw;
+        right: -39vw;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+
+    .myPic {
+        /* grid-area: mypic;
+        width: 65%;
+        margin-left: 20px;
+        border-radius: 50%;
+        border: 2px var(--ELCnavy) solid; */
+    }
+
+    /* Footer Content CSS */
+
+    .asideBack {
+        width: 160vw;
+        height: 11vw;
+        bottom: -10vw;
+        left: -15vw;
+    }
+
+    .footerBack {
+        width: 160vw;
+        height: 42vw;
+        bottom: -45vw;
+        left: -22vw;
+    }
+
+    .socialBar {
+        margin-top: 3vw;
+        left: 9vw;
+    }
+
+    /* Main Content CSS */
+
+    .primaryContent {
+        width: 60vw;
+        margin-left: auto;
+        right: 0vw;
+        padding: 10vw 5vw 5vw 20vw;
+    }
+
+
+}
+
+@media screen and (min-width: 1600px) {
+
+    /* DOM element adjustments */
+
+    body {
+        --folderHeight: 580px;
+        --folderWidth: 880px;
+        --ffLeft: -60px;
+        --ffTop: -70px;
+        --titleSize: 3vw;
+        --subtitleSize: 2vw;
+        --subHeaderSize: 2.5vw;
+    }
+
+}
+
+/* For especially large screens */
+@media screen and (min-width: 1800px) {}
+
+/*
+ * ----------------------------------------
+ * animation openFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes openFolder {
+    0% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+
+    100% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+@keyframes openFolder {
+    0% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%) grayscale(0%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+    100% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation closeFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes closeFolder {
+    0% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+
+    100% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+@keyframes closeFolder {
+    0% {
+        -webkit-filter: brightness(50%);
+        filter: brightness(50%);
+        -webkit-transform: scale(1.1) rotateX(-88deg);
+        transform: scale(1.1) rotateX(-88deg);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+
+    100% {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation presentFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes presentFolder {
+    0% {
+        z-index: initial !important;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        z-index: initial !important;
+    }
+
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes presentFolder {
+    0% {
+        z-index: initial !important;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
+        z-index: initial !important;
+    }
+
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation presentBackFolder
+ * ----------------------------------------
+ */
+ @-webkit-keyframes presentBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    20% {
         z-index: 2;
     }
 
-    .gitIt{
-        font-size: 3vw;
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
-@media screen and (min-width: 1175px){
-
-    .projectBtn{
-        font-size: 1.5vw;
+@keyframes presentBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    
-    .projectGit{
-        right: -15%;
-        bottom: -5%;
+    20% {
         z-index: 2;
     }
 
+    50% {
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    100% {
+        z-index: 10;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }
 
-@media screen and (min-width: 1300px){
-
-    h2{
-        font-size: 2.4vw;
+/*
+ * ----------------------------------------
+ * animation replaceFolder
+ * ----------------------------------------
+ */
+@-webkit-keyframes replaceFolder {
+    0% {
+        z-index: 5;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    .mainText{
-        margin: 1%;
-        font-size: 1.7vw;
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
-    input, textarea{
-        font-size: 2vw;
+    51% {
+        z-index: 3;
     }
 
-    .downloadResume{
-        font-size: 2vw;
-        margin-bottom: 1%;
+    100% {
+        z-index: 3;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes replaceFolder {
+    0% {
+        z-index: 5;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    .contactMeTitle{
-        font-size: 2.2vw;
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
-    .formText{
-        font-size: 1.7vw;
+    51% {
+        z-index: 3;
     }
 
-    .submitBtn{
-        font-size: 2.5vw;
+    100% {
+        z-index: 3;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/*
+ * ----------------------------------------
+ * animation replaceBackFolder
+ * ----------------------------------------
+ */
+ @-webkit-keyframes replaceBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    .projectGit{
-        right: -20%;
-        bottom: -5%;
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
+    }
+
+    51% {
         z-index: 2;
     }
 
-    .gitIt{
-        font-size: 2.8vw;
+    100% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
-
 }
 
-
-@media screen and (min-width: 1450px){
-
-    h2{
-        font-size: 2vw;
+@keyframes replaceBackFolder {
+    0% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 
-    .mainText{
-        margin: 1%;
-        font-size: 1.2vw;
+    50% {
+        z-index: 9;
+        -webkit-transform: translateY(var(--transitionHeight));
+        transform: translateY(var(--transitionHeight));
     }
 
-    .contactMeText{
-        font-size: 1.7vw;
-    }
-
-    input, textarea{
-        font-size: 1.7vw;
-    }
-
-    .projectBtn{
-        font-size: 1.3vw;
-    }
-
-}
-
-@media screen and (min-width: 1450px){
-    .projectGit{
-        right: -25%;
-        bottom: -5%;
+    51% {
         z-index: 2;
     }
 
-    .gitIt{
-        font-size: 2.4vw;
+    100% {
+        z-index: 2;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
     }
 }
-/* END OF RESPONSIVENESS */
-
