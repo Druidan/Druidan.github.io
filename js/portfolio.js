@@ -92,7 +92,7 @@ const portfolio = {
         title: 'Fridge2Table',
         pic: './assets/images/fridge2table_logo.png',
         description: 'Fridge2Table has one overarching goal - to make the modern problem of food management smooth and efficient. Fridge2Table gives users the ability to track their food wherever they store it with expiration dates and regular notifications if their food sits unused for too long.',
-        deployed: null,
+        deployed: 'https://play.google.com/store/apps/details?id=com.dreamteamdesigns.fridge2table',
         repo: 'https://github.com/Dreadpipe/fridge2table', 
         listClass: 'f2Table',
     },
