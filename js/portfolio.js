@@ -72,5 +72,21 @@ const portfolio = {
         repo: 'https://github.com/Druidan/project-2', 
         listClass: 'bbLi',
     },
+    10: {
+        title: 'Game Mole',
+        pic: './assets/images/gMole2.png',
+        description: 'When you need your gaming news fix, start at Game Mole - an aggregator of the latest news from the most popular game news sites on the internet.',
+        deployed: 'https://gamemole.herokuapp.com/',
+        repo: 'https://github.com/Druidan/GameMole', 
+        listClass: 'gMole',
+    },
+    11: {
+        title: 'Magical Memory',
+        pic: './assets/images/mMemory.png',
+        description: 'A fan-made memory matching game based on Magic the Gathering, the popular competative strategy card game.',
+        deployed: 'https://magicalmemory.herokuapp.com/',
+        repo: 'https://github.com/Druidan/magicalMemory', 
+        listClass: 'mMemory',
+    },
 }
 
