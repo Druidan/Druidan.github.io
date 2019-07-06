@@ -19,8 +19,8 @@ const portfolio = {
         title: 'Whale Diplomacy',
         pic: './assets/images/orcaCircles.gif',
         description: 'The whales have come for revenge! Can you answer their trivia questions to prevent all out war?',
-        deployed: 'https://druidan.github.io/TriviaGame/index.html',
-        repo: 'https://github.com/Druidan/TriviaGame.git', 
+        deployed: 'https://druidan.github.io/WhaleDiplomacy/',
+        repo: 'https://github.com/Druidan/WhaleDiplomacy', 
         listClass: 'whaleDipLi',
     },
     // 4: {
