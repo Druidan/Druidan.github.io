@@ -35,8 +35,8 @@ const portfolio = {
     //     title: 'Jeopardy Training',
     //     pic: './assets/images/JeopardyLogo.jpg',
     //     description: 'Train yourself for Jeopardy using these actual questions from the show!',
-    //     deployed: 'https://druidan.github.io/project1/index.html',
-    //     repo: 'https://github.com/Druidan/project1.git', 
+    //     deployed: 'https://druidan.github.io/JeopardyTraining/',
+    //     repo: 'https://github.com/Druidan/JeopardyTraining', 
     //     listClass: 'jepoLi',
     // },
     6: {
