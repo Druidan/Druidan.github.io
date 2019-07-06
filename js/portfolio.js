@@ -69,7 +69,7 @@ const portfolio = {
         pic: './assets/images/BurgerBattle.png',
         description: 'Prepare for a king of the hill battle royale to decide which burger you want to eat right now.',
         deployed: 'https://burgerbattle.herokuapp.com/',
-        repo: 'https://github.com/Druidan/project-2', 
+        repo: 'https://github.com/Druidan/BurgerBattle', 
         listClass: 'bbLi',
     },
     10: {
