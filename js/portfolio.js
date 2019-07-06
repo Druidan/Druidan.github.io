@@ -48,7 +48,16 @@ const portfolio = {
         repo: 'https://github.com/Druidan/LiriBot', 
         listClass: 'LiriLi',
     },
-    7: {
+    // 7: {
+    //     title: 'Bamazon',
+    //     pic: './assets/images/BamazonLogo.png',
+    //     description: 'Have questions about movies, music, or local band shows? Ask Liribot!',
+    //     videoWalkthrough: 'https://www.youtube.com/watch?v=blhtNukXXS4&feature=youtu.be',
+    //     deployed: null,
+    //     repo: 'https://github.com/Druidan/LiriBot', 
+    //     listClass: 'LiriLi',
+    // },
+    8: {
         title: 'Nerd Friend Finder',
         pic: './assets/images/nff.gif',
         description: 'Ever had a hard time finding nerd friends who share your specific nerd tastes? Take our survey and find your closest match!',
@@ -56,7 +65,7 @@ const portfolio = {
         repo: 'https://github.com/Druidan/NerdFinder', 
         listClass: 'nffLi',
     },
-    8: {
+    9: {
         title: 'Burger Muncher',
         pic: './assets/images/muncher.png',
         description: 'Keep track of each type of burger you munch with Burger Muncher!',
@@ -64,7 +73,7 @@ const portfolio = {
         repo: 'https://github.com/Druidan/BurgerMuncher', 
         listClass: 'muncherLi',
     },
-    9: {
+    10: {
         title: 'Burger Battle!',
         pic: './assets/images/BurgerBattle.png',
         description: 'Prepare for a king of the hill battle royale to decide which burger you want to eat right now.',
@@ -72,7 +81,7 @@ const portfolio = {
         repo: 'https://github.com/Druidan/BurgerBattle', 
         listClass: 'bbLi',
     },
-    10: {
+    11: {
         title: 'Game Mole',
         pic: './assets/images/gMole2.png',
         description: 'When you need your gaming news fix, start at Game Mole - an aggregator of the latest news from the most popular game news sites on the internet.',
@@ -80,7 +89,7 @@ const portfolio = {
         repo: 'https://github.com/Druidan/GameMole', 
         listClass: 'gMole',
     },
-    11: {
+    12: {
         title: 'Magical Memory',
         pic: './assets/images/mMemory.png',
         description: 'A fan-made memory matching game based on Magic the Gathering, the popular competative strategy card game.',
@@ -88,7 +97,7 @@ const portfolio = {
         repo: 'https://github.com/Druidan/magicalMemory', 
         listClass: 'mMemory',
     },
-    12: {
+    13: {
         title: 'Fridge2Table',
         pic: './assets/images/fridge2table_logo.png',
         description: 'Fridge2Table has one overarching goal - to make the modern problem of food management smooth and efficient. Fridge2Table gives users the ability to track their food wherever they store it with expiration dates and regular notifications if their food sits unused for too long.',
