@@ -30,3 +30,4 @@ My portfolio will be using the following NPM:
 ## Future Features / Icebox
 * I plan on adding more projects to my portfolio once I have polished them up more. Of course even the existing displayed projects require some additional work.
 * I plan on adding a download link for my technical resume, once I've decided where to put it on the page, and finished my resume.
+* On very short screens that are also above a certain width, the folders are slightly too obscured by the slanted blue div, as is my "Developer" title.
