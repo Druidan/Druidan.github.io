@@ -1,6 +1,3 @@
-
-// This file holds utility functions we can use if we do vanilla js to do similar things to jQuery. If we use jQuery we can delete this file.
-
 //This function will grab an element by its class, but only the last one in the array of elements by class. Most useful when replacing html IDs with Classes.
 function elemByClass (selectedClass) {
     let result;
