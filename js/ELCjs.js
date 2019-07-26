@@ -40,11 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const skillAnchor = document.createElement('a');
             skillAnchor.setAttribute('onclick', 'event.stopPropagation()');
             skillAnchor.setAttribute('href', skills[skill].link);
+            skillAnchor.setAttribute('target', '_blank');
+            skillAnchor.setAttribute('rel', 'noopener noreferrer');
             const listClass = skills[skill].listClass;
             addClass(skillAnchor, 'skillItem');
             addClass(skillAnchor, `${listClass}`);
             const skillItem = document.createElement('img');
             skillItem.setAttribute('src', skills[skill].pic);
+            skillItem.setAttribute('alt', `${skills[skill].skill} Logo`);
             const skillTitle = document.createElement('h2');
             addClass(skillTitle, 'skillTitle');
             skillTitle.append(`${skills[skill].skill}`);
