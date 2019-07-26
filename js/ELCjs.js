@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Global HTML Grab
     const folder = document.querySelectorAll(".folder");
     const folioList = document.querySelectorAll(".folioList");
+    const skillsSection  = document.querySelectorAll(".skillsDiv");
     const itemDisplayDiv = document.querySelectorAll(".folioDisplay");
     const contactName = document.querySelectorAll(".nameBox");
     const contactEmail = document.querySelectorAll(".emailBox");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sounds array
     const sounds = ['./assets/sounds/paper1.mp3', './assets/sounds/paper2.mp3', './assets/sounds/paper3.mp3', './assets/sounds/paper4.mp3', './assets/sounds/paper5.mp3', ]
 
+    // Dynamically create the portfolio list in the portfolio folder
     function populatePortfolio() {
         for (project in portfolio) {
             const folioListDiv = elemByClass(folioList);
@@ -28,6 +30,27 @@ document.addEventListener("DOMContentLoaded", function () {
             clickClass(listItem, displayFolioItem);
             listItem.append(`${portfolio[project].title}`);
             folioListDiv.prepend(listItem);
+        }
+    }
+
+    // Dynamically create the skill list in the biography folder
+    function populateSkills() {
+        for (skill in skills) {
+            const skillsDiv = elemByClass(skillsSection);
+            const skillAnchor = document.createElement('a');
+            skillAnchor.setAttribute('onclick', 'event.stopPropagation()');
+            skillAnchor.setAttribute('href', skills[skill].link);
+            const listClass = skills[skill].listClass;
+            addClass(skillAnchor, 'skillItem');
+            addClass(skillAnchor, `${listClass}`);
+            const skillItem = document.createElement('img');
+            skillItem.setAttribute('src', skills[skill].pic);
+            const skillTitle = document.createElement('h2');
+            addClass(skillTitle, 'skillTitle');
+            skillTitle.append(`${skills[skill].skill}`);
+            skillAnchor.append(skillTitle);
+            skillAnchor.prepend(skillItem);
+            skillsDiv.append(skillAnchor);
         }
     }
 
@@ -257,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     populatePortfolio();
+    populateSkills();
 
     //Click Events
     clickClass(folder, swapFolder);
