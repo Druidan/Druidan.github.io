@@ -393,6 +393,29 @@
         filter: grayscale(40%)
     }
 
+    /* Skills Section CSS */
+
+    .skillsDiv {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: minmax(0px, max-content);
+        grid-gap: 5px;
+        justify-content: center;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .skillItem {
+        display: grid;
+        width: 100%;
+    }
+
+    .skillPic {
+        width: 90%;
+        margin: 5%;
+    }
+
     /* Portfolio Folder Content CSS */
 
     .folioList {

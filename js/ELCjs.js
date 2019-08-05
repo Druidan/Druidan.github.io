@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const skillItem = document.createElement('img');
             skillItem.setAttribute('src', skills[skill].pic);
             skillItem.setAttribute('alt', `${skills[skill].skill} Logo`);
+            addClass(skillItem, 'skillPic');
             const skillTitle = document.createElement('h2');
             addClass(skillTitle, 'skillTitle');
             skillTitle.append(`${skills[skill].skill}`);
