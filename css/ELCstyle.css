@@ -394,13 +394,18 @@
     }
 
     /* Skills Section CSS */
+    
+    .skillTitle {
+        display: block;
+        text-align: center;
+        justify-self: center;
+    }
 
     .skillsDiv {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: minmax(0px, max-content);
-        grid-gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
         justify-content: center;
         align-content: center;
         text-align: center;
@@ -409,20 +414,22 @@
 
     .skillItem {
         display: grid;
-        /* width: 100%; */
-        align-content: center;
+        grid-template-rows: 1fr auto;
+        justify-self: center;
+        text-align: center;
+        width: 80%;
         margin-bottom: 15%;
     }
 
     .skillPic {
-        /* width: 90%; */
-        margin: 5%;
+        width: 100%;
+        align-self: center;
     }
 
-    .skillPic {
-        width: 90%;
-        margin: 5%;
+    .skillName {
+        /* justify-self: baseline; */
     }
+
 
     /* Portfolio Folder Content CSS */
 
@@ -715,36 +722,6 @@
         padding: 35vw 4vw 20vw 3vw;
     }
 
-    .folderDiv {}
-
-    /* Skills Section CSS */
-
-    .skillsDiv {
-        display: grid;
-        width: calc(var(--folderWidth) - 12%);
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5px;
-        justify-content: center;
-        text-align: center;
-        padding-top: 15px;
-    }
-
-    .skillItem {
-        display: grid;
-        width: 100%;
-        margin-bottom: 15%;
-    }
-
-    .skillPic {
-        width: 90%;
-        margin: 5%;
-    }
-
-    .skillPic {
-        width: 90%;
-        margin: 5%;
-    }
-
 }
 
 @media screen and (min-width: 400px) {
@@ -782,6 +759,10 @@
         --folderTopMargin: 8%;
     }
 
+    .skillsDiv {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 @media screen and (min-width: 600px) {
@@ -794,7 +775,7 @@
         --ffLeft: 20px;
         --ffTop: -3vh;
         --titleSize: 7vw;
-        --subtitleSize: 6vw;
+        --subtitleSize: 5vw;
         --sectionHeaderSize: 5vw;
         --subHeaderSize: 4vw;
         --standardSize: 3.2vw;
@@ -854,7 +835,6 @@
 
     .elcsubTitle {
         grid-area: subtitle;
-        text-align: center;
     }
 
     /* Footer Content CSS */
@@ -902,7 +882,6 @@
         --ffLeft: 20px;
         --folderTopMargin: 8%;
         --titleSize: 7vw;
-        --subtitleSize: 6vw;
         --sectionHeaderSize: 5vw;
         --subHeaderSize: 3.5vw;
         --standardSize: 3.2vw;
@@ -918,7 +897,6 @@
         align-items: center;
     }
 
-
     .contactForm{
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
@@ -931,6 +909,11 @@
     .messageBox{
         height: 150px;
     }
+
+    .skillsDiv {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }
 
 @media screen and (min-width: 800px) {
@@ -1050,7 +1033,7 @@
         grid-template-areas:
             "name name  ."
             "mypic mypic    ."
-            "subtitle subtitle  .";
+            "subtitle .  .";
     }
 
     .myPic {
@@ -1063,7 +1046,8 @@
     }
 
     .elcsubTitle {
-        text-align: left;
+        grid-area: subtitle;
+        text-align: right;
     }
 
     /* Footer Content CSS */
@@ -1099,8 +1083,8 @@
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
         align-content: center;
-        margin-left: 8vw;
-        margin-top: 5vw;
+        margin-left: 10vw;
+        margin-top: 9vw;
     }
 
     .farLeftSoc {
@@ -1171,9 +1155,10 @@
     }
 
     .socialBar {
-        margin-top: 5.5vw;
         left: 2.2vw;
         grid-gap: 10px;
+        margin-left: 10vw;
+        margin-top: 9vw;
     }
 
     /* Main Content CSS */
@@ -1208,6 +1193,12 @@
         bottom: -65vw;
         left: -28vw;
     }
+
+    .socialBar {
+        margin-left: 10vw;
+        margin-top: 9vw;
+    }
+
 }
 
 /* For large tablets in portrait and small in landscape */
@@ -1263,6 +1254,8 @@
     .socialBar {
         width: 15vw;
         transform: rotate(-20deg);
+        margin-left: 10vw;
+        margin-top: 9vw;
     }
 
     .socImg {
@@ -1275,6 +1268,10 @@
         width: 80vw;
         margin-left: auto;
         right: 0vw;
+    }
+
+    .skillsDiv {
+        grid-template-columns: repeat(5, 1fr);
     }
 
 }
@@ -1348,7 +1345,7 @@
     }
 
     .socialBar {
-        margin-top: 3vw;
+        margin-top: 7vw;
         left: 9vw;
     }
 
@@ -1360,6 +1357,11 @@
         right: 0vw;
         padding: 10vw 5vw 5vw 20vw;
     }
+
+    .skillsDiv {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -1381,7 +1383,7 @@
     }
 
     .socialBar {
-        margin-top: 2.2vw;
+        /* margin-top: 2.2vw; */
         left: 7.5vw;
     }
 }
