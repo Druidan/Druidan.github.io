@@ -1,3 +1,13 @@
+//Check for Service Worker Support, then register the worker is so.
+if('serviceWorker' in navigator) { 
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+        .register('../service_worker_cache.js')
+        .then( reg => console.log('Service Worker Registered!'))
+        .catch(err => console.log(`Service Worker: Error: ${err}`));
+    });
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     //My JS starts past this point.
 
