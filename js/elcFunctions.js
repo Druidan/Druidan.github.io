@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 //This function will grab an element by its class, but only the last one in the array of elements by class. Most useful when replacing html IDs with Classes.
 function elemByClass (selectedClass) {
     let result;
@@ -67,3 +69,5 @@ function say (log) {
 function objectLength (object) {
     return Object.keys(object).length;
 }
+
+});

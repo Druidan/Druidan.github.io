@@ -9,7 +9,6 @@ if('serviceWorker' in navigator) {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-    //My JS starts past this point.
 
     //Global HTML Grab
     const folder = document.querySelectorAll(".folder");
