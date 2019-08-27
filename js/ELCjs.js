@@ -8,7 +8,7 @@ if('serviceWorker' in navigator) {
     });
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
     //Global HTML Grab
     const folder = document.querySelectorAll(".folder");
@@ -300,4 +300,4 @@ document.addEventListener("DOMContentLoaded", function () {
     clickClass(submitBtn, sendMessage);
 
     //My JS Ends beyond this point.
-});
+// });
