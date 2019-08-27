@@ -2,7 +2,7 @@
 if('serviceWorker' in navigator) { 
     window.addEventListener('load', () => {
         navigator.serviceWorker
-        .register('../service_worker_cache.js')
+        .register('../service_worker_cachedSite.js')
         .then( reg => console.log('Service Worker Registered!'))
         .catch(err => console.log(`Service Worker: Error: ${err}`));
     });
