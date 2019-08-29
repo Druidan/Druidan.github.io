@@ -13,6 +13,13 @@ class Sound{
     play() {
         this.sound.play().catch(error => {});
     }
+    reset() {
+        this.sound.currentTime = 0;
+    }
+    triggerPlay() {
+        this.reset();
+        this.play();
+    }
     stop() {
         this.sound.pause().catch(error => {});
     }
