@@ -55,15 +55,44 @@ function removeClass (el, className) {
     }
 }
 
+// Check Type and log of a variable.
 function q (check) {
     console.log(`Q: This ${typeof check} has a value of:`);
     console.log(check)
 }
 
+// Console log as a message.
 function say (log) {
     console.log(`Message: ${log}`);
 }
 
+// Console log in a table.
+function table (log) {
+    console.table(log);
+}
+
+// Returns the length of an object.
 function objectLength (object) {
     return Object.keys(object).length;
 }
+
+// Turns an integer into a string with commas.
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// From an array, create a new array of strings that match a provided string. 
+function matchesFromArr(StringToMatch, arr) {
+    return arr.filter(item => {
+        const regex = new RegExp(StringToMatch, 'gi');
+        return item.match(regex)
+    });
+}
+
+// Create a new array minus the item at a provided index.
+function sliceIndex(array, index) {
+    return newArr = [
+        ...array.slice(0, index),
+        ...array.slice(index +1)
+    ];
+};
