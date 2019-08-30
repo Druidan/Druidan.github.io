@@ -1,4 +1,4 @@
-const ELCIIcache = 'v1';
+const ELCIIcache = 'v2';
 
 // Call Install Event
 self.addEventListener('install', event => {
