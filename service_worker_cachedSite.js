@@ -2,18 +2,18 @@ const ELCIIcache = 'v1';
 
 // Call Install Event
 self.addEventListener('install', event => {
-    console.log('Service Worker: Installed, my lord!');
+    // console.log('Service Worker: Installed, my lord!');
 });
 
 // Activate Event
 self.addEventListener('activate', event => {
-    console.log('Service Worker: Activated!');
+    // console.log('Service Worker: Activated!');
     // Remove deprecated caches
     event.waitUntil(
         caches.keys().then( cacheVersions => {
             cacheVersions.map(cacheV => {
                 if (cacheV !== ELCIIcache) {
-                    console.log('Service Worker: "Taking Out the Trash, my lord. Old cache versions are taken care of!"');
+                    // console.log('Service Worker: "Taking Out the Trash, my lord. Old cache versions are taken care of!"');
                     return caches.delete(cacheV);
                 }
             })
@@ -24,7 +24,7 @@ self.addEventListener('activate', event => {
 
 // Call Fetch Event
 self.addEventListener('fetch', event => {
-    console.log('Service Worker: Fetching, my lord!');
+    // console.log('Service Worker: Fetching, my lord!');
     event.respondWith(
         fetch(event.request)
         .then( response => {
