@@ -32,8 +32,9 @@ function clickClass (querySeleced, func) {
 };
 
 function hasClass (el, className) {
-    if (el.classList)
+    if (el.classList) 
         return el.classList.contains(className)
+    // For browsers that don't support the classList property - 
     else
         return !!el.className.match(new RegExp(`(\\s|^)${className}(\\s|$)`))
 }
@@ -42,18 +43,36 @@ function hasClass (el, className) {
 function addClass (el, className) {
     if (el.classList)
         el.classList.add(className)
-    else if (!hasClass(el, className)) el.className += ' ' + className
+    // For browsers that don't support the classList property - 
+    else if (!hasClass(el, className)) el.className += ' ' + className // For browsers that don't support the classList property - 
 }
 // ----------------
 
 function removeClass (el, className) {
     if (el.classList)
         el.classList.remove(className)
-    else if (hasClass(el, className)) {
+    // For browsers that don't support the classList property - 
+    else if (hasClass(el, className)) { 
         const reg = new RegExp(`(\\s|^)${className}(\\s|$)`)
         el.className = el.className.replace(reg, ' ')
     }
 }
+
+function toggleClass (el, toggleClass) {
+    if (el.classList) {
+        say(el.classList)
+        el.classList.toggle(toggleClass);
+        say(el.classList)
+    // For browsers that don't support the classList property - 
+    } else {
+        const elClasses = el.className.split(" ");
+        const i = elClasses.indexOf(toggleClass);
+        if (i >= 0) 
+            elClasses.splice(i, 1);
+        else 
+            elClasses.push(toggleClass);
+            el.className = classes.join(" "); 
+    }};
 
 // Check Type and log of a variable.
 function q (check) {
