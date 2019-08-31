@@ -1,6 +1,7 @@
 //Dependencies
 require('dotenv').config();
 const express = require('express');
+// import express from 'express'
 const compression = require('compression');
 const mcache = require('memory-cache');
 const nodemailer = require('nodemailer');
@@ -61,7 +62,6 @@ app.post('/message', (req, res) => {
 	);
 });
 
-//I liked the look of Geoff's port notification, so I stoooole it.
 app.listen(PORT, () => {
-	console.log(`==> 🌎  Listening on port ${PORT}.`);
+	console.log(`==> 🌎  Listening on Port: ${PORT}.`);
 });
