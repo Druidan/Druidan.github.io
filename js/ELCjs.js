@@ -24,8 +24,8 @@ if('serviceWorker' in navigator) {
     let backFoldersOpen = false;
     let mailSent = false;
 
-    // Sounds array
-    const sounds = ['./assets/sounds/paper1.mp3', './assets/sounds/paper2.mp3', './assets/sounds/paper3.mp3', './assets/sounds/paper4.mp3', './assets/sounds/paper5.mp3', ]
+    // Create a Sound Element
+    const paper = new Sound(`./assets/sounds/paper1.mp3`);
 
     // Dynamically create the portfolio list in the portfolio folder
     function populatePortfolio() {
@@ -86,14 +86,7 @@ if('serviceWorker' in navigator) {
 
         // If this folder is already selected and open, deselect it and close it.
         if (hasClass(thisElement, "selectFolder")) {
-            const allaudiotags = document.querySelectorAll("audio");
-            if (allaudiotags.length > 0) {
-                allaudiotags.forEach(audio => {
-                    audio.remove();
-                });
-            }
-            const paper = new Sound(sounds[Math.floor(Math.random() * sounds.length)])
-            paper.play();
+            paper.triggerPlay();
             removeClass(thisElement, "selectFolder");
             if (hasClass(thisElement, "frontFolder")) {
                 removeClass(thisElement, "frontZ");
@@ -115,14 +108,7 @@ if('serviceWorker' in navigator) {
         } else {
             // If this folder has not already been selected, find the other folder that's open and close it
             const allFolders = document.querySelectorAll(".folder");
-            const allaudiotags = document.querySelectorAll("audio");
-            if (allaudiotags.length > 0) {
-                allaudiotags.forEach(audio => {
-                    audio.remove();
-                });
-            }
-            const paper = new Sound(sounds[Math.floor(Math.random() * sounds.length)])
-            paper.play();
+            paper.triggerPlay();
             //Put all of the folders through the checkIfOpen function
             funcOnClass(allFolders, checkIfOpen)
             // The selectedClass function will do this function for each folder.
