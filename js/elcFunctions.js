@@ -153,3 +153,24 @@ function sliceIndex(array, index) {
         ...array.slice(index +1)
     ];
 };
+
+// Create a millisecond waiting period for a wrapped function(func). 
+// - Primarilly usefull for scroll-based event listeners 
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+// (Source: Wes Bos, Javascript 30, video 13, "Vanilla JavaScript Slide In on Scroll"
+//  - https://bit.ly/2lSz0XM); 
+// -----------------------------------------------------------
+
