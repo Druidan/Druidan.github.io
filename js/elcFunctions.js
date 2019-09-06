@@ -74,7 +74,13 @@ function toggleClass (el, toggleClass) {
             el.className = classes.join(" "); 
     }};
 
-// Multipurpose check function.
+// Faster way to write log, but less performant. Development only.
+function l () {
+    const args = [...arguments];
+    console.log(args);
+}
+
+// Multipurpose check function. Not performant. Ideal for singular diagnosis, not rapid logging.
 function q (check, style, trace) {
     let mytype;
     switch (true) {
@@ -118,15 +124,21 @@ function q (check, style, trace) {
     if (mytype !== 'Integer') { console.assert(check, "That's not true! That's impossible!"); }
 };
 
-// Console log as a message.
-function say (log) {
-    console.log(`Message: ${log}`);
-}
+// A fast and simple way to log strings or arrays of strings.
+function say () {
+    const args = [...arguments];
+    if (args.length === 1) { console.log(`Message: ${args[0]}`); } 
+    else {
+        let i = 1;
+        args.forEach(arg => { console.log(`Message ${i}: ${arg}`); i++; });
+    };
+};
 
 // Console log in a table.
 function table (log) {
     console.table(log);
-}
+};
+
 
 // Returns the length of an object.
 function objectLength (object) {
@@ -154,6 +166,12 @@ function sliceIndex(array, index) {
     ];
 };
 
+// Returns a copied version of a passed object. Not nessesarily performant, 
+// and smashes everything into strings (like Dates and Functions).
+function poorClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
 // Create a millisecond waiting period for a wrapped function(func). 
 // - Primarilly usefull for scroll-based event listeners 
 function debounce(func, wait = 20, immediate = true) {
@@ -174,3 +192,12 @@ function debounce(func, wait = 20, immediate = true) {
 //  - https://bit.ly/2lSz0XM); 
 // -----------------------------------------------------------
 
+// Set a key and value in local storage.
+function localSET(key, toSet) {
+    localStorage.setItem(key, JSON.stringify(toSet));
+}
+
+// Get a key and value from local storage.
+function localGET(key) {
+    return JSON.parse(localStorage.getItem(key)) || [];
+}
