@@ -82,6 +82,10 @@ function l () {
 
 // Multipurpose check function. Not performant. Ideal for singular diagnosis, not rapid logging.
 function q (check, style, trace) {
+    function l () {
+        const args = [...arguments];
+        console.log(args);
+    }
     let mytype;
     switch (true) {
         case typeof check === 'string':
@@ -115,7 +119,7 @@ function q (check, style, trace) {
         console.log(check, style);
     } else {
         if(mytype === 'Array') { console.table(check); } 
-        else { console.log(check); };
+        else { console.log(check); l(check) };
     };
     if ((arguments.length >= 2 && typeof style === 'boolean') || trace) { 
         console.log('%c Trace Your Steps Below... ', 'font-size:15px; color: Cornsilk; background: DarkOliveGreen;') 
