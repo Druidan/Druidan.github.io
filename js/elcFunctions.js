@@ -41,10 +41,13 @@ function hasClass (el, className) {
 // ----------------
 
 function addClass (el, className) {
-    if (el.classList)
-        el.classList.add(className)
+    if (el.classList) {
+        if (className instanceof Array) {
+            for (name in className) { el.classList.add(className[name]) }
+        } else { el.classList.add(className) }
     // For browsers that don't support the classList property - 
-    else if (!hasClass(el, className)) el.className += ' ' + className // For browsers that don't support the classList property - 
+    } else if (!hasClass(el, className)) el.className += ' ' + className // For browsers that don't support the classList property - 
+    
 }
 // ----------------
 

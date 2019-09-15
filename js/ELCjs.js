@@ -30,15 +30,13 @@ if('serviceWorker' in navigator) {
     // Dynamically create the portfolio list in the portfolio folder
     function populatePortfolio() {
         for (project in portfolio) {
-            const folioListDiv = elemByClass(folioList);
-            const listClass = portfolio[project].listClass;
+            // Create a list item for each project, add appropriate classes and click events.
             const listItem = document.createElement('li');
-            addClass(listItem, 'folioItem');
-            addClass(listItem, `${listClass}`);
-            listItem.setAttribute('onclick', 'event.stopPropagation()')
+            addClass(listItem, ['folioItem', `${portfolio[project].listClass}`]);
+            listItem.setAttribute('onclick', 'event.stopPropagation()');
             clickClass(listItem, displayFolioItem);
             listItem.append(`${portfolio[project].title}`);
-            folioListDiv.prepend(listItem);
+            elemByClass(folioList).prepend(listItem);
         }
     }
 
