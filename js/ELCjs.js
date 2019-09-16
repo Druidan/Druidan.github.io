@@ -8,6 +8,11 @@ if('serviceWorker' in navigator) {
     });
 };
 
+// import createDOMPurify from 'dompurify';
+// import { JSDOM } from 'jsdom';
+// const JSDOMwindow = (new JSDOM('')).window;
+// const DOMPurify = createDOMPurify(JSDOMwindow);
+
 // document.addEventListener("DOMContentLoaded", function () {
 
     //Global HTML Grab
@@ -44,6 +49,15 @@ if('serviceWorker' in navigator) {
     function populateSkills() {
         for (skill in skills) {
             const skillsDiv = elemByClass(skillsSection);
+            // const eachSkill = DOMPurify.sanitize(
+            //     `
+            //     <a onclick="event.stopPropagation()" href="${skills[skill].link}" target="_blank" rel="noopener noreferrer"  class="skillItem ${skills[skill].listClass}">
+            //         <img src="${skills[skill].pic}" alt="${skills[skill].skill} Logo" class="skillPic">
+            //         <h2 class="skillName">${skills[skill].skill}</h2>
+            //     </a>
+            //     `
+            // );
+            // skillsDiv.innerHTML = eachSkill;
             const skillAnchor = document.createElement('a');
             skillAnchor.setAttribute('onclick', 'event.stopPropagation()');
             skillAnchor.setAttribute('href', skills[skill].link);
